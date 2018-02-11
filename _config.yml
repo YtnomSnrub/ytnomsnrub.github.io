@@ -1,1 +1,15 @@
+# Site settings
+title: YtnomSnrub
+description: I like the way Snrub thinks!
+repository: YtnomSnrub/ytnomsnrub.github.io
+github_username: YtnomSnrub
+
+# Pages to appear in the tabs row under the title
+header_pages: 
+- index.md
+
+# Build settings
+markdown: kramdown
 theme: jekyll-theme-cayman
+
+github: [metadata]
