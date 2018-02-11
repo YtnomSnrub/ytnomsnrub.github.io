@@ -30,10 +30,18 @@ a {
 
 .main-content {
     min-height: calc(100vh);
-    padding-top: calc(96px + 1em);
+    padding-top: calc(24px + 1em);
 
     code {
         @include font-code;
+    }
+
+    img {
+        position: relative;
+        left: 0;
+
+        width: 100%;
+        height: 30vh;
     }
 
     a {

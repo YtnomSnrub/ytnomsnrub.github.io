@@ -4,9 +4,9 @@ description: I like the way Snrub thinks!
 repository: YtnomSnrub/ytnomsnrub.github.io
 github_username: YtnomSnrub
 
-# Pages to appear in the tabs row under the title
-header_pages: 
-- index.md
+# Dir for sass files
+sass:
+  sass_dir: _scss
 
 # Build settings
 markdown: kramdown
