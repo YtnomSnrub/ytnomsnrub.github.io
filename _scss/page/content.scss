@@ -44,7 +44,57 @@ a {
         height: 30vh;
     }
 
-    a {
+    .button-row {
+        display: table;
+
+        margin: 1.4em auto;
+    }
+
+    a.button {
+        position: relative;
+        top: -$button-extend;
+
+        display: inline-block;
+
+        margin: 0.4em;
+        padding: 0.6em 1.2em;
+
+        transition: top 0.1s $m-ease-in-out, box-shadow 0.1s $m-ease-in-out;
+        text-decoration: none;
+
+        color: $text-color-alt;
+        border-radius: $border-radius;
+        background-color: $primary-color;
+        box-shadow: 0 $button-extend darken($primary-color, 10%);
+
+        &.button-discord {
+            background-color: #7287dd;
+            box-shadow: 0 $button-extend darken(#7287dd, 10%);
+        }
+
+        &:hover,
+        &:focus {
+            top: -$button-extend-hover;
+
+            box-shadow: 0 $button-extend-hover darken($primary-color, 10%);
+
+            &.button-discord {
+                box-shadow: 0 $button-extend-hover darken(#7287dd, 10%);
+            }
+        }
+
+        &:active {
+            top: -$button-extend-pressed;
+
+            box-shadow: 0 $button-extend-pressed darken($primary-color, 10%);
+
+            &.button-discord {
+                box-shadow: 0 $button-extend-pressed darken(#7287dd, 10%);
+            }
+        }
+    }
+
+    a :not(.button) {
         position: relative;
 
         &::before {

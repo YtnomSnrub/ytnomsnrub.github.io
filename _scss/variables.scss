@@ -6,7 +6,7 @@ $m-ease-in-out: cubic-bezier(0.4, 0.0, 0.6, 1);
 
 // Colors
 $primary-color: #2e2f34;
-$secondary-color: #1e88e5;
+$secondary-color: #2e2e2e;
 $background-color: #ffffff;
 $background-color-alt: #2e2f34;
 $text-color: rgba(0, 0, 0, 0.87);
@@ -49,6 +49,10 @@ $tiny-breakpoint: 12em;
 // Sizes
 $tabs-height: 3em;
 $tabs-height-small: 2.5em;
+// Buttons
+$button-extend: 0.1em;
+$button-extend-hover: 0.4em;
+$button-extend-pressed: 0.2em;
 
 // Header
 @mixin header-background {
