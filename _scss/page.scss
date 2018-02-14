@@ -27,6 +27,8 @@ a {
 }
 
 img {
+    overflow: hidden;
+
     transform: scale(1.05);
 
     opacity: 0;

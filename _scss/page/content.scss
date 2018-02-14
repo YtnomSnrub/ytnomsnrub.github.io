@@ -67,9 +67,22 @@ a {
         background-color: $primary-color;
         box-shadow: 0 $button-extend darken($primary-color, 10%);
 
+        @media (max-width: $medium-breakpoint) {
+            display: block;
+
+            margin: 0.8em;
+
+            text-align: center;
+        }
+
         &.button-discord {
-            background-color: #7287dd;
-            box-shadow: 0 $button-extend darken(#7287dd, 10%);
+            background-color: $discord-color;
+            box-shadow: 0 $button-extend darken($discord-color, 10%);
+        }
+
+        &.button-modis {
+            background-color: $modis-color;
+            box-shadow: 0 $button-extend darken($modis-color, 10%);
         }
 
         &:hover,
@@ -79,7 +92,11 @@ a {
             box-shadow: 0 $button-extend-hover darken($primary-color, 10%);
 
             &.button-discord {
-                box-shadow: 0 $button-extend-hover darken(#7287dd, 10%);
+                box-shadow: 0 $button-extend-hover darken($discord-color, 10%);
+            }
+
+            &.button-modis {
+                box-shadow: 0 $button-extend-hover darken($modis-color, 10%);
             }
         }
 
@@ -89,7 +106,11 @@ a {
             box-shadow: 0 $button-extend-pressed darken($primary-color, 10%);
 
             &.button-discord {
-                box-shadow: 0 $button-extend-pressed darken(#7287dd, 10%);
+                box-shadow: 0 $button-extend-pressed darken($discord-color, 10%);
+            }
+
+            &.button-modis {
+                box-shadow: 0 $button-extend-pressed darken($modis-color, 10%);
             }
         }
     }

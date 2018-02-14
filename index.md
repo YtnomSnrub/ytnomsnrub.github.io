@@ -14,7 +14,7 @@ HaikuBot is a Discord bot that detects accidental (or intentional) haikus in you
 
 <div class="button-row">
     <a class="button button-discord" href="https://discordbots.org/bot/372175794895585280">
-        View on Discord Bots
+        View on Discord Bot List
     </a>
     <a class="button" href="https://discordapp.com/oauth2/authorize?client_id=372175794895585280&scope=bot&permissions=19520">
         Invite to Server
@@ -28,3 +28,12 @@ HaikuBot is a Discord bot that detects accidental (or intentional) haikus in you
 </div>
 
 Modis is a modular discord bot, designed to be both flexible and easily extendable. It features a music module with an interactive GUI, as well as tools for moderation and a growing community developing new modules all the time. Modis is still in active development while we try to stabilise the framework and some of our internal modules, but you can come check out the community and the bot in our Discord server.
+
+<div class="button-row">
+    <a class="button button-modis" href="https://infraxion.github.io/modis">
+        Modis Website
+    </a>
+    <a class="button" href="https://github.com/infraxion/modis">
+        View on GitHub
+    </a>
+</div>
