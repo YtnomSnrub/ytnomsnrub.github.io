@@ -163,27 +163,37 @@ a {
     border-radius: $border-radius;
 }
 
-.haiku-count {
+.haiku-count,
+.server-count {
     display: inline-block;
 
     min-width: 8em;
-    margin: 0;
+    margin: 0 0.4em;
     padding: 0.6em 1.8em;
 
     text-align: center;
 
-    color: $haiku-color-text;
     border-radius: $border-radius;
-    background-color: $haiku-color;
-    box-shadow: 0 $button-extend darken($haiku-color, 10%);
+    box-shadow: 0 $button-extend 4px rgba(0, 0, 0, 0.4);
 
     p {
         margin: 0;
         padding: 0;
     }
 
-    p.haiku-counter {
+    p.haiku-counter,
+    p.server-counter {
         font-size: 1.5em;
         font-weight: 700;
     }
+}
+
+.haiku-count {
+    color: $haiku-color-text;
+    background-color: $haiku-color;
+}
+
+.server-count {
+    color: $text-color-alt;
+    background-color: $primary-color;
 }

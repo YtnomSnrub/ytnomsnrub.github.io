@@ -15,6 +15,10 @@ HaikuBot is a Discord bot that detects accidental (or intentional) haikus in you
         <p class="haiku-counter">...</p>
         <p>Haikus found</p>
     </div>
+    <div class="server-count">
+        <p class="server-counter">...</p>
+        <p>Servers</p>
+    </div>
 </div>
 
 <div class="button-row">
