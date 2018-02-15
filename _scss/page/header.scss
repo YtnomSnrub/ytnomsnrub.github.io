@@ -24,18 +24,9 @@ $header-background-color: #1e1e1e;
 
         overflow: hidden;
 
-        transform: scale(1.05);
-
         opacity: 0;
 
 @include header-background;
-
-        &.visible {
-            transition: opacity 0.25s $m-ease, transform 0.4s $m-ease-out;
-            transform: scale(1);
-
-            opacity: 1;
-        }
     }
 
     .project-name,
