@@ -173,6 +173,7 @@ a {
 
     text-align: center;
 
+    opacity: 1;
     border-radius: $border-radius;
     box-shadow: 0 $button-extend 4px rgba(0, 0, 0, 0.4);
 
@@ -183,8 +184,17 @@ a {
 
     p.haiku-counter,
     p.server-counter {
+        transition: opacity 0.1s $m-ease, transform 0.1s $m-ease;
+        transform: none;
+
         font-size: 1.5em;
         font-weight: 700;
+
+        &.hidden {
+            transform: scale(0.5);
+
+            opacity: 0;
+        }
     }
 }
 
