@@ -162,3 +162,28 @@ a {
     border: 1px solid $border-color;
     border-radius: $border-radius;
 }
+
+.haiku-count {
+    display: inline-block;
+
+    min-width: 8em;
+    margin: 0;
+    padding: 0.6em 1.8em;
+
+    text-align: center;
+
+    color: $haiku-color-text;
+    border-radius: $border-radius;
+    background-color: $haiku-color;
+    box-shadow: 0 $button-extend darken($haiku-color, 10%);
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    p.haiku-counter {
+        font-size: 1.5em;
+        font-weight: 700;
+    }
+}
