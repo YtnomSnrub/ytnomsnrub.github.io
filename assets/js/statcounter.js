@@ -1,4 +1,9 @@
 $(function () {
+    updateStats();
+    setInterval(updateStats, 10000);
+});
+
+function updateStats() {
     $.get(
         "https://haikubotapi.apphb.com/Api/haikucount",
         function (data) {
@@ -12,7 +17,7 @@ $(function () {
             $(".server-counter").html(numberWithCommas(data["server_count"]));
         }
     );
-});
+}
 
 const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
