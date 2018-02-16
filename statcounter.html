@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US " }}">
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel='stylesheet' type='text/css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/assets/js/statcounter.js"></script>
+
+        <style>
+            html {
+                overflow: hidden;
+            }
+
+            body {
+                margin: 0;
+            }
+
+            .button-row {
+                display: table;
+
+                margin: 0 auto;
+            }
+
+            .haiku-count,
+            .server-count {
+                display: inline-block;
+                
+                font-family: "Work Sans";
+                font-weight: 400;
+
+                min-width: 20vh;
+                margin: 0 4vh;
+                padding: 8vh 16vh;
+
+                text-align: center;
+
+                opacity: 1;
+                border-radius: 4vh;
+                box-shadow: 0 2vh 4vh rgba(0, 0, 0, 0.4);
+            }
+
+            .haiku-count p, .server-count p {
+                margin: 0;
+                padding: 0;
+                font-size: 18vh;
+            }
+
+            .haiku-count p.haiku-counter,
+            .server-count p.server-counter {
+                transition: opacity 0.1s ease, transform 0.1s ease;
+                transform: none;
+
+                padding-bottom: 4vh;
+
+                font-size: 32vh;
+                font-weight: 700;
+            }
+
+            .haiku-count p.haiku-counter.hidden,
+            .server-count p.server-counter.hidden {
+                transform: scale(0.5);
+
+                opacity: 0;
+            }
+
+            .haiku-count {
+                color: #643f00;
+                background-color: #ffcc4d;
+            }
+
+            .server-count {
+                color: #ffffff;
+                background-color: #2e2f34;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="button-row">
+            <div class="haiku-count">
+                <p class="haiku-counter">...</p>
+                <p>Haikus found</p>
+            </div>
+            <div class="server-count">
+                <p class="server-counter">...</p>
+                <p>Servers</p>
+            </div>
+        </div>
+    </body>
+
+</html>
