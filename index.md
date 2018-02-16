@@ -8,7 +8,7 @@ This is my GitHub page with the projects I'm working on.
 
 ## HaikuBot
 
-HaikuBot is a Discord bot that detects accidental (or intentional) messages in your Discord server that can be turned into a 5-7-5 haiku, and formats then sends the original message in haiku format. It uses a dictionary of syllables to try and be as accurate as possible, also parsing acronyms, numbers, punctuation, and message formatting. HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unless you interact with it or it detects a haiku.
+HaikuBot is a Discord bot that detects accidental (or intentional) messages in your Discord server that can be turned into a 5-7-5 haiku, and then shows the original message in haiku format. It uses a dictionary of syllables to try and be as accurate as possible, also parsing acronyms, numbers, punctuation, and message formatting. HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unless you interact with it or it detects a haiku.
 
 <div class="button-row">
     <div class="haiku-count">
