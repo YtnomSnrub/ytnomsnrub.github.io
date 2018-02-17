@@ -46,7 +46,7 @@
                 font-weight: 400;
 
                 min-width: 24px;
-                margin: 0 6px;
+                margin: 6px 6px;
                 padding: 12px 28px;
 
                 text-align: center;
@@ -54,6 +54,17 @@
                 opacity: 1;
                 border-radius: 4px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            }
+
+            @media (max-width: 400px) {
+                .haiku-count,
+                .server-count {
+                    width: 100%;
+                    margin: 3px 0;
+                    padding: 0;
+                    padding-bottom: 6px;
+                    padding-top: 4px;
+                }
             }
 
             .haiku-count p, .server-count p {
