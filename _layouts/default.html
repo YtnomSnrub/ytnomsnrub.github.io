@@ -21,6 +21,8 @@
         <script src="{{site.baseurl}}/assets/js/jquery.smoothState.min.js"></script>
         <script src="{{site.baseurl}}/assets/js/transition.js"></script>
 
+        <script src="{{site.baseurl}}/assets/js/statcounter.js"></script>
+
         <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
         <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/favicon.ico"/>
@@ -31,9 +33,11 @@
             {% include header.html %}
 
             <section class="main-content">
-                {{ content }}
+                <div class="container">
+                    {{ content }}
 
-                {% include footer.html %}
+                    {% include footer.html %}
+                </div>
             </section>
         </div>
 
