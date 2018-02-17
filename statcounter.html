@@ -20,6 +20,24 @@
                 margin: 0 auto;
             }
 
+            @keyframes loading-stat {
+                0% {
+                    transform: translateX(-12px) translateY(0);
+                }
+
+                33% {
+                    transform: translateX(12px) translateY(0);
+                }
+
+                67% {
+                    transform: translateX(0px) translateY(-12px);
+                }
+
+                100% {
+                    transform: translateX(-12px) translateY(0);
+                }
+            }
+
             .haiku-count,
             .server-count {
                 display: inline-block;
@@ -62,6 +80,14 @@
                 opacity: 0;
             }
 
+            .haiku-count p.haiku-counter.loading,
+            .server-count p.server-counter.loading {
+                animation-name: loading-stat;
+                animation-duration: 0.7s;
+                animation-timing-function: $m-ease-in-out;
+                animation-iteration-count: infinite;
+            }
+
             .haiku-count {
                 color: #643f00;
                 background-color: #ffcc4d;
@@ -77,11 +103,11 @@
     <body>
         <div class="button-row">
             <div class="haiku-count">
-                <p class="haiku-counter">...</p>
+                <p class="haiku-counter loading">.</p>
                 <p>Haikus found</p>
             </div>
             <div class="server-count">
-                <p class="server-counter">...</p>
+                <p class="server-counter loading">.</p>
                 <p>Servers</p>
             </div>
         </div>

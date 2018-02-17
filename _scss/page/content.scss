@@ -163,6 +163,24 @@ a {
     border-radius: $border-radius;
 }
 
+@keyframes loading-stat {
+    0% {
+        transform: translateX(-12px) translateY(0);
+    }
+
+    33% {
+        transform: translateX(12px) translateY(0);
+    }
+
+    67% {
+        transform: translateX(0px) translateY(-12px);
+    }
+
+    100% {
+        transform: translateX(-12px) translateY(0);
+    }
+}
+
 .haiku-count,
 .server-count {
     display: inline-block;
@@ -184,7 +202,7 @@ a {
 
     p.haiku-counter,
     p.server-counter {
-        transition: opacity 0.1s $m-ease, transform 0.1s $m-ease;
+        transition: opacity 0.2s $m-ease, transform 0.1s $m-ease;
         transform: none;
 
         font-size: 1.5em;
@@ -194,6 +212,13 @@ a {
             transform: scale(0.5);
 
             opacity: 0;
+        }
+
+        &.loading {
+            animation-name: loading-stat;
+            animation-duration: 0.7s;
+            animation-timing-function: $m-ease-in-out;
+            animation-iteration-count: infinite;
         }
     }
 }
