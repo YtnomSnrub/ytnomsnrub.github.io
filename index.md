@@ -12,11 +12,11 @@ HaikuBot is a Discord bot that detects accidental (or intentional) messages in y
 
 <div class="button-row">
     <div class="haiku-count">
-        <p class="haiku-counter">...</p>
+        <p class="haiku-counter loading">.</p>
         <p>Haikus found</p>
     </div>
     <div class="server-count">
-        <p class="server-counter">...</p>
+        <p class="server-counter loading">.</p>
         <p>Servers</p>
     </div>
 </div>
