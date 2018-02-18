@@ -99,6 +99,12 @@ a {
             box-shadow: 0 $button-extend darken($discord-color, 10%);
         }
 
+        &.button-haiku {
+            color: $haiku-color-text;
+            background-color: $haiku-color;
+            box-shadow: 0 $button-extend darken($haiku-color, 20%);
+        }
+
         &.button-modis {
             background-color: $modis-color;
             box-shadow: 0 $button-extend darken($modis-color, 10%);
@@ -114,6 +120,10 @@ a {
                 box-shadow: 0 $button-extend-hover darken($discord-color, 10%);
             }
 
+            &.button-haiku {
+                box-shadow: 0 $button-extend-hover darken($haiku-color, 20%);
+            }
+
             &.button-modis {
                 box-shadow: 0 $button-extend-hover darken($modis-color, 10%);
             }
@@ -126,6 +136,10 @@ a {
 
             &.button-discord {
                 box-shadow: 0 $button-extend-pressed darken($discord-color, 10%);
+            }
+
+            &.button-haiku {
+                box-shadow: 0 $button-extend-pressed darken($haiku-color, 20%);
             }
 
             &.button-modis {

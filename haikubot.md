@@ -25,3 +25,9 @@ HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unles
         Invite to Server
     </a>
 </div>
+
+<div class="button-row">
+    <a class="button" href="/">
+        Back to Homepage
+    </a>
+</div>

@@ -27,6 +27,9 @@ $(function () {
 
                 // Add the anchors
                 addMarkdownAnchors();
+                // Update counts
+                updateHaikus();
+                updateServers();
 
                 // Scroll to top
                 console.log(location.hash);

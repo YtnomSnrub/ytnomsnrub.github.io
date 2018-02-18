@@ -8,8 +8,6 @@ This is my GitHub page with the projects I'm working on.
 
 ## HaikuBot
 
-HaikuBot is a Discord bot that detects accidental (or intentional) messages in your Discord server that can be turned into a 5-7-5 haiku, and then shows the message in haiku format. It uses a dictionary of syllables to try and be as accurate as possible, also parsing acronyms, numbers, punctuation, and message formatting. HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unless you interact with it or it detects a haiku.
-
 <div class="button-row">
     <div class="haiku-count">
         <p class="haiku-counter loading">.</p>
@@ -21,12 +19,20 @@ HaikuBot is a Discord bot that detects accidental (or intentional) messages in y
     </div>
 </div>
 
+HaikuBot is a Discord bot that detects accidental (or intentional) messages in your Discord server that can be turned into a 5-7-5 haiku, and then shows the message in haiku format. It uses a dictionary of syllables to try and be as accurate as possible, also parsing acronyms, numbers, punctuation, and message formatting. HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unless you interact with it or it detects a haiku.
+
 <div class="button-row">
     <a class="button button-discord" href="https://discordbots.org/bot/372175794895585280">
         View on Discord Bot List
     </a>
     <a class="button" href="https://discordapp.com/oauth2/authorize?client_id=372175794895585280&scope=bot&permissions=19520">
         Invite to Server
+    </a>
+</div>
+
+<div class="button-row">
+    <a class="button button-haiku" href="/haikubot">
+        Visit Page
     </a>
 </div>
 
