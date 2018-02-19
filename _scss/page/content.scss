@@ -87,6 +87,21 @@ a {
         background-color: $primary-color;
         box-shadow: 0 $button-extend darken($primary-color, 10%);
 
+        &.button-svg {
+            display: block;
+
+            margin: 0;
+            margin-bottom: -$button-extend-hover;
+            padding: 0;
+
+            transition: top 0.07s $m-ease-in-out, filter 0.07s $m-ease-in-out;
+
+            background: none;
+            box-shadow: none;
+
+            filter: drop-shadow(0 $button-extend darken($primary-color, 10%));
+        }
+
         @media (max-width: $medium-breakpoint) {
             display: block;
 
@@ -96,17 +111,38 @@ a {
         &.button-discord {
             background-color: $discord-color;
             box-shadow: 0 $button-extend darken($discord-color, 10%);
+
+            &.button-svg {
+                background: none;
+                box-shadow: none;
+
+                filter: drop-shadow(0 $button-extend darken($discord-color, 10%));
+            }
         }
 
         &.button-haiku {
             color: $haiku-color-text;
             background-color: $haiku-color;
             box-shadow: 0 $button-extend darken($haiku-color, 20%);
+
+            &.button-svg {
+                background: none;
+                box-shadow: none;
+
+                filter: drop-shadow(0 $button-extend darken($haiku-color, 20%));
+            }
         }
 
         &.button-modis {
             background-color: $modis-color;
             box-shadow: 0 $button-extend darken($modis-color, 10%);
+
+            &.button-svg {
+                background: none;
+                box-shadow: none;
+
+                filter: drop-shadow(0 $button-extend darken($modis-color, 10%));
+            }
         }
 
         &:hover,
@@ -115,16 +151,44 @@ a {
 
             box-shadow: 0 $button-extend-hover darken($primary-color, 10%);
 
+            &.button-svg {
+                background: none;
+                box-shadow: none;
+
+                filter: drop-shadow(0 $button-extend-hover darken($primary-color, 10%));
+            }
+
             &.button-discord {
                 box-shadow: 0 $button-extend-hover darken($discord-color, 10%);
+
+                &.button-svg {
+                    background: none;
+                    box-shadow: none;
+
+                    filter: drop-shadow(0 $button-extend-hover darken($discord-color, 10%));
+                }
             }
 
             &.button-haiku {
                 box-shadow: 0 $button-extend-hover darken($haiku-color, 20%);
+
+                &.button-svg {
+                    background: none;
+                    box-shadow: none;
+
+                    filter: drop-shadow(0 $button-extend-hover darken($haiku-color, 20%));
+                }
             }
 
             &.button-modis {
                 box-shadow: 0 $button-extend-hover darken($modis-color, 10%);
+
+                &.button-svg {
+                    background: none;
+                    box-shadow: none;
+
+                    filter: drop-shadow(0 $button-extend-hover darken($modis-color, 10%));
+                }
             }
         }
 
@@ -133,21 +197,45 @@ a {
 
             box-shadow: 0 $button-extend-pressed darken($primary-color, 10%);
 
+            &.button-svg {
+                box-shadow: none;
+
+                filter: drop-shadow(0 $button-extend-pressed darken($primary-color, 10%));
+            }
+
             &.button-discord {
                 box-shadow: 0 $button-extend-pressed darken($discord-color, 10%);
+
+                &.button-svg {
+                    box-shadow: none;
+
+                    filter: drop-shadow(0 $button-extend-pressed darken($discord-color, 10%));
+                }
             }
 
             &.button-haiku {
                 box-shadow: 0 $button-extend-pressed darken($haiku-color, 20%);
+
+                &.button-svg {
+                    box-shadow: none;
+
+                    filter: drop-shadow(0 $button-extend-pressed darken($haiku-color, 20%));
+                }
             }
 
             &.button-modis {
                 box-shadow: 0 $button-extend-pressed darken($modis-color, 10%);
+
+                &.button-svg {
+                    box-shadow: none;
+
+                    filter: drop-shadow(0 $button-extend-pressed darken($modis-color, 10%));
+                }
             }
         }
     }
 
-    a :not(.button) {
+    a :not(button) {
         position: relative;
 
         &::before {
@@ -211,6 +299,10 @@ a {
     100% {
         transform: translateX(-12px) translateY(0);
     }
+}
+
+.discord-bot-widget {
+    filter: drop-shadow(0 $button-extend 2px rgba(0, 0, 0, 0.4));
 }
 
 .haiku-count,
