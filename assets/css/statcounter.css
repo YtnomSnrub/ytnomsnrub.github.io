@@ -1,0 +1,110 @@
+
+html {
+    overflow: hidden;
+}
+
+body {
+    margin: 0;
+}
+
+.button-row {
+    display: table;
+
+    margin: 0 auto;
+}
+
+@keyframes loading-stat {
+    0% {
+        transform: translateX(-12px) translateY(0);
+    }
+
+    33% {
+        transform: translateX(12px) translateY(0);
+    }
+
+    67% {
+        transform: translateX(0px) translateY(-12px);
+    }
+
+    100% {
+        transform: translateX(-12px) translateY(0);
+    }
+}
+
+.haiku-count,
+.server-count {
+    display: inline-block;
+
+    min-width: 24px;
+    margin: 6px 6px;
+    padding: 12px 28px;
+
+    text-align: center;
+
+    opacity: 1;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+    font-family: "Work Sans";
+    font-weight: 400;
+}
+
+@media (min-height: 124px) {
+    .haiku-count,
+    .server-count {
+        width: 100%;
+        margin: 3px 0;
+        padding: 0;
+        padding-top: 4px;
+        padding-bottom: 6px;
+    }
+
+    .button-row {
+        min-width: calc(50% + 2em);
+    }
+}
+
+.haiku-count p,
+.server-count p {
+    margin: 0;
+    padding: 0;
+
+    font-size: 18px;
+}
+
+.haiku-count p.haiku-counter,
+.server-count p.server-counter {
+    padding-bottom: 4px;
+
+    transition: opacity 0.1s ease, transform 0.1s ease;
+    transform: none;
+    animation: none;
+
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.haiku-count p.haiku-counter.hidden,
+.server-count p.server-counter.hidden {
+    transform: scale(0.5);
+
+    opacity: 0;
+}
+
+.haiku-count p.haiku-counter.loading,
+.server-count p.server-counter.loading {
+    animation-name: loading-stat;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.haiku-count {
+    color: #643f00;
+    background-color: #ffcc4d;
+}
+
+.server-count {
+    color: #ffffff;
+    background-color: #2e2f34;
+}

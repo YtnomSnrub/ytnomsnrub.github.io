@@ -69,6 +69,10 @@ a {
         display: table;
 
         margin: 1.4em auto;
+
+        @media (max-width: $small-breakpoint) {
+            min-width: 80%;
+        }
     }
 
     a.button {
