@@ -55,9 +55,9 @@ $tiny-breakpoint: 12em;
 $tabs-height: 0.6em;
 $tabs-height-small: 0.5em;
 // Buttons
-$button-extend: 0.1em;
-$button-extend-hover: 0.4em;
-$button-extend-pressed: 0.2em;
+$button-extend: 2px;
+$button-extend-hover: 6px;
+$button-extend-pressed: 2px;
 
 // Header
 @mixin header-background {
