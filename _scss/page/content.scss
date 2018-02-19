@@ -16,7 +16,9 @@ a {
 }
 
 .main-content h1 {
-    @include font-heading;
+    margin-top: 0;
+
+@include font-heading;
 
     @media (max-width: $medium-breakpoint) {
         font-size: 2em;
