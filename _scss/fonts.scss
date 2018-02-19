@@ -2,13 +2,13 @@
 // Fonts
 // Update html to include these fonts when adding new fonts
 @mixin font-title {
-    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
     font-size: 6rem;
     font-weight: 100;
 }
 
 @mixin font-subtitle {
-    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
     font-weight: 300;
 }
 
@@ -33,6 +33,6 @@
 }
 
 @mixin font-code {
-    font-family: "Source Code Pro", Consolas, Courier, monospace;
-    font-weight: 400;
+    font-family: "Montserrat", Consolas, Courier, monospace;
+    font-weight: 700;
 }

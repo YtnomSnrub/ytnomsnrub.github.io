@@ -79,6 +79,7 @@ a {
         padding: 0.6em 1.8em;
 
         transition: top 0.1s $m-ease-in-out, box-shadow 0.1s $m-ease-in-out;
+        text-align: center;
         text-decoration: none;
 
         color: $text-color-alt;
@@ -90,8 +91,6 @@ a {
             display: block;
 
             margin: 0.8em;
-
-            text-align: center;
         }
 
         &.button-discord {
@@ -228,6 +227,12 @@ a {
     border-radius: $border-radius;
     box-shadow: 0 $button-extend 4px rgba(0, 0, 0, 0.4);
 
+    @media (max-width: $small-breakpoint) {
+        display: block;
+
+        margin: 0.8em 0;
+    }
+
     p {
         margin: 0;
         padding: 0;
@@ -239,7 +244,8 @@ a {
         transform: none;
 
         font-size: 1.5em;
-        font-weight: 700;
+
+@include font-code;
 
         &.hidden {
             transform: scale(0.5);
