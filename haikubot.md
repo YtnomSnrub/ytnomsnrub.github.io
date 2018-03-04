@@ -27,6 +27,9 @@ HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unles
 </div>
 
 <div class="button-row">
+    <a class="button button-haiku" href="https://discord.gg/Cm5v93M">
+        Join Official Server
+    </a>
     <a class="button" href="/">
         Back to Homepage
     </a>
