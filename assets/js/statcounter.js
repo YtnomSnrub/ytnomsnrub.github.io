@@ -2,7 +2,7 @@ $(function () {
     updateHaikus();
     updateServers();
     setInterval(updateHaikus, 5000);
-    setInterval(updateServers, 30000);
+    setInterval(updateServers, 60000 * 5);
 });
 
 function updateHaikus() {
