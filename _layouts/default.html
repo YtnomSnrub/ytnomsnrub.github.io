@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: " en-US " }}">
 
-    {% assign default_paths = site.pages | map: "path" %}
-    {% assign page_paths = site.header_pages | default: default_paths %}
+    {% assign default_paths = site.pages | map: "path" %} {% assign page_paths = site.header_pages | default: default_paths %}
 
     <head>
         <meta charset="UTF-8"> {% seo %}
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#141414">
+
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,700" rel='stylesheet' type='text/css'>
@@ -25,7 +28,7 @@
 
         <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
-        <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/favicon.ico"/>
+        <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/favicon.ico" />
     </head>
 
     <body>
@@ -34,9 +37,7 @@
 
             <section class="main-content">
                 <div class="container">
-                    {{ content }}
-
-                    {% include footer.html %}
+                    {{ content }} {% include footer.html %}
                 </div>
             </section>
         </div>
