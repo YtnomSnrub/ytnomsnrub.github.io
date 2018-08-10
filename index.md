@@ -9,12 +9,12 @@ This is my GitHub page with the projects I'm working on.
 ## HaikuBot
 
 <div class="button-row">
-    <div class="haiku-count">
-        <p class="haiku-counter loading">.</p>
+    <div class="stat-count haiku-count">
+        <p class="stat-counter haiku-counter loading" data-api="haikucount" data-loop-time="10000">.</p>
         <p>Haikus found</p>
     </div>
-    <div class="server-count">
-        <p class="server-counter loading">.</p>
+    <div class="stat-count server-count">
+        <p class="stat-counter server-counter loading" data-api="server_count" data-dbl="true" data-loop-time="300000">.</p>
         <p>Servers</p>
     </div>
 </div>
