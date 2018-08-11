@@ -33,7 +33,7 @@ HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unles
 </div>
 
 <div class="button-row">
-    <a class="button button-haiku" href="/haikubot">
+    <a class="button button-haiku" href="/haikubot/">
         Visit Page
     </a>
 </div>

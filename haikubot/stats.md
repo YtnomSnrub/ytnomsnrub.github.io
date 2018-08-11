@@ -77,7 +77,7 @@
     <a class="button" href="/">
         Back to Homepage
     </a>
-    <a class="button button-haiku" href="/haikubot">
+    <a class="button button-haiku" href="/haikubot/">
         Back to HaikuBot
     </a>
 </div>
