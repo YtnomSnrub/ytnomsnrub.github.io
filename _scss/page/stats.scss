@@ -41,6 +41,10 @@
 
     &.stat-table-small {
         display: none;
+
+        td {
+            width: 50%;
+        }
     }
 
     &.stat-table-large {

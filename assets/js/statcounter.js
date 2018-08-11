@@ -53,9 +53,11 @@ function updateStatField(statField) {
                 let haikusDay = data / 7;
                 let haikusHour = haikusDay / 24;
                 let haikusMinute = haikusHour / 60;
-                setStatFieldValue($("#StatHaikusDay"), haikusDay.toFixed(0));
-                setStatFieldValue($("#StatHaikusHour"), haikusHour.toFixed(0));
-                setStatFieldValue($("#StatHaikusMinute"), haikusMinute.toFixed(2));
+                let haikusSecond = haikusMinute / 60;
+                setStatFieldValue($(".stat-counter-haikus-day"), haikusDay.toFixed(0));
+                setStatFieldValue($(".stat-counter-haikus-hour"), haikusHour.toFixed(0));
+                setStatFieldValue($(".stat-counter-haikus-minute"), haikusMinute.toFixed(2));
+                setStatFieldValue($(".stat-counter-haikus-second"), haikusSecond.toFixed(2));
             }
         }
     ).fail(function () {

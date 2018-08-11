@@ -32,19 +32,18 @@
             <td>Haikus last week</td>
             <td class="stat-counter loading" data-api="haikucountlastweek" data-loop-time="300000">.</td>
         </tr>
-    </tbody>
-</table>
-
-<table class="stat-table stat-table-large">
-    <tbody>
         <tr>
             <td>Haikus per day</td>
-            <td class="stat-counter loading" id="StatHaikusDay">.</td>
+            <td class="stat-counter loading stat-counter-haikus-day">.</td>
             <td>Haikus per hour</td>
-            <td class="stat-counter loading" id="StatHaikusHour">.</td>
-            <td>Haikus per minute</td>
-            <td class="stat-counter loading" id="StatHaikusMinute">.</td>
+            <td class="stat-counter loading stat-counter-haikus-hour">.</td>
         </tr>
+        <!--<tr>
+            <td>Haikus per minute</td>
+            <td class="stat-counter loading stat-counter-haikus-minute">.</td>
+            <td>Haikus per second</td>
+            <td class="stat-counter loading stat-counter-haikus-second">.</td>
+        </tr>-->
     </tbody>
 </table>
 
@@ -53,8 +52,8 @@
         <tr>
             <td>Haikus this week</td>
             <td class="stat-counter loading" data-api="haikucountweek" data-loop-time="10000">.</td>
-        <tr>
         </tr>
+        <tr>
             <td>Haikus last week</td>
             <td class="stat-counter loading" data-api="haikucountlastweek" data-loop-time="300000">.</td>
         </tr>
@@ -65,15 +64,11 @@
     <tbody>
         <tr>
             <td>Haikus per day</td>
-            <td class="stat-counter loading" id="StatHaikusDay">.</td>
-        <tr>
+            <td class="stat-counter loading stat-counter-haikus-day">.</td>
         </tr>
+        <tr>
             <td>Haikus per hour</td>
-            <td class="stat-counter loading" id="StatHaikusHour">.</td>
-        <tr>
-        </tr>
-            <td>Haikus per minute</td>
-            <td class="stat-counter loading" id="StatHaikusMinute">.</td>
+            <td class="stat-counter loading stat-counter-haikus-hour">.</td>
         </tr>
     </tbody>
 </table>
