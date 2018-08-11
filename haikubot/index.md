@@ -12,7 +12,7 @@
 </div>
 
 <div class="button-row">
-    <a class="button" href="/stats">
+    <a class="button" href="/haikubot/stats">
         View all Stats
     </a>
 </div>
@@ -38,15 +38,15 @@ Sometimes, there are channels where you don't want HaikuBot. Luckily, Discord al
 
 - First, right-click the channel you want HaikuBot to ignore, and select 'Edit Channel'.
 
-![Edit Channel](./assets/img/edit_channel.png)
+![Edit Channel](/assets/img/edit_channel.png)
 
 - Under the Roles/Members section of the 'Permissions' panel, add a new role for HaikuBot.
 
-![HaikuBot Channel Role](./assets/img/haiku_channel.png)
+![HaikuBot Channel Role](/assets/img/haiku_channel.png)
 
 - Remove the 'Read Messages' and 'Send Messages' permissions for HaikuBot for this channel.
 
-![Channel Role Settings](./assets/img/channel_settings.png)
+![Channel Role Settings](/assets/img/channel_settings.png)
 
 That's it! HaikuBot should now ignore any messages in this channel. Make sure that HaikuBot and any of its roles don't have the 'Administrator' permission, as this overrides any channel-specific permissions. Bleep bloop!
 
