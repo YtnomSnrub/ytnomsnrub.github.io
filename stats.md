@@ -22,7 +22,7 @@
     </div>
 </div>
 
-## Weekly Stats
+## Recent Trends
 
 <table class="stat-table stat-table-large">
     <tbody>
