@@ -1,7 +1,3 @@
----
-layout: stats
-title: "Stats"
----
 # Stats
 
 <div class="button-row">

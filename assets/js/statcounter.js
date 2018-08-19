@@ -15,6 +15,9 @@ const chartOptions = {
                     value = value.join(',');
                     return value;
                 }
+            },
+            afterFit: function (scaleInstance) {
+                scaleInstance.width = 100;
             }
         }]
     },
@@ -138,6 +141,11 @@ function setupCharts() {
         clearInterval(chartIntervals.pop());
     }
 
+    // Check charts
+    if (!$("#HaikuChart").length || !$("#ServerChart").length) {
+        return;
+    }
+
     // Setup charts
     setupHaikuChart();
     setupServerChart();
@@ -209,16 +217,13 @@ function setupServerChart() {
         data: {
             datasets: [{
                 label: 'Servers',
-                backgroundColor: [
-                    '#2e2f3477'
-                ],
-                borderColor: [
-                    '#2e2f34'
-                ],
-                pointHoverBackgroundColor: [
-                    '#2e2f34'
-                ],
-                borderWidth: 1
+                backgroundColor: 'rgba(46, 47, 52, 0.5)',
+                borderColor: '#2e2f34',
+                pointRadius: 4,
+                pointHoverBackgroundColor: '#2e2f34',
+                pointHoverBorderColor: '#2e2f34',
+                pointHoverRadius: 6,
+                borderWidth: 2
             }]
         },
         options: chartOptions
