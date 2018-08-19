@@ -85,8 +85,8 @@ title: "Stats"
     </tbody>
 </table>
 
-<canvas id="HaikuChart" width="400" height="100"></canvas>
-<canvas id="ServerChart" width="400" height="100"></canvas>
+<canvas id="HaikuChart" width="400" height="150"></canvas>
+<canvas id="ServerChart" width="400" height="150"></canvas>
 
 <div class="button-row">
     <a class="button" href="/">
