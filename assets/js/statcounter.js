@@ -9,14 +9,28 @@ const chartOptions = {
         yAxes: [{
             ticks: {
                 beginAtZero: false,
-                stepSize: 1000
+                userCallback: function (value, index, values) {
+                    value = value.toString();
+                    value = value.split(/(?=(?:...)*$)/);
+                    value = value.join(',');
+                    return value;
+                }
             }
         }]
     },
     tooltips: {
         enabled: true,
         mode: "index",
-        intersect: false
+        intersect: false,
+        callbacks: {
+            label: function (tooltipItem, data) {
+                var value = data.datasets[0].data[tooltipItem.index];
+                value = value.toString();
+                value = value.split(/(?=(?:...)*$)/);
+                value = value.join(',');
+                return value;
+            }
+        }
     }
 };
 
