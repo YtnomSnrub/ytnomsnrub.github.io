@@ -1,3 +1,7 @@
+---
+layout: stats
+title: "Stats"
+---
 # Stats
 
 <div class="button-row">
@@ -38,12 +42,12 @@
             <td>Haikus per hour</td>
             <td class="stat-counter loading stat-counter-haikus-hour">.</td>
         </tr>
-        <!--<tr>
+        <tr>
             <td>Haikus per minute</td>
             <td class="stat-counter loading stat-counter-haikus-minute">.</td>
-            <td>Haikus per second</td>
-            <td class="stat-counter loading stat-counter-haikus-second">.</td>
-        </tr>-->
+            <td>Servers this week</td>
+            <td class="stat-counter loading" data-api="servercountweek" data-change="true"  data-loop-time="300000">.</td>
+        </tr>
     </tbody>
 </table>
 
@@ -56,6 +60,10 @@
         <tr>
             <td>Haikus last week</td>
             <td class="stat-counter loading" data-api="haikucountlastweek" data-loop-time="300000">.</td>
+        </tr>
+        <tr>
+            <td>Servers this week</td>
+            <td class="stat-counter loading" data-api="servercountweek" data-change="true" data-loop-time="300000">.</td>
         </tr>
     </tbody>
 </table>
@@ -70,8 +78,15 @@
             <td>Haikus per hour</td>
             <td class="stat-counter loading stat-counter-haikus-hour">.</td>
         </tr>
+        <tr>
+            <td>Haikus per minute</td>
+            <td class="stat-counter loading stat-counter-haikus-minute">.</td>
+        </tr>
     </tbody>
 </table>
+
+<canvas id="HaikuChart" width="400" height="100"></canvas>
+<canvas id="ServerChart" width="400" height="100"></canvas>
 
 <div class="button-row">
     <a class="button" href="/">

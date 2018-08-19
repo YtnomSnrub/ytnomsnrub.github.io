@@ -21,7 +21,7 @@ HaikuBot is a friend-shaped Discord bot that detects accidental (or intentional)
 
 <img class="discord-bot-widget" src="https://discordbots.org/api/widget/372175794895585280.svg?usernamecolor=FAFAFA&topcolor=222222&middlecolor=2e2f34&datacolor=643f00&labelcolor=643f00&highlightcolor=FFCC4D" />
 
-HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unless you interact with it or it detects a haiku. If you have any questions, problems, and suggestions for the bot, or you just want to say hi, come join the [Official HaikuBot Discord Server](https://discord.gg/Cm5v93M).
+HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unless you interact with it or it detects a haiku. If you have any questions, problems, and suggestions for the bot, or you just want to say hi, come join the [Official HaikuBot Discord Server](https://discord.gg/Cm5v93M). You can test HaikuBot in the official server, or send a private message directly to the bot to try out your haiku writing skills!
 
 <div class="button-row">
     <a class="button button-discord" href="https://discordbots.org/bot/372175794895585280">
