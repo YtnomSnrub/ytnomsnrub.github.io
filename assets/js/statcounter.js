@@ -4,16 +4,23 @@ let serverChart = null;
 var statIntervals = [];
 var chartIntervals = [];
 
+const WEEKDAYS = {
+    0: "Sunday",
+    1: "Monday",
+    2: "Tuesday",
+    3: "Wednesday",
+    4: "Thursday",
+    5: "Friday",
+    6: "Saturday"
+}
+
 const chartOptions = {
     scales: {
         yAxes: [{
             ticks: {
                 beginAtZero: false,
                 userCallback: function (value, index, values) {
-                    value = value.toString();
-                    value = value.split(/(?=(?:...)*$)/);
-                    value = value.join(',');
-                    return value;
+                    return numberWithCommas(value);
                 }
             },
             afterFit: function (scaleInstance) {
@@ -25,13 +32,17 @@ const chartOptions = {
         enabled: true,
         mode: "index",
         intersect: false,
+        backgroundColor: "rgba(46, 47, 52, 0.8)",
+        titleFontColor: "rgba(255, 255, 255, 1)",
+        bodyFontColor: "rgba(255, 255, 255, 1)",
+        footerFontColor: "rgba(255, 255, 255, 1)",
+        borderColor: "rgba(46, 47, 52, 0.5)",
+        borderWidth: 2,
+        displayColors: false,
         callbacks: {
             label: function (tooltipItem, data) {
-                var value = data.datasets[0].data[tooltipItem.index];
-                value = value.toString();
-                value = value.split(/(?=(?:...)*$)/);
-                value = value.join(',');
-                return value;
+                let value = data.datasets[0].data[tooltipItem.index];
+                return numberWithCommas(value);
             }
         }
     }
@@ -146,6 +157,12 @@ function setupCharts() {
         return;
     }
 
+    // Setup fonts
+    Chart.defaults.global.defaultFontColor = "rgba(0, 0, 0, 0.8)";
+    Chart.defaults.global.defaultFontFamily = "'Work Sans', 'Arial', sans-serif";
+    Chart.defaults.global.defaultFontStyle = "400";
+    Chart.defaults.global.defaultFontSize = 14;
+
     // Setup charts
     setupHaikuChart();
     setupServerChart();
@@ -170,7 +187,8 @@ function setupHaikuChart() {
                 pointHoverBackgroundColor: '#ffcc4d',
                 pointHoverBorderColor: '#ffcc4d',
                 pointHoverRadius: 6,
-                borderWidth: 2
+                borderWidth: 2,
+                lineTension: 0
             }]
         },
         options: chartOptions
@@ -181,32 +199,37 @@ function setupHaikuChart() {
 
 function updateHaikuChartData() {
     // Get haiku counts for past week
-    let haikuCounts = [];
-    let haikuLabels = [];
+    let haikuCounts = new Array(7).fill(0);
+    let haikuLabels = new Array(7).fill(0);
+    // Update the chart
+    haikuChart.data.datasets[0].data = haikuCounts;
+    haikuChart.data.labels = haikuLabels;
+    haikuChart.update();
+
+    // Add data to the chart
     for (let i = 0; i < 7; ++i) {
         // Get the data from the api
         getString = "https://haikubotapi.apphb.com/api/haikucount?day=" + (7 - i);
         $.ajax({
             url: getString,
-            async: false,
             success: function (data) {
-                if (data > 0) {
-                    // Add the label
-                    haikuLabels.push(7 - i);
-                    // Add the data
-                    haikuCounts.push(data);
-                }
+                // Get the day
+                let labelDate = new Date();
+                labelDate.setDate(labelDate.getUTCDate() - (6 - i));
+                // Add the label
+                haikuLabels[i] = WEEKDAYS[labelDate.getUTCDay()];
+                // Add the data
+                haikuCounts[i] = data;
+                // Update the chart
+                haikuChart.data.datasets[0].data = haikuCounts;
+                haikuChart.data.labels = haikuLabels;
+                haikuChart.update();
             },
             error: function () {
                 console.log("Failed to get daily resource, retrying...");
             }
         });
     }
-
-    // Update the chart
-    haikuChart.data.datasets[0].data = haikuCounts;
-    haikuChart.data.labels = haikuLabels;
-    haikuChart.update();
 }
 
 function setupServerChart() {
@@ -223,7 +246,8 @@ function setupServerChart() {
                 pointHoverBackgroundColor: '#2e2f34',
                 pointHoverBorderColor: '#2e2f34',
                 pointHoverRadius: 6,
-                borderWidth: 2
+                borderWidth: 2,
+                lineTension: 0
             }]
         },
         options: chartOptions
@@ -234,30 +258,35 @@ function setupServerChart() {
 
 function updateServerChartData() {
     // Get haiku counts for past week
-    let serverCounts = [];
-    let serverLabels = [];
+    let serverCounts = new Array(7).fill(0);
+    let serverLabels = new Array(7).fill(0);
+    // Update the chart
+    serverChart.data.datasets[0].data = serverCounts;
+    serverChart.data.labels = serverLabels;
+    serverChart.update();
+
+    // Add data to the chart
     for (let i = 0; i < 7; ++i) {
         // Get the data from the api
         getString = "https://haikubotapi.apphb.com/api/servercount?day=" + (7 - i);
         $.ajax({
             url: getString,
-            async: false,
             success: function (data) {
-                if (data > 0) {
-                    // Add the label
-                    serverLabels.push(7 - i);
-                    // Add the data
-                    serverCounts.push(data);
-                }
+                // Get the day
+                let labelDate = new Date();
+                labelDate.setDate(labelDate.getUTCDate() - (6 - i));
+                // Add the label
+                serverLabels[i] = WEEKDAYS[labelDate.getUTCDay()];
+                // Add the data
+                serverCounts[i] = data;
+                // Update the chart
+                serverChart.data.datasets[0].data = serverCounts;
+                serverChart.data.labels = serverLabels;
+                serverChart.update();
             },
             error: function () {
                 console.log("Failed to get daily resource, retrying...");
             }
         });
     }
-
-    // Update the chart
-    serverChart.data.datasets[0].data = serverCounts;
-    serverChart.data.labels = serverLabels;
-    serverChart.update();
 }
