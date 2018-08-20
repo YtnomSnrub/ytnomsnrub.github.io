@@ -174,7 +174,7 @@ function setupCharts() {
         updateHaikuChartData();
         updateServerChartData();
         updateHaikuHourChartData();
-    }, 600000));
+    }, 300000));
 }
 
 function setupHaikuChart() {
@@ -271,8 +271,8 @@ function setupHaikuHourChart() {
     // Set tooltips
     haikuHourChart.options.tooltips.callbacks = {
         title: function (tooltipItem, data) {
-            let value = moment.utc(ooltipItem[0].xLabel);
-            return moment(value).format("h a, MMM D");
+            let value = moment.utc(tooltipItem[0].xLabel).local();
+            return value.format("h a, MMM D");
         },
         label: function (tooltipItem, data) {
             let value = data.datasets[0].data[tooltipItem.index];
