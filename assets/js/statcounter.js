@@ -271,7 +271,7 @@ function setupHaikuHourChart() {
     // Set tooltips
     haikuHourChart.options.tooltips.callbacks = {
         title: function (tooltipItem, data) {
-            let value = new Date(tooltipItem[0].xLabel);
+            let value = moment.utc(ooltipItem[0].xLabel);
             return moment(value).format("h a, MMM D");
         },
         label: function (tooltipItem, data) {
