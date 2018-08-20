@@ -12,7 +12,9 @@ const WEEKDAYS = {
     4: "Thursday",
     5: "Friday",
     6: "Saturday"
-}
+};
+
+const LINE_TENSION = 0.2;
 
 const chartOptions = {
     scales: {
@@ -24,7 +26,7 @@ const chartOptions = {
                 }
             },
             afterFit: function (scaleInstance) {
-                scaleInstance.width = 100;
+                scaleInstance.width = 80;
             }
         }]
     },
@@ -190,7 +192,7 @@ function setupHaikuChart() {
                 pointHoverBorderColor: '#ffcc4d',
                 pointHoverRadius: 6,
                 borderWidth: 2,
-                lineTension: 0
+                lineTension: LINE_TENSION
             }]
         },
         options: chartOptions
@@ -201,12 +203,8 @@ function setupHaikuChart() {
 
 function updateHaikuChartData() {
     // Get haiku counts for past week
-    let haikuCounts = new Array(7).fill(0);
+    let haikuCounts = new Array(7).fill(null);
     let haikuLabels = new Array(7).fill("");
-    // Update the chart
-    haikuChart.data.datasets[0].data = haikuCounts;
-    haikuChart.data.labels = haikuLabels;
-    haikuChart.update();
 
     // Add data to the chart
     for (let i = 0; i < 7; ++i) {
@@ -225,7 +223,9 @@ function updateHaikuChartData() {
                 // Update the chart
                 haikuChart.data.datasets[0].data = haikuCounts;
                 haikuChart.data.labels = haikuLabels;
-                haikuChart.update();
+                if (!haikuCounts.includes(null)) {
+                    haikuChart.update();
+                }
             },
             error: function () {
                 console.log("Failed to get daily resource, retrying...");
@@ -249,7 +249,7 @@ function setupHaikuHourChart() {
                 pointHoverBorderColor: '#ffcc4d',
                 pointHoverRadius: 6,
                 borderWidth: 2,
-                lineTension: 0
+                lineTension: LINE_TENSION
             }]
         },
         options: chartOptions
@@ -265,6 +265,9 @@ function setupHaikuHourChart() {
         }
     }];
 
+    // Set y-axis to start at 0
+    haikuHourChart.options.scales.yAxes[0].ticks.beginAtZero = true;
+
     // Set tooltips
     haikuHourChart.options.tooltips.callbacks = {
         title: function (tooltipItem, data) {
@@ -276,9 +279,6 @@ function setupHaikuHourChart() {
             return numberWithCommas(value);
         }
     }
-
-    // Set y-axis to start at 0
-    haikuHourChart.options.scales.yAxes.beginAtZero = true;
 
     updateHaikuHourChartData();
 }
@@ -341,7 +341,7 @@ function setupServerChart() {
                 pointHoverBorderColor: '#2e2f34',
                 pointHoverRadius: 6,
                 borderWidth: 2,
-                lineTension: 0
+                lineTension: LINE_TENSION
             }]
         },
         options: chartOptions
@@ -352,7 +352,7 @@ function setupServerChart() {
 
 function updateServerChartData() {
     // Get haiku counts for past week
-    let serverCounts = new Array(7).fill(0);
+    let serverCounts = new Array(7).fill(null);
     let serverLabels = new Array(7).fill("");
     // Update the chart
     serverChart.data.datasets[0].data = serverCounts;
@@ -376,7 +376,9 @@ function updateServerChartData() {
                 // Update the chart
                 serverChart.data.datasets[0].data = serverCounts;
                 serverChart.data.labels = serverLabels;
-                serverChart.update();
+                if (!serverCounts.includes(null)) {
+                    serverChart.update();
+                }
             },
             error: function () {
                 console.log("Failed to get daily resource, retrying...");
