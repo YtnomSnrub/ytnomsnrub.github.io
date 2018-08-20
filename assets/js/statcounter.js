@@ -166,10 +166,12 @@ function setupCharts() {
     // Setup charts
     setupHaikuChart();
     setupServerChart();
+    setupHaikuHourChart()
     // Update charts on loop
     chartIntervals.push(setInterval(function () {
         updateHaikuChartData();
         updateServerChartData();
+        updateHaikuHourChartData();
     }, 600000));
 }
 
@@ -215,7 +217,7 @@ function updateHaikuChartData() {
             success: function (data) {
                 // Get the day
                 let labelDate = new Date();
-                labelDate.setDate(labelDate.getUTCDate() - (6 - i));
+                labelDate.setDate(labelDate.getUTCDate() - (7 - i));
                 // Add the label
                 haikuLabels[i] = WEEKDAYS[labelDate.getUTCDay()];
                 // Add the data
@@ -230,6 +232,94 @@ function updateHaikuChartData() {
             }
         });
     }
+}
+
+function setupHaikuHourChart() {
+    let haikuChartCanvas = document.getElementById("HaikuHourChart").getContext('2d');
+    // Setup the chart
+    haikuHourChart = new Chart(haikuChartCanvas, {
+        type: 'line',
+        data: {
+            datasets: [{
+                label: 'New Haikus',
+                backgroundColor: 'rgba(255, 204, 77, 0.5)',
+                borderColor: '#ffcc4d',
+                pointRadius: 4,
+                pointHoverBackgroundColor: '#ffcc4d',
+                pointHoverBorderColor: '#ffcc4d',
+                pointHoverRadius: 6,
+                borderWidth: 2,
+                lineTension: 0
+            }]
+        },
+        options: chartOptions
+    });
+
+    haikuHourChart.options.scales.xAxes = [{
+        type: 'time',
+        time: {
+            unit: 'hour',
+            displayFormats: {
+                hour: 'h a'
+            }
+        }
+    }];
+
+    haikuHourChart.options.tooltips.callbacks = {
+        title: function (tooltipItem, data) {
+            let value = new Date(tooltipItem[0].xLabel);
+            return moment(value).format("h a, MMM D");
+        },
+        label: function (tooltipItem, data) {
+            let value = data.datasets[0].data[tooltipItem.index];
+            return numberWithCommas(value);
+        }
+    }
+
+    updateHaikuHourChartData();
+}
+
+function updateHaikuHourChartData() {
+    // Get haiku counts for past week
+    let haikuCounts = [];
+    let haikuLabels = [];
+    // Update the chart
+    haikuHourChart.data.datasets[0].data = haikuCounts;
+    haikuHourChart.data.labels = haikuLabels;
+    haikuHourChart.update();
+
+    // Get the data from the api
+    getString = "https://haikubotapi.apphb.com/api/hourstats";
+    $.ajax({
+        url: getString,
+        success: function (data) {
+            for (let i = 0; i < data.length; ++i) {
+                // Add the label
+                let labelDate = new Date(data[i].hourTime);
+                haikuLabels[i] = convertUTCDateToLocalDate(labelDate);
+                // Add the data
+                haikuCounts[i] = data[i].haikuCount;
+                // Update the chart
+                haikuHourChart.data.datasets[0].data = haikuCounts;
+                haikuHourChart.data.labels = haikuLabels;
+                haikuHourChart.update();
+            }
+        },
+        error: function () {
+            console.log("Failed to get daily resource, retrying...");
+        }
+    });
+}
+
+function convertUTCDateToLocalDate(date) {
+    var newDate = new Date(date.getTime() + date.getTimezoneOffset() * 60 * 1000);
+
+    var offset = date.getTimezoneOffset() / 60;
+    var hours = date.getHours();
+
+    newDate.setHours(hours - offset);
+
+    return newDate;
 }
 
 function setupServerChart() {
@@ -274,7 +364,7 @@ function updateServerChartData() {
             success: function (data) {
                 // Get the day
                 let labelDate = new Date();
-                labelDate.setDate(labelDate.getUTCDate() - (6 - i));
+                labelDate.setDate(labelDate.getUTCDate() - (7 - i));
                 // Add the label
                 serverLabels[i] = WEEKDAYS[labelDate.getUTCDay()];
                 // Add the data

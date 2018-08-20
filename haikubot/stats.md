@@ -84,6 +84,10 @@
 <canvas id="HaikuChart" width="400" height="150"></canvas>
 <canvas id="ServerChart" width="400" height="150"></canvas>
 
+## Hourly Haikus
+
+<canvas id="HaikuHourChart" width="400" height="150"></canvas>
+
 <div class="button-row">
     <a class="button" href="/">
         Back to Homepage
