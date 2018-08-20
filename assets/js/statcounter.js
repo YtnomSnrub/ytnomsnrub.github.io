@@ -200,7 +200,7 @@ function setupHaikuChart() {
 function updateHaikuChartData() {
     // Get haiku counts for past week
     let haikuCounts = new Array(7).fill(0);
-    let haikuLabels = new Array(7).fill(0);
+    let haikuLabels = new Array(7).fill("");
     // Update the chart
     haikuChart.data.datasets[0].data = haikuCounts;
     haikuChart.data.labels = haikuLabels;
@@ -259,7 +259,7 @@ function setupServerChart() {
 function updateServerChartData() {
     // Get haiku counts for past week
     let serverCounts = new Array(7).fill(0);
-    let serverLabels = new Array(7).fill(0);
+    let serverLabels = new Array(7).fill("");
     // Update the chart
     serverChart.data.datasets[0].data = serverCounts;
     serverChart.data.labels = serverLabels;
