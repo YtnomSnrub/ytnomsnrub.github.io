@@ -265,6 +265,7 @@ function setupHaikuHourChart() {
         }
     }];
 
+    // Set tooltips
     haikuHourChart.options.tooltips.callbacks = {
         title: function (tooltipItem, data) {
             let value = new Date(tooltipItem[0].xLabel);
@@ -275,6 +276,9 @@ function setupHaikuHourChart() {
             return numberWithCommas(value);
         }
     }
+
+    // Set y-axis to start at 0
+    haikuHourChart.options.scales.yAxes.beginAtZero = true;
 
     updateHaikuHourChartData();
 }
