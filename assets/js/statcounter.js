@@ -215,7 +215,7 @@ function updateHaikuChartData() {
             success: function (data) {
                 // Get the day
                 let labelDate = new Date();
-                labelDate.setDate(labelDate.getUTCDate() - (7 - i));
+                labelDate.setDate(labelDate.getUTCDate() - (6 - i));
                 // Add the label
                 haikuLabels[i] = WEEKDAYS[labelDate.getUTCDay()];
                 // Add the data
@@ -368,7 +368,7 @@ function updateServerChartData() {
             success: function (data) {
                 // Get the day
                 let labelDate = new Date();
-                labelDate.setDate(labelDate.getUTCDate() - (7 - i));
+                labelDate.setDate(labelDate.getUTCDate() - (6 - i));
                 // Add the label
                 serverLabels[i] = WEEKDAYS[labelDate.getUTCDay()];
                 // Add the data
