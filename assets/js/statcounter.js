@@ -299,8 +299,8 @@ function updateHaikuHourChartData() {
         success: function (data) {
             for (let i = 0; i < data.length; ++i) {
                 // Add the label
-                let labelDate = new Date(data[i].hourTime);
-                haikuLabels[i] = convertUTCDateToLocalDate(labelDate);
+                let labelDate = moment.utc(data[i].hourTime);
+                haikuLabels[i] = labelDate;
                 // Add the data
                 haikuCounts[i] = data[i].haikuCount;
                 // Update the chart
@@ -313,17 +313,6 @@ function updateHaikuHourChartData() {
             console.log("Failed to get daily resource, retrying...");
         }
     });
-}
-
-function convertUTCDateToLocalDate(date) {
-    var newDate = new Date(date.getTime() + date.getTimezoneOffset() * 60 * 1000);
-
-    var offset = date.getTimezoneOffset() / 60;
-    var hours = date.getHours();
-
-    newDate.setHours(hours - offset);
-
-    return newDate;
 }
 
 function setupServerChart() {
