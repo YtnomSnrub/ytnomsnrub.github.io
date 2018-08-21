@@ -28,6 +28,15 @@ const chartOptions = {
             afterFit: function (scaleInstance) {
                 scaleInstance.width = 80;
             }
+        }],
+        xAxes: [{
+            type: 'time',
+            time: {
+                displayFormats: {
+                    hour: 'h a',
+                    day: 'dddd'
+                }
+            }
         }]
     },
     tooltips: {
@@ -42,9 +51,14 @@ const chartOptions = {
         borderWidth: 2,
         displayColors: false,
         callbacks: {
+            title: function (tooltipItem, data) {
+                let value = moment.utc(tooltipItem[0].xLabel);
+                return value.format("dddd");
+            },
             label: function (tooltipItem, data) {
                 let value = data.datasets[0].data[tooltipItem.index];
-                return numberWithCommas(value);
+                console.log(tooltipItem);
+                return numberWithCommas(value) + " " + data.datasets[0].label.toLowerCase();
             }
         }
     }
@@ -198,13 +212,15 @@ function setupHaikuChart() {
         options: chartOptions
     });
 
+    haikuChart.options.scales.xAxes[0].time.unit = 'day';
+
     updateHaikuChartData();
 }
 
 function updateHaikuChartData() {
     // Get haiku counts for past week
     let haikuCounts = new Array(7).fill(null);
-    let haikuLabels = new Array(7).fill("");
+    let haikuLabels = [];
 
     // Add data to the chart
     for (let i = 0; i < 7; ++i) {
@@ -213,11 +229,13 @@ function updateHaikuChartData() {
         $.ajax({
             url: getString,
             success: function (data) {
-                // Get the day
-                let labelDate = new Date();
-                labelDate.setDate(labelDate.getUTCDate() - (6 - i));
                 // Add the label
-                haikuLabels[i] = WEEKDAYS[labelDate.getUTCDay()];
+                let labelDate = moment.utc().local().add(-6 + i, 'days');
+                labelDate.hour(0);
+                labelDate.minute(0);
+                labelDate.second(0);
+                labelDate.millisecond(0);
+                haikuLabels[i] = labelDate.local();
                 // Add the data
                 haikuCounts[i] = data;
                 // Update the chart
@@ -255,28 +273,25 @@ function setupHaikuHourChart() {
         options: chartOptions
     });
 
-    haikuHourChart.options.scales.xAxes = [{
-        type: 'time',
-        time: {
-            unit: 'hour',
-            displayFormats: {
-                hour: 'h a'
-            }
-        }
-    }];
-
+    // Set x-axis format
+    haikuHourChart.options.scales.xAxes[0].time.unit = 'hour';
     // Set y-axis to start at 0
     haikuHourChart.options.scales.yAxes[0].ticks.beginAtZero = true;
 
     // Set tooltips
     haikuHourChart.options.tooltips.callbacks = {
+        beforeTitle: function (tooltipItem, data) {
+            let value = moment.utc(tooltipItem[0].xLabel).local();
+            return value.format("MMMM D");
+        },
         title: function (tooltipItem, data) {
             let value = moment.utc(tooltipItem[0].xLabel).local();
-            return value.format("h a, MMM D");
+            let prevValue = moment(value).add(-3, 'hours');
+            return prevValue.format("h a") + " - " + value.format("h a");
         },
         label: function (tooltipItem, data) {
             let value = data.datasets[0].data[tooltipItem.index];
-            return numberWithCommas(value);
+            return numberWithCommas(value) + " new haikus";
         }
     }
 
@@ -336,13 +351,15 @@ function setupServerChart() {
         options: chartOptions
     });
 
+    serverChart.options.scales.xAxes[0].time.unit = 'day';
+
     updateServerChartData();
 }
 
 function updateServerChartData() {
     // Get haiku counts for past week
     let serverCounts = new Array(7).fill(null);
-    let serverLabels = new Array(7).fill("");
+    let serverLabels = [];
     // Update the chart
     serverChart.data.datasets[0].data = serverCounts;
     serverChart.data.labels = serverLabels;
@@ -356,10 +373,12 @@ function updateServerChartData() {
             url: getString,
             success: function (data) {
                 // Get the day
-                let labelDate = new Date();
-                labelDate.setDate(labelDate.getUTCDate() - (6 - i));
-                // Add the label
-                serverLabels[i] = WEEKDAYS[labelDate.getUTCDay()];
+                let labelDate = moment.utc().local().add(-6 + i, 'days');
+                labelDate.hour(0);
+                labelDate.minute(0);
+                labelDate.second(0);
+                labelDate.millisecond(0);
+                serverLabels[i] = labelDate;
                 // Add the data
                 serverCounts[i] = data;
                 // Update the chart
