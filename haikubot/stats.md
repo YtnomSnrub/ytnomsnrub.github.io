@@ -47,10 +47,6 @@
     </tbody>
 </table>
 
-## Weekly Stats
-
-All stats are measured and displayed in UTC.
-
 <table class="stat-table stat-table-small">
     <tbody>
         <tr>
@@ -85,15 +81,17 @@ All stats are measured and displayed in UTC.
     </tbody>
 </table>
 
-<canvas id="HaikuChart" width="1200" height="600"></canvas>
+## Weekly Stats
 
-<canvas id="ServerChart" width="1200" height="600"></canvas>
+All stats are measured and displayed in UTC.
 
-## Hourly Haikus
+<canvas id="HaikuChart" class="stat-graph" width="1200" height="600"></canvas>
+<canvas id="ServerChart" class="stat-graph" width="1200" height="600"></canvas>
 
-New haikus are measured every 3 hours, and updated when a new haiku is made.
+## Hourly Stats
 
-<canvas id="HaikuHourChart" width="1200" height="600"></canvas>
+<canvas id="HaikuHourChart" class="stat-graph" width="1200" height="600"></canvas>
+<canvas id="MessageHourChart" class="stat-graph" width="1200" height="600"></canvas>
 
 <div class="button-row">
     <a class="button" href="/">

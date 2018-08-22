@@ -1,18 +1,10 @@
 let haikuChart = null;
 let serverChart = null;
+let haikuHourChart = null;
+let messageHourChart = null;
 
 var statIntervals = [];
 var chartIntervals = [];
-
-const WEEKDAYS = {
-    0: "Sunday",
-    1: "Monday",
-    2: "Tuesday",
-    3: "Wednesday",
-    4: "Thursday",
-    5: "Friday",
-    6: "Saturday"
-};
 
 const LINE_TENSION = 0.2;
 
@@ -179,21 +171,18 @@ function setupCharts() {
     Chart.defaults.global.defaultFontSize = 14;
 
     // Setup charts
-    setupHaikuChart();
-    setupServerChart();
-    updateDayChartsData();
-    setupHaikuHourChart();
-    updateHaikuHourChartData();
+    setupDayCharts();
+    setupHourCharts();
     // Update charts on loop
     chartIntervals.push(setInterval(function () {
         updateDayChartsData();
-        updateHaikuHourChartData();
+        updateHourChartsData();
     }, 300000));
 }
 
-function setupHaikuChart() {
+function setupDayCharts() {
+    // Setup the haiku chart
     let haikuChartCanvas = document.getElementById("HaikuChart").getContext('2d');
-    // Setup the chart
     haikuChart = new Chart(haikuChartCanvas, {
         type: 'line',
         data: {
@@ -212,12 +201,8 @@ function setupHaikuChart() {
         options: chartOptions
     });
 
-    haikuChart.options.scales.xAxes[0].time.unit = 'day';
-}
-
-function setupServerChart() {
+    // Setup the server chart
     let serverChartCanvas = document.getElementById("ServerChart").getContext('2d');
-    // Setup the chart
     serverChart = new Chart(serverChartCanvas, {
         type: 'line',
         data: {
@@ -236,7 +221,11 @@ function setupServerChart() {
         options: chartOptions
     });
 
+    haikuChart.options.scales.xAxes[0].time.unit = 'day';
     serverChart.options.scales.xAxes[0].time.unit = 'day';
+
+    // Update chart data
+    updateDayChartsData();
 }
 
 function updateDayChartsData() {
@@ -275,9 +264,9 @@ function updateDayChartsData() {
     });
 }
 
-function setupHaikuHourChart() {
+function setupHourCharts() {
+    // Setup the haiku chart
     let haikuChartCanvas = document.getElementById("HaikuHourChart").getContext('2d');
-    // Setup the chart
     haikuHourChart = new Chart(haikuChartCanvas, {
         type: 'line',
         data: {
@@ -296,13 +285,34 @@ function setupHaikuHourChart() {
         options: chartOptions
     });
 
+    // Setup the message chart
+    let messageChartCanvas = document.getElementById("MessageHourChart").getContext('2d');
+    messageHourChart = new Chart(messageChartCanvas, {
+        type: 'line',
+        data: {
+            datasets: [{
+                label: 'Messages Parsed',
+                backgroundColor: 'rgba(46, 47, 52, 0.5)',
+                borderColor: '#2e2f34',
+                pointRadius: 12,
+                pointHoverBackgroundColor: '#2e2f34',
+                pointHoverBorderColor: '#2e2f34',
+                pointHoverRadius: 6,
+                borderWidth: 2,
+                lineTension: LINE_TENSION
+            }]
+        },
+        options: chartOptions
+    });
+
     // Set x-axis format
-    haikuHourChart.options.scales.xAxes[0].time.unit = 'hour';
-    // Set y-axis to start at 0
+    haikuHourChart.options.scales.xAxes[0].time.minUnit = 'hour';
+    messageHourChart.options.scales.xAxes[0].time.minUnit = 'hour';
+    // Set y-axis to start at 0 for haikus
     haikuHourChart.options.scales.yAxes[0].ticks.beginAtZero = true;
 
     // Set tooltips
-    haikuHourChart.options.tooltips.callbacks = {
+    let hourCallbacks = {
         beforeTitle: function (tooltipItem, data) {
             let value = moment(new Date(tooltipItem[0].xLabel));
             return value.format("MMMM D");
@@ -314,19 +324,24 @@ function setupHaikuHourChart() {
         },
         label: function (tooltipItem, data) {
             let value = data.datasets[0].data[tooltipItem.index];
-            return numberWithCommas(value) + " new haikus";
+            return numberWithCommas(value) + " " + data.datasets[0].label.toLowerCase();
         }
-    }
+    };
+
+    haikuHourChart.options.tooltips.callbacks = hourCallbacks;
+    messageHourChart.options.tooltips.callbacks = hourCallbacks;
+
+    // Update chart data
+    updateHourChartsData();
 }
 
-function updateHaikuHourChartData() {
-    // Get haiku counts for past week
-    let haikuCounts = [];
-    let haikuLabels = [];
-    // Update the chart
-    haikuHourChart.data.datasets[0].data = haikuCounts;
-    haikuHourChart.data.labels = haikuLabels;
-    haikuHourChart.update();
+function updateHourChartsData() {
+    // Get haiku counts for past hours
+    let haikuCounts = haikuHourChart.data.datasets[0].data;
+    let haikuLabels = haikuHourChart.data.labels;
+    // Get message counts for past hours
+    let messageCounts = messageHourChart.data.datasets[0].data;
+    let messageLabels = messageHourChart.data.labels
 
     // Get the data from the api
     getString = "https://haikubotapi.apphb.com/api/hourstats";
@@ -337,12 +352,17 @@ function updateHaikuHourChartData() {
                 // Add the label
                 let labelDate = moment(new Date(data[i].hourStartTime));
                 haikuLabels[i] = labelDate;
+                messageLabels[i] = labelDate;
                 // Add the data
                 haikuCounts[i] = data[i].haikuCount;
-                // Update the chart
+                messageCounts[i] = data[i].messagesCount;
+                // Update the charts
                 haikuHourChart.data.datasets[0].data = haikuCounts;
                 haikuHourChart.data.labels = haikuLabels;
+                messageHourChart.data.datasets[0].data = messageCounts;
+                messageHourChart.data.labels = messageLabels;
                 haikuHourChart.update();
+                messageHourChart.update();
             }
         },
         error: function () {
