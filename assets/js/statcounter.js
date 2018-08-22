@@ -57,7 +57,6 @@ const chartOptions = {
             },
             label: function (tooltipItem, data) {
                 let value = data.datasets[0].data[tooltipItem.index];
-                console.log(tooltipItem);
                 return numberWithCommas(value) + " " + data.datasets[0].label.toLowerCase();
             }
         }
@@ -182,11 +181,12 @@ function setupCharts() {
     // Setup charts
     setupHaikuChart();
     setupServerChart();
-    setupHaikuHourChart()
+    updateDayChartsData();
+    setupHaikuHourChart();
+    updateHaikuHourChartData();
     // Update charts on loop
     chartIntervals.push(setInterval(function () {
-        updateHaikuChartData();
-        updateServerChartData();
+        updateDayChartsData();
         updateHaikuHourChartData();
     }, 300000));
 }
@@ -213,43 +213,66 @@ function setupHaikuChart() {
     });
 
     haikuChart.options.scales.xAxes[0].time.unit = 'day';
-
-    updateHaikuChartData();
 }
 
-function updateHaikuChartData() {
-    // Get haiku counts for past week
-    let haikuCounts = new Array(7).fill(null);
-    let haikuLabels = [];
+function setupServerChart() {
+    let serverChartCanvas = document.getElementById("ServerChart").getContext('2d');
+    // Setup the chart
+    serverChart = new Chart(serverChartCanvas, {
+        type: 'line',
+        data: {
+            datasets: [{
+                label: 'Servers',
+                backgroundColor: 'rgba(46, 47, 52, 0.5)',
+                borderColor: '#2e2f34',
+                pointRadius: 4,
+                pointHoverBackgroundColor: '#2e2f34',
+                pointHoverBorderColor: '#2e2f34',
+                pointHoverRadius: 6,
+                borderWidth: 2,
+                lineTension: LINE_TENSION
+            }]
+        },
+        options: chartOptions
+    });
 
-    // Add data to the chart
-    for (let i = 0; i < 7; ++i) {
-        // Get the data from the api
-        getString = "https://haikubotapi.apphb.com/api/haikucount?day=" + (7 - i);
-        $.ajax({
-            url: getString,
-            success: function (data) {
+    serverChart.options.scales.xAxes[0].time.unit = 'day';
+}
+
+function updateDayChartsData() {
+    // Get haiku counts for past week
+    let haikuCounts = haikuChart.data.datasets[0].data;
+    let haikuLabels = haikuChart.data.labels;
+    // Get server counts for past week
+    let serverCounts = serverChart.data.datasets[0].data;
+    let serverLabels = serverChart.data.labels;
+
+    // Get the data from the api
+    getString = "https://haikubotapi.apphb.com/api/daystats";
+    $.ajax({
+        url: getString,
+        success: function (data) {
+            for (let i = 0; i < data.length; ++i) {
                 // Add the label
-                let labelDate = moment.utc().local().add(-6 + i, 'days');
-                labelDate.hour(0);
-                labelDate.minute(0);
-                labelDate.second(0);
-                labelDate.millisecond(0);
-                haikuLabels[i] = labelDate.local();
+                let labelDate = moment.utc(data[i].dayStartTime);
+                haikuLabels[i] = labelDate;
+                serverLabels[i] = labelDate;
                 // Add the data
-                haikuCounts[i] = data;
-                // Update the chart
+                haikuCounts[i] = data[i].haikuCount;
+                serverCounts[i] = data[i].serverCount;
+                // Update the charts
                 haikuChart.data.datasets[0].data = haikuCounts;
                 haikuChart.data.labels = haikuLabels;
-                if (!haikuCounts.includes(null)) {
-                    haikuChart.update();
-                }
-            },
-            error: function () {
-                console.log("Failed to get daily resource, retrying...");
+                serverChart.data.datasets[0].data = haikuCounts;
+                serverChart.data.labels = haikuLabels;
+                haikuChart.update();
+                serverChart.update();
             }
-        });
-    }
+        },
+        error: function () {
+            console.log("Failed to get daily resource, retrying...");
+        }
+    });
 }
 
 function setupHaikuHourChart() {
@@ -294,8 +317,6 @@ function setupHaikuHourChart() {
             return numberWithCommas(value) + " new haikus";
         }
     }
-
-    updateHaikuHourChartData();
 }
 
 function updateHaikuHourChartData() {
@@ -314,7 +335,7 @@ function updateHaikuHourChartData() {
         success: function (data) {
             for (let i = 0; i < data.length; ++i) {
                 // Add the label
-                let labelDate = moment.utc(data[i].hourTime);
+                let labelDate = moment.utc(data[i].hourStartTime);
                 haikuLabels[i] = labelDate;
                 // Add the data
                 haikuCounts[i] = data[i].haikuCount;
@@ -328,69 +349,4 @@ function updateHaikuHourChartData() {
             console.log("Failed to get daily resource, retrying...");
         }
     });
-}
-
-function setupServerChart() {
-    let serverChartCanvas = document.getElementById("ServerChart").getContext('2d');
-    // Setup the chart
-    serverChart = new Chart(serverChartCanvas, {
-        type: 'line',
-        data: {
-            datasets: [{
-                label: 'Servers',
-                backgroundColor: 'rgba(46, 47, 52, 0.5)',
-                borderColor: '#2e2f34',
-                pointRadius: 4,
-                pointHoverBackgroundColor: '#2e2f34',
-                pointHoverBorderColor: '#2e2f34',
-                pointHoverRadius: 6,
-                borderWidth: 2,
-                lineTension: LINE_TENSION
-            }]
-        },
-        options: chartOptions
-    });
-
-    serverChart.options.scales.xAxes[0].time.unit = 'day';
-
-    updateServerChartData();
-}
-
-function updateServerChartData() {
-    // Get haiku counts for past week
-    let serverCounts = new Array(7).fill(null);
-    let serverLabels = [];
-    // Update the chart
-    serverChart.data.datasets[0].data = serverCounts;
-    serverChart.data.labels = serverLabels;
-    serverChart.update();
-
-    // Add data to the chart
-    for (let i = 0; i < 7; ++i) {
-        // Get the data from the api
-        getString = "https://haikubotapi.apphb.com/api/servercount?day=" + (7 - i);
-        $.ajax({
-            url: getString,
-            success: function (data) {
-                // Get the day
-                let labelDate = moment.utc().local().add(-6 + i, 'days');
-                labelDate.hour(0);
-                labelDate.minute(0);
-                labelDate.second(0);
-                labelDate.millisecond(0);
-                serverLabels[i] = labelDate;
-                // Add the data
-                serverCounts[i] = data;
-                // Update the chart
-                serverChart.data.datasets[0].data = serverCounts;
-                serverChart.data.labels = serverLabels;
-                if (!serverCounts.includes(null)) {
-                    serverChart.update();
-                }
-            },
-            error: function () {
-                console.log("Failed to get daily resource, retrying...");
-            }
-        });
-    }
 }
