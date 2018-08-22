@@ -49,7 +49,7 @@
 
 ## Weekly Stats
 
-All stats are measured in UTC, and displayed in your computer's local time.
+All stats are measured and displayed in UTC.
 
 <table class="stat-table stat-table-small">
     <tbody>

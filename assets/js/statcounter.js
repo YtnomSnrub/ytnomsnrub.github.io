@@ -52,7 +52,7 @@ const chartOptions = {
         displayColors: false,
         callbacks: {
             title: function (tooltipItem, data) {
-                let value = moment.utc(tooltipItem[0].xLabel);
+                let value = moment(new Date(tooltipItem[0].xLabel));
                 return value.format("dddd");
             },
             label: function (tooltipItem, data) {
@@ -254,7 +254,7 @@ function updateDayChartsData() {
         success: function (data) {
             for (let i = 0; i < data.length; ++i) {
                 // Add the label
-                let labelDate = moment.utc(data[i].dayStartTime);
+                let labelDate = moment(new Date(data[i].dayStartTime));
                 haikuLabels[i] = labelDate;
                 serverLabels[i] = labelDate;
                 // Add the data
@@ -304,11 +304,11 @@ function setupHaikuHourChart() {
     // Set tooltips
     haikuHourChart.options.tooltips.callbacks = {
         beforeTitle: function (tooltipItem, data) {
-            let value = moment.utc(tooltipItem[0].xLabel).local();
+            let value = moment(new Date(tooltipItem[0].xLabel));
             return value.format("MMMM D");
         },
         title: function (tooltipItem, data) {
-            let value = moment.utc(tooltipItem[0].xLabel).local();
+            let value = moment(new Date(tooltipItem[0].xLabel));
             let prevValue = moment(value).add(-3, 'hours');
             return prevValue.format("h a") + " - " + value.format("h a");
         },
@@ -335,7 +335,7 @@ function updateHaikuHourChartData() {
         success: function (data) {
             for (let i = 0; i < data.length; ++i) {
                 // Add the label
-                let labelDate = moment.utc(data[i].hourStartTime);
+                let labelDate = moment(new Date(data[i].hourStartTime));
                 haikuLabels[i] = labelDate;
                 // Add the data
                 haikuCounts[i] = data[i].haikuCount;
