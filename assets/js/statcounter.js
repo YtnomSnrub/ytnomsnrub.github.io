@@ -294,7 +294,7 @@ function setupHourCharts() {
                 label: 'Messages Parsed',
                 backgroundColor: 'rgba(46, 47, 52, 0.5)',
                 borderColor: '#2e2f34',
-                pointRadius: 12,
+                pointRadius: 4,
                 pointHoverBackgroundColor: '#2e2f34',
                 pointHoverBorderColor: '#2e2f34',
                 pointHoverRadius: 6,
