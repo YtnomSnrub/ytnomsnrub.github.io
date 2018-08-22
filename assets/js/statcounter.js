@@ -263,8 +263,8 @@ function updateDayChartsData() {
                 // Update the charts
                 haikuChart.data.datasets[0].data = haikuCounts;
                 haikuChart.data.labels = haikuLabels;
-                serverChart.data.datasets[0].data = haikuCounts;
-                serverChart.data.labels = haikuLabels;
+                serverChart.data.datasets[0].data = serverCounts;
+                serverChart.data.labels = serverLabels;
                 haikuChart.update();
                 serverChart.update();
             }
