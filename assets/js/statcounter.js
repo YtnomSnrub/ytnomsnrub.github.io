@@ -54,6 +54,10 @@ const chartOptions = {
                 let value = moment(new Date(tooltipItem[0].xLabel));
                 return value.format("dddd");
             },
+            afterTitle: function (tooltipItem, data) {
+                let value = moment(new Date(tooltipItem[0].xLabel));
+                return value.format("MMMM D");
+            },
             label: function (tooltipItem, data) {
                 let value = data.datasets[0].data[tooltipItem.index];
                 return numberWithCommas(value) + " " + data.datasets[0].label.toLowerCase();
