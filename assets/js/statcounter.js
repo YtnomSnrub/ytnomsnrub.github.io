@@ -35,12 +35,19 @@ const chartOptions = {
         enabled: true,
         mode: "index",
         intersect: false,
+        // Background
         backgroundColor: "rgba(46, 47, 52, 0.8)",
+        // Font colors
         titleFontColor: "rgba(255, 255, 255, 1)",
+        titleFontSize: 14,
         bodyFontColor: "rgba(255, 255, 255, 1)",
+        bodyFontSize: 14,
         footerFontColor: "rgba(255, 255, 255, 1)",
+        footerFontSize: 12,
+        // Border
         borderColor: "rgba(46, 47, 52, 0.5)",
         borderWidth: 2,
+        // Text
         displayColors: false,
         callbacks: {
             title: function (tooltipItem, data) {
@@ -292,11 +299,11 @@ function setupHourCharts() {
         data: {
             datasets: [{
                 label: 'Messages Parsed',
-                backgroundColor: 'rgba(46, 47, 52, 0.5)',
-                borderColor: '#2e2f34',
+                backgroundColor: 'rgba(77, 157, 255, 0.5)',
+                borderColor: '#4d9dff',
                 pointRadius: 4,
-                pointHoverBackgroundColor: '#2e2f34',
-                pointHoverBorderColor: '#2e2f34',
+                pointHoverBackgroundColor: '#4d9dff',
+                pointHoverBorderColor: '#4d9dff',
                 pointHoverRadius: 6,
                 borderWidth: 2,
                 lineTension: LINE_TENSION
