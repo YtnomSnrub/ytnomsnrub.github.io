@@ -22,8 +22,6 @@
     </div>
 </div>
 
-## Recent Trends
-
 <table class="stat-table stat-table-large">
     <tbody>
         <tr>
@@ -51,7 +49,7 @@
     <tbody>
         <tr>
             <td>Messages parsed</td>
-            <td class="stat-counter loading" data-api="messagecount" data-loop-time="10000">.</td>
+            <td class="stat-counter loading" data-api="messagecount" data-loop-time="4000">.</td>
         </tr>
     </tbody>
 </table>
