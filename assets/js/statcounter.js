@@ -83,6 +83,14 @@ function setupStats() {
         }
     });
 
+    // Setup the datetime updaters
+    $(".time-utc").each(function () {
+        let timeField = $(this);
+        statIntervals.push(setInterval(function () {
+            timeField.html("<b>Current UTC:</b> " + moment.utc().format("MMM D, hh:mm:ss a"));
+        }, 1000));
+    });
+
     // Setup the charts
     setupCharts();
 }

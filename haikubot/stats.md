@@ -83,7 +83,8 @@
 
 ## Weekly Stats
 
-All stats are measured and displayed in UTC.
+<p>All stats are measured and displayed in UTC.</p>
+<p class="time time-utc">.</p>
 
 <canvas id="HaikuChart" class="stat-graph" width="1200" height="600"></canvas>
 <canvas id="ServerChart" class="stat-graph" width="1200" height="600"></canvas>
