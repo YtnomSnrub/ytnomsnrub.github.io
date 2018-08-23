@@ -49,6 +49,22 @@
 
     &.stat-table-large {
         display: table;
+
+        td {
+            width: 8em;
+        }
+
+        .stat-counter {
+            width: 6em;
+        }
+    }
+
+    &.stat-table-single {
+        display: table;
+
+        td {
+            width: 50%;
+        }
     }
 
     @media screen and (max-width: $large-breakpoint) {
@@ -69,16 +85,12 @@
         }
 
         td {
-            width: 8em;
-
             text-align: right;
 
             border: 0;
         }
 
         .stat-counter {
-            width: 6em;
-
             transition: opacity 0.2s $m-ease;
             text-align: left;
 
@@ -127,6 +139,15 @@
         margin: 0.8em 0;
     }
 
+    // Sizes
+    &.stat-count-medium {
+        min-width: 10em;
+    }
+
+    &.stat-count-large {
+        min-width: 12em;
+    }
+
     p {
         margin: 0;
         padding: 0;
@@ -154,6 +175,7 @@
         }
     }
 
+    // Colors
     &.haiku-count {
         color: $haiku-color-text;
         background-color: $haiku-color;
@@ -172,6 +194,11 @@
     &.broken-heart-count {
         color: $heart-color-light;
         background-color: $heart-color-dark;
+    }
+
+    &.message-count {
+        color: $message-color-text;
+        background-color: $message-color;
     }
 }
 

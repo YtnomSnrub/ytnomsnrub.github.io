@@ -308,10 +308,10 @@ function setupHourCharts() {
             datasets: [{
                 label: 'Messages Parsed',
                 backgroundColor: 'rgba(77, 157, 255, 0.5)',
-                borderColor: '#4d9dff',
+                borderColor: '#4da0ff',
                 pointRadius: 4,
-                pointHoverBackgroundColor: '#4d9dff',
-                pointHoverBorderColor: '#4d9dff',
+                pointHoverBackgroundColor: '#4da0ff',
+                pointHoverBorderColor: '#4da0ff',
                 pointHoverRadius: 6,
                 borderWidth: 2,
                 lineTension: LINE_TENSION

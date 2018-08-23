@@ -47,6 +47,15 @@
     </tbody>
 </table>
 
+<table class="stat-table stat-table-single">
+    <tbody>
+        <tr>
+            <td>Messages parsed</td>
+            <td class="stat-counter loading" data-api="messagecount" data-loop-time="10000">.</td>
+        </tr>
+    </tbody>
+</table>
+
 <table class="stat-table stat-table-small">
     <tbody>
         <tr>
