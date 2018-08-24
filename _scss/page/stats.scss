@@ -97,7 +97,7 @@
 
             border-left: 1px solid $border-color;
 
-@include font-code;
+@include font-stat;
 
             &.hidden {
                 opacity: 0;
@@ -160,7 +160,7 @@
 
         font-size: 1.5em;
 
-@include font-code;
+@include font-stat;
 
         &.hidden {
             transform: scale(0.5);

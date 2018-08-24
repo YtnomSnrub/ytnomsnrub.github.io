@@ -33,6 +33,11 @@
 }
 
 @mixin font-code {
-    font-family: "Montserrat", Consolas, Courier, monospace;
+    font-family: "Roboto Mono", Consolas, Courier, monospace;
+    font-weight: 700;
+}
+
+@mixin font-stat {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
     font-weight: 700;
 }

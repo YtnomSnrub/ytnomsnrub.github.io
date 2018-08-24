@@ -32,23 +32,10 @@ HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unles
     </a>
 </div>
 
-## Restricting HaikuBot
+## Guides
 
-Sometimes, there are channels where you don't want HaikuBot. Luckily, Discord allows you to restrict where users (and bots) can and can't speak.
-
-- First, right-click the channel you want HaikuBot to ignore, and select 'Edit Channel'.
-
-![Edit Channel](/assets/img/edit_channel.png)
-
-- Under the Roles/Members section of the 'Permissions' panel, add a new role for HaikuBot.
-
-![HaikuBot Channel Role](/assets/img/haiku_channel.png)
-
-- Remove the 'Read Messages' and 'Send Messages' permissions for HaikuBot for this channel.
-
-![Channel Role Settings](/assets/img/channel_settings.png)
-
-That's it! HaikuBot should now ignore any messages in this channel. Make sure that HaikuBot and any of its roles don't have the 'Administrator' permission, as this overrides any channel-specific permissions. Bleep bloop!
+- [Restricting HaikuBot](/haikubot/guides/restricting-haikubot)
+- [Making a Haiku Log](/haikubot/guides/making-a-haiku-log)
 
 <div class="button-row">
     <a class="button button-haiku" href="https://discord.gg/Cm5v93M">

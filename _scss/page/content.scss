@@ -39,7 +39,10 @@ a {
     }
 
     code {
-        @include font-code;
+        color: $code-text-color;
+        background-color: $code-bg-color;
+
+@include font-code;
     }
 
     img {
@@ -56,6 +59,14 @@ a {
             width: auto;
             height: 4vh;
         }
+    }
+
+    blockquote {
+        padding: 0;
+        padding-left: 0.6em;
+
+        color: transparentize($text-color, 0.3);
+        border-left: 4px solid $border-color;
     }
 
     .topright {

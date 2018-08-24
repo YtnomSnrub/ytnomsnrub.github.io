@@ -31,7 +31,6 @@ $(function () {
                 setupStats();
 
                 // Scroll to top
-                console.log(location.hash);
                 var $mainContent = $(".main-content");
                 var t = $mainContent.offset().top + 1;
                 if (window.scrollY > t) {
