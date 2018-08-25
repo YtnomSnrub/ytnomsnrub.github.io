@@ -24,13 +24,7 @@
 
         <script defer src="{{site.baseurl}}/assets/js/statcounter.js"></script>
 
-        <style>
-body {
-    opacity: 0.5;
-}
-
-
-        </style>
+        <link rel="stylesheet" href="{{ '/assets/css/critical.css?v=' | append: site.github.build_revision | relative_url }}">
 
         <!-- Google Analytics -->
         {% if site.google_analytics %}
@@ -70,7 +64,7 @@ body {
 
             <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
         </noscript>
-        <script defer type="text/javascript">
+        <script type="text/javascript">
             var loadDeferredStyles = function () {
                 var addStylesNode = document.getElementById("deferred-styles");
                 var replacement = document.createElement("div");
