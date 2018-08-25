@@ -25,8 +25,8 @@ const chartOptions = {
             type: 'time',
             time: {
                 displayFormats: {
-                    hour: 'h a',
-                    day: 'dddd'
+                    hour: 'ddd, h a',
+                    day: 'MMM D'
                 }
             }
         }]
@@ -155,13 +155,16 @@ function updateStatField(statField) {
 }
 
 function setStatFieldValue(statField, statValue) {
+    // Find the delay
+    let statDelay = statField.prev().is("td") ? 125 : 250;
+    // Change the value
     if (statField.html() != statValue) {
         statField.addClass("hidden");
         setTimeout(function () {
             statField.removeClass("loading");
             statField.html(statValue);
             statField.removeClass("hidden");
-        }, 250);
+        }, statDelay);
     }
 }
 
@@ -325,8 +328,10 @@ function setupHourCharts() {
     });
 
     // Set x-axis format
-    haikuHourChart.options.scales.xAxes[0].time.minUnit = 'hour';
-    messageHourChart.options.scales.xAxes[0].time.minUnit = 'hour';
+    haikuHourChart.options.scales.xAxes[0].time.unit = 'hour';
+    haikuHourChart.options.scales.xAxes[0].time.stepSize = 12;
+    messageHourChart.options.scales.xAxes[0].time.unit = 'hour';
+    messageHourChart.options.scales.xAxes[0].time.stepSize = 12;
     // Set y-axis to start at 0 for haikus
     haikuHourChart.options.scales.yAxes[0].ticks.beginAtZero = true;
     messageHourChart.options.scales.yAxes[0].ticks.beginAtZero = true;
