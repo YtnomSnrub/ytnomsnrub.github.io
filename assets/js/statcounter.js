@@ -329,6 +329,7 @@ function setupHourCharts() {
     messageHourChart.options.scales.xAxes[0].time.minUnit = 'hour';
     // Set y-axis to start at 0 for haikus
     haikuHourChart.options.scales.yAxes[0].ticks.beginAtZero = true;
+    messageHourChart.options.scales.yAxes[0].ticks.beginAtZero = true;
 
     // Set tooltips
     let hourCallbacks = {
