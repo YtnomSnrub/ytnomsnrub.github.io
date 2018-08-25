@@ -19,5 +19,6 @@ markdown: kramdown
 theme: jekyll-theme-cayman
 # Analytics
 google_analytics: UA-105356258-3
+google_optimise: GTM-M396ZDN
 
 github: [metadata]
