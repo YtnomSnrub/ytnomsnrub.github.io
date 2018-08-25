@@ -100,12 +100,3 @@
 
 <canvas id="HaikuHourChart" class="stat-graph" width="1200" height="600"></canvas>
 <canvas id="MessageHourChart" class="stat-graph" width="1200" height="600"></canvas>
-
-<div class="button-row">
-    <a class="button" href="/">
-        Back to Homepage
-    </a>
-    <a class="button button-haiku" href="/haikubot/">
-        Back to HaikuBot
-    </a>
-</div>

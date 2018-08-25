@@ -1,0 +1,86 @@
+$color-block-size: 2.8em;
+$color-block-padding: 0.6em;
+$color-block-text-padding: 0.6em;
+
+.color-block {
+    position: relative;
+    left: $color-block-size + $color-block-padding;
+
+    padding: $color-block-padding 0;
+
+    &::before {
+        position: absolute;
+        left: -$color-block-size - $color-block-padding;
+        top: 0;
+        bottom: 0;
+
+        width: $color-block-size;
+        height: $color-block-size;
+        margin: auto;
+
+        content: "";
+
+        border-color: $border-color;
+        border-radius: $border-radius;
+    }
+
+    &::after {
+        position: relative;
+        left: $color-block-padding;
+
+        content: "";
+        text-transform: uppercase;
+
+        font-weight: 700;
+    }
+}
+
+.color-haiku {
+    &::before {
+        background-color: $haiku-color;
+    }
+
+    &::after {
+        content: "#{$haiku-color}";
+    }
+}
+
+.color-haiku-text {
+    &::before {
+        background-color: $haiku-color-text;
+    }
+
+    &::after {
+        content: "#{$haiku-color-text}";
+    }
+}
+
+.color-alt {
+    &::before {
+        background-color: $primary-color;
+    }
+
+    &::after {
+        content: "#{$primary-color}";
+    }
+}
+
+.color-heart {
+    &::before {
+        background-color: $heart-color;
+    }
+
+    &::after {
+        content: "#{$heart-color}";
+    }
+}
+
+.color-discord {
+    &::before {
+        background-color: $discord-color;
+    }
+
+    &::after {
+        content: "#{$discord-color}";
+    }
+}

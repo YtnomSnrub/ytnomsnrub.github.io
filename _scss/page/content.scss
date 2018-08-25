@@ -26,13 +26,14 @@ a {
 }
 
 .main-content h2,
-.main-content h3 {
+.main-content h3,
+.main-content h4 {
     @include font-subheading;
 }
 
 .main-content {
     min-height: calc(100vh);
-    padding-top: calc(24px + 1em);
+    padding-top: $tabs-height + 2em;
 
     .container {
         position: relative;

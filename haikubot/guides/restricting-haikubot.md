@@ -15,9 +15,3 @@ Sometimes, there are channels where you don't want HaikuBot. Luckily, Discord al
 ![Channel Role Settings](/assets/img/channel_settings.png)
 
 That's it! HaikuBot should now ignore any messages in this channel. Make sure that HaikuBot and any of its roles don't have the 'Administrator' permission, as this overrides any channel-specific permissions. Bleep bloop!
-
-<div class="button-row">
-    <a class="button button-haiku" href="/haikubot/">
-        Back to HaikuBot
-    </a>
-</div>

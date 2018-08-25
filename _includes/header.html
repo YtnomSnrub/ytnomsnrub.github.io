@@ -4,7 +4,15 @@
         <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
         <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
     </header>
-    
+
+    <div id="PageTabs" class="page-tabs">
+        <div class="page-tabs-inner">
+            {% for path in page_paths %} {% assign my_page = site.pages | where: "path", path | first %} {% if my_page.title %}
+            <a class="page-link {% if page.url == my_page.url %} page-link-current {% endif %}" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+            {% endif %} {% endfor %}
+        </div>
+    </div>
+
     <script type="text/javascript">
         $(function () {
             $('<img>').on('load', function () {
@@ -14,15 +22,15 @@
                 imgUrl = imgUrl.substring(5, imgUrl.length - 2);
                 return imgUrl;
             }).each(function () {
-                if(!this.complete) {
+                if (!this.complete) {
                     $('header.page-header .background').removeClass("visible");
                 }
             });
-            
+
             $('img').on('load', function () {
                 $(this).addClass("visible");
             }).each(function () {
-                if(this.complete) {
+                if (this.complete) {
                     $(this).trigger('load');
                 }
             });

@@ -36,12 +36,10 @@ HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unles
 
 - [Restricting HaikuBot](/haikubot/guides/restricting-haikubot)
 - [Making a Haiku Log](/haikubot/guides/making-a-haiku-log)
+- [HaikuBot Colors](/haikubot/guides/haikubot-colors)
 
 <div class="button-row">
     <a class="button button-haiku" href="https://discord.gg/Cm5v93M">
         Join Official Server
-    </a>
-    <a class="button" href="/">
-        Back to Homepage
     </a>
 </div>

@@ -15,9 +15,3 @@ To clear an existing Haiku Log, just type `!haiku log` (without any channel), an
 ## How does it Work?
 
 Discord uses IDs for servers and channels. An ID is a unique number assigned to each server and channel when it is created. When you setup a Haiku Log, HaikuBot stores the ID of both your server and the Haiku Log channel. This means that no identifying information about your server is stored.
-
-<div class="button-row">
-    <a class="button button-haiku" href="/haikubot/">
-        Back to HaikuBot
-    </a>
-</div>

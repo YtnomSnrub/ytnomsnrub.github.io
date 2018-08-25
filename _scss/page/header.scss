@@ -96,12 +96,10 @@ $header-background-color: #1e1e1e;
         right: 0;
         top: 0;
 
-@include header-shadow-fixed;
+        @include header-shadow-fixed;
 
-        @media (max-height: $medium-breakpoint), (max-width: $small-breakpoint) {
-            .page-tabs-inner {
-                height: $tabs-height-small;
-            }
+        .page-tabs-inner {
+            height: $tabs-height-small;
         }
     }
 
