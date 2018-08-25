@@ -13,11 +13,7 @@
 
         <link rel="shortcut icon" type="image/x-icon" href="{{site.baseurl}}/favicon.ico" />
 
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel='stylesheet' type='text/css'>
-        <link async href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel='stylesheet' type='text/css'>
-        <link async href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel='stylesheet' type='text/css'>
-        <link async href="https://fonts.googleapis.com/css?family=Montserrat:100,300,700" rel='stylesheet' type='text/css'>
-        <link async href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel='stylesheet' type='text/css'>
 
         <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script defer type="text/javascript" src="{{site.baseurl}}/assets/js/moment.min.js"></script>
@@ -32,13 +28,20 @@
 body {
     opacity: 0;
 }
+
+
         </style>
 
         <noscript id="deferred-styles">
+            <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel='stylesheet' type='text/css'>
+            <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel='stylesheet' type='text/css'>
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,700" rel='stylesheet' type='text/css'>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
             <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
         </noscript>
         <script defer type="text/javascript">
-            var loadDeferredStyles = function() {
+            var loadDeferredStyles = function () {
                 var addStylesNode = document.getElementById("deferred-styles");
                 var replacement = document.createElement("div");
                 replacement.innerHTML = addStylesNode.textContent;
@@ -47,10 +50,11 @@ body {
             };
             var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
                 window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-            if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+            if (raf) raf(function () { window.setTimeout(loadDeferredStyles, 0); });
             else window.addEventListener('load', loadDeferredStyles);
         </script>
-        
+
+        <!-- Google Analytics -->
         {% if site.google_analytics %}
         <script defer type="text/javascript">
             (function (i, s, o, g, r, a, m) {
@@ -62,17 +66,20 @@ body {
 
             ga('create', '{{ site.google_analytics }}', 'auto')
             ga('send', 'pageview');
-        </script>
-        {% endif %}
+        </script> {% endif %}
     </head>
 
     <body>
         <div id="main" class="main">
+            <!-- Header -->
             {% include header.html %}
 
             <section class="main-content">
                 <div class="container">
-                    {{ content }} {% include footer.html %}
+                    <!-- Content -->
+                    {{ content }}
+                    <!-- Footer -->
+                    {% include footer.html %}
                 </div>
             </section>
         </div>
