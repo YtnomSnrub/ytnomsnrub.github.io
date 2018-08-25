@@ -29,6 +29,8 @@ $(function () {
                 addMarkdownAnchors();
                 // Reload the stats
                 setupStats();
+                // Load images
+                loadImages();
 
                 // Scroll to top
                 var $mainContent = $(".main-content");
@@ -61,6 +63,8 @@ $(function () {
 
     // Update tab bar
     updateTabs();
+    // Load images
+    loadImages();
 
     // Add the anchors
     addMarkdownAnchors();
@@ -74,6 +78,16 @@ function addMarkdownAnchors() {
         icon = '<i class="material-icons">link</i>';
         if (id) {
             return $el.append($("<a/>").addClass("header-link").attr("href", "#" + id).html(icon));
+        }
+    });
+}
+
+function loadImages() {
+    $('img').on('load', function () {
+        $(this).addClass("visible");
+    }).each(function () {
+        if (this.complete) {
+            $(this).trigger('load');
         }
     });
 }

@@ -4,7 +4,10 @@
     {% assign default_paths = site.pages | map: "path" %} {% assign page_paths = site.header_pages | default: default_paths %}
 
     <head>
-        <meta charset="UTF-8"> {% seo %}
+        <meta charset="UTF-8">
+
+        {% seo %}
+        
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffcc4d">
 
@@ -18,8 +21,8 @@
         <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
 
         <script defer src="{{site.baseurl}}/assets/js/jquery.smoothState.min.js"></script>
-        <script defer src="{{site.baseurl}}/assets/js/transition.js"></script>
 
+        <script defer src="{{site.baseurl}}/assets/js/transition.js"></script>
         <script defer src="{{site.baseurl}}/assets/js/statcounter.js"></script>
 
         <link rel="preconnect" href="https://haikubotapi.apphb.com">
@@ -40,7 +43,8 @@
 
             ga('create', '{{ site.google_analytics }}', 'auto')
             ga('send', 'pageview');
-        </script> {% endif %}
+        </script>
+        {% endif %}
     </head>
 
     <body>
