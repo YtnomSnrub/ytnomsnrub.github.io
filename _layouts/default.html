@@ -26,33 +26,11 @@
 
         <style>
 body {
-    opacity: 0;
+    opacity: 0.5;
 }
 
 
         </style>
-
-        <noscript id="deferred-styles">
-            <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel='stylesheet' type='text/css'>
-            <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel='stylesheet' type='text/css'>
-            <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,700" rel='stylesheet' type='text/css'>
-            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-            <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-        </noscript>
-        <script defer type="text/javascript">
-            var loadDeferredStyles = function () {
-                var addStylesNode = document.getElementById("deferred-styles");
-                var replacement = document.createElement("div");
-                replacement.innerHTML = addStylesNode.textContent;
-                document.body.appendChild(replacement)
-                addStylesNode.parentElement.removeChild(addStylesNode);
-            };
-            var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-                window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-            if (raf) raf(function () { window.setTimeout(loadDeferredStyles, 0); });
-            else window.addEventListener('load', loadDeferredStyles);
-        </script>
 
         <!-- Google Analytics -->
         {% if site.google_analytics %}
@@ -83,6 +61,32 @@ body {
                 </div>
             </section>
         </div>
+
+        <noscript id="deferred-styles">
+            <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel='stylesheet' type='text/css'>
+            <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel='stylesheet' type='text/css'>
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,700" rel='stylesheet' type='text/css'>
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+            <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+        </noscript>
+        <script defer type="text/javascript">
+            var loadDeferredStyles = function () {
+                var addStylesNode = document.getElementById("deferred-styles");
+                var replacement = document.createElement("div");
+                replacement.innerHTML = addStylesNode.textContent;
+                document.body.appendChild(replacement)
+                addStylesNode.parentElement.removeChild(addStylesNode);
+            };
+
+            var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+                window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+            if (raf) {
+                raf(function () { window.setTimeout(loadDeferredStyles, 0); });
+            } else {
+                window.addEventListener('load', loadDeferredStyles);
+            }
+        </script>
     </body>
 
 </html>
