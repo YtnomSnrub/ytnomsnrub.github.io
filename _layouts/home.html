@@ -1,15 +1,9 @@
----
-layout: default
----
+--- layout: default ---
 
 <div>
     <script type="text/javascript">
         function iframe_loaded(frame) {
-            console.log("widget loaded");
             $(frame).addClass("visible")
         }
-    </script>
-
-    {{ content }}
+    </script> {{ content }}
 </div>
-    
