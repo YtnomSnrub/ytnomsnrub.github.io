@@ -11,12 +11,6 @@
     </div>
 </div>
 
-<div class="button-row">
-    <a class="button" href="/haikubot/stats">
-        View all Stats
-    </a>
-</div>
-
 HaikuBot is a friend-shaped Discord bot that detects accidental (or intentional) messages in your Discord server that can be turned into a 5-7-5 haiku, and then shows the message in haiku format. It uses a combination algorithms and a syllable dictionary to try to be accurate (although it still sometimes makes mistakes).
 
 <img class="discord-bot-widget" src="https://discordbots.org/api/widget/372175794895585280.svg?usernamecolor=FAFAFA&topcolor=222222&middlecolor=2e2f34&datacolor=643f00&labelcolor=643f00&highlightcolor=FFCC4D" />
@@ -39,6 +33,9 @@ HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unles
 - [HaikuBot Colors](/haikubot/guides/haikubot-colors)
 
 <div class="button-row">
+    <a class="button" href="/haikubot/stats">
+        View all Stats
+    </a>
     <a class="button button-haiku" href="https://discord.gg/Cm5v93M">
         Join Official Server
     </a>

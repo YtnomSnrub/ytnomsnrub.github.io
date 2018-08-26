@@ -68,6 +68,9 @@ $(function () {
 
     // Add the anchors
     addMarkdownAnchors();
+
+    // Update tabs on scroll
+    window.addEventListener('scroll', updateTabs);
 });
 
 function addMarkdownAnchors() {
@@ -107,5 +110,3 @@ function updateTabs() {
         }
     }
 }
-
-window.onscroll = updateTabs;
