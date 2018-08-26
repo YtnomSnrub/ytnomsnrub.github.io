@@ -21,7 +21,7 @@ HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unles
     <a class="button button-discord" href="https://discordbots.org/bot/372175794895585280">
         View on Discord Bot List
     </a>
-    <a class="button" href="https://discordapp.com/oauth2/authorize?client_id=372175794895585280&scope=bot&permissions=19520">
+    <a class="button" href="https://discordapp.com/oauth2/authorize?client_id=372175794895585280&scope=bot&permissions=85056">
         Invite to Server
     </a>
 </div>
