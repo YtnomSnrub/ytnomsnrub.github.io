@@ -1,3 +1,7 @@
+---
+title: "Haiku Log"
+---
+
 # Making a Haiku Log
 
 HaikuBot can be set up to log all Haikus to a single channel, called a Haiku Log. HaikuBot will post each haiku that it finds in the Haiku Log, in addition to the normal haiku that's sent after a message.

@@ -1,3 +1,7 @@
+---
+title: "Restriciting HaikuBot"
+---
+
 # Restricting HaikuBot
 
 Sometimes, there are channels where you don't want HaikuBot. Luckily, Discord allows you to restrict where users (and bots) can and can't speak.

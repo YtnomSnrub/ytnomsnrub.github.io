@@ -22,6 +22,15 @@
     </div>
 </div>
 
+<table class="stat-table stat-table-single">
+    <tbody>
+        <tr>
+            <td>Messages parsed</td>
+            <td class="stat-counter loading" data-api="messagecount" data-loop-time="4000">.</td>
+        </tr>
+    </tbody>
+</table>
+
 <table class="stat-table stat-table-large">
     <tbody>
         <tr>
@@ -41,15 +50,6 @@
             <td class="stat-counter loading stat-counter-haikus-minute">.</td>
             <td>Servers this week</td>
             <td class="stat-counter loading" data-api="servercountweek" data-change="true"  data-loop-time="300000">.</td>
-        </tr>
-    </tbody>
-</table>
-
-<table class="stat-table stat-table-single">
-    <tbody>
-        <tr>
-            <td>Messages parsed</td>
-            <td class="stat-counter loading" data-api="messagecount" data-loop-time="4000">.</td>
         </tr>
     </tbody>
 </table>
@@ -84,6 +84,15 @@
         <tr>
             <td>Haikus per minute</td>
             <td class="stat-counter loading stat-counter-haikus-minute">.</td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="stat-table stat-table-single">
+    <tbody>
+        <tr>
+            <td>Servers with a Haiku Log</td>
+            <td class="stat-counter loading" data-api="haikulogcount" data-loop-time="30000">.</td>
         </tr>
     </tbody>
 </table>

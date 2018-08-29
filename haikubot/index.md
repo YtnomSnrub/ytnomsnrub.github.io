@@ -1,3 +1,7 @@
+---
+title: "HaikuBot"
+---
+
 # HaikuBot
 
 <div class="button-row">

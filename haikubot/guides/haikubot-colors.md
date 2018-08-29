@@ -1,3 +1,7 @@
+---
+title: "HaikuBot Colors"
+---
+
 # HaikuBot Colors
 
 Do you want to know the colors used for HaikuBot? You can use these for all sorts of things, like setting HaikuBot's role color to be the same as the bot's icon color!
