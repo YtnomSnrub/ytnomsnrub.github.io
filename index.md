@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "YtnomSnrub"
+title: "Home"
 ---
 # YtnomSnrub
 
