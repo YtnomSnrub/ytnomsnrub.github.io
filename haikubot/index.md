@@ -34,6 +34,7 @@ HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unles
 
 - [Restricting HaikuBot](/haikubot/guides/restricting-haikubot)
 - [Making a Haiku Log](/haikubot/guides/making-a-haiku-log)
+- [Changing a Server's Haiku Type](/haikubot/guides/changing-a-servers-haiku-type)
 - [HaikuBot Colors](/haikubot/guides/haikubot-colors)
 
 <div class="button-row">
