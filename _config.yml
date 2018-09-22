@@ -13,7 +13,7 @@ sass:
 header_pages: 
 - index.md
 - haikubot/index.md
-- kingdom/index.md
+- kingdom/info.md
 
 # Build settings
 markdown: kramdown
