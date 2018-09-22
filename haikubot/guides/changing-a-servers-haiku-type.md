@@ -16,7 +16,7 @@ You can change the way that Haikus are formatted in your server. This can be don
 
 The way that haikus are formatted are formatted by default. This option has a gap between lines.
 
-![Normal Haiku Format](/assets/img/haiku-type-normal.png)
+![Normal Haiku Format](/haikubot/img/haiku-type-normal.png)
 
 ## Small
 
@@ -26,7 +26,7 @@ The way that haikus are formatted are formatted by default. This option has a ga
 
 A smaller format for haikus. This option has no gap between lines.
 
-![Normal Haiku Format](/assets/img/haiku-type-small.png)
+![Normal Haiku Format](/haikubot/img/haiku-type-small.png)
 
 ## Tiny
 
@@ -36,4 +36,4 @@ A smaller format for haikus. This option has no gap between lines.
 
 A super compact format for haikus, with a '\|\|' used to separate lines.
 
-![Normal Haiku Format](/assets/img/haiku-type-tiny.png)
+![Normal Haiku Format](/haikubot/img/haiku-type-tiny.png)
