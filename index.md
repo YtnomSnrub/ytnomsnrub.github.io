@@ -37,7 +37,7 @@ HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unles
 Modis is a modular discord bot, designed to be both flexible and easily extendable. It features a music module with an interactive GUI, as well as tools for moderation and a growing community developing new modules all the time. Modis is still in active development while we try to stabilise the framework and some of our internal modules, but you can come check out the community and the bot in our Discord server.
 
 <div class="button-row">
-    <a class="button button-modis" href="https://infraxion.github.io/modis">
+    <a class="button button-modis" href="https://modisworks.github.io/">
         Modis Website
     </a>
     <a class="button" href="https://github.com/infraxion/modis">
