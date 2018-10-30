@@ -6,7 +6,7 @@ let messageHourChart = null;
 var statIntervals = [];
 var chartIntervals = [];
 
-const LINE_TENSION = 0.2;
+const LINE_TENSION = 0.0;
 
 const chartOptions = {
     scales: {
