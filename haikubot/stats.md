@@ -6,7 +6,7 @@
         <p>Haikus found</p>
     </div>
     <div class="stat-count server-count">
-        <p class="stat-counter server-counter loading" data-api="server_count" data-dbl="true" data-loop-time="300000">.</p>
+        <p class="stat-counter server-counter loading" data-api="servercount" data-loop-time="300000">.</p>
         <p>Servers</p>
     </div>
 </div>
