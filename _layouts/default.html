@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
 
         {% seo %}
-        
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#2e2f34">
 
@@ -26,14 +26,16 @@
         <script defer src="{{site.baseurl}}/assets/js/statcounter.js"></script>
 
         <link rel="preconnect" href="https://haikubotapi.apphb.com">
-        <link rel="preconnect" href="https://discordbots.org">
         <link rel="preconnect" href="https://stats.g.doubleclick.net">
-        
+
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <style>
-            {% include /css/critical.css %}
-        </style>
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,700" rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
         <!-- Google Analytics -->
         {% if site.google_analytics %}
@@ -88,32 +90,6 @@
                 </div>
             </section>
         </div>
-
-        <noscript id="deferred-styles">
-            <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel='stylesheet' type='text/css'>
-            <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel='stylesheet' type='text/css'>
-            <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel='stylesheet' type='text/css'>
-            <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,700" rel='stylesheet' type='text/css'>
-
-            <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-        </noscript>
-        <script type="text/javascript">
-            var loadDeferredStyles = function () {
-                var addStylesNode = document.getElementById("deferred-styles");
-                var replacement = document.createElement("div");
-                replacement.innerHTML = addStylesNode.textContent;
-                document.body.appendChild(replacement)
-                addStylesNode.parentElement.removeChild(addStylesNode);
-            };
-
-            var raf = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-                window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-            if (raf) {
-                raf(function () { window.setTimeout(loadDeferredStyles, 0); });
-            } else {
-                window.addEventListener('load', loadDeferredStyles);
-            }
-        </script>
     </body>
 
 </html>
