@@ -32,7 +32,7 @@ HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unles
 
 ## Patreon
 
-Soon, you will be able to support HaikuBot on Patreon. By pledging a small amount of money each month to the ongoing development of HaikuBot you can gain access to a Patreon-only icon next to your signature for each haiku, as well as the option to change the color of the bar next to haikus that you make for silver members and higher.
+You can also support HaikuBot on Patreon. By pledging a small amount of money each month to the ongoing development of HaikuBot you can gain access to a Patreon-only icon next to your signature for each haiku, as well as the option to change the color of the bar next to haikus that you make for silver members and higher.
 
 ![HaikuBot on Patreon](/haikubot/img/haiku-patreon.png)
 
