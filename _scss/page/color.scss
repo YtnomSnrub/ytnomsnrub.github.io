@@ -2,6 +2,35 @@ $color-block-size: 2.8em;
 $color-block-padding: 0.6em;
 $color-block-text-padding: 0.6em;
 
+table.color-block-table {
+    overflow: visible;
+    position: relative;
+
+    padding: 1em;
+    background-color: $background-color-alt;
+    border-color: $border-color;
+    border-radius: $border-radius;
+
+    color: $text-color-alt;
+
+    display: table;
+
+    tbody {
+        width: 100%;
+    }
+
+    td {
+        border: 1em solid transparent;
+    }
+
+    @media screen and (max-width: $medium-breakpoint) {
+        td {
+            display: block;
+        }
+    }
+}
+
+
 .color-block {
     position: relative;
     left: $color-block-size + $color-block-padding;
