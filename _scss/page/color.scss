@@ -84,3 +84,88 @@ $color-block-text-padding: 0.6em;
         content: "#{$discord-color}";
     }
 }
+
+
+.color-patreon-red {
+    &::before {
+        background-color: $patreon-color-red;
+    }
+}
+
+.color-patreon-orange {
+    &::before {
+        background-color: $patreon-color-orange;
+    }
+}
+
+.color-patreon-amber {
+    &::before {
+        background-color: $patreon-color-amber;
+    }
+}
+
+.color-patreon-yellow {
+    &::before {
+        background-color: $patreon-color-yellow;
+    }
+}
+
+.color-patreon-lime {
+    &::before {
+        background-color: $patreon-color-lime;
+    }
+}
+
+.color-patreon-green {
+    &::before {
+        background-color: $patreon-color-green;
+    }
+}
+
+.color-patreon-aqua {
+    &::before {
+        background-color: $patreon-color-aqua;
+    }
+}
+
+.color-patreon-cyan {
+    &::before {
+        background-color: $patreon-color-cyan;
+    }
+}
+
+.color-patreon-sky {
+    &::before {
+        background-color: $patreon-color-sky;
+    }
+}
+
+.color-patreon-ocean {
+    &::before {
+        background-color: $patreon-color-ocean;
+    }
+}
+
+.color-patreon-indigo {
+    &::before {
+        background-color: $patreon-color-indigo;
+    }
+}
+
+.color-patreon-purple {
+    &::before {
+        background-color: $patreon-color-purple;
+    }
+}
+
+.color-patreon-magenta {
+    &::before {
+        background-color: $patreon-color-magenta;
+    }
+}
+
+.color-patreon-pink {
+    &::before {
+        background-color: $patreon-color-pink;
+    }
+}

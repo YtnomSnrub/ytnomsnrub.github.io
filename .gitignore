@@ -139,3 +139,6 @@ ENV/
 
 ######## ATOM ########
 .atom-build.*
+package-lock.json
+Gemfile.lock
+Gemfile.lock

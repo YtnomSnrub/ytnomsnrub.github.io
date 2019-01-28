@@ -120,6 +120,11 @@ a {
             box-shadow: 0 $button-extend darken($discord-color, 10%);
         }
 
+        &.button-patreon {
+            background-color: $patreon-color;
+            box-shadow: 0 $button-extend darken($patreon-color, 10%);
+        }
+
         &.button-haiku {
             color: $haiku-color-text;
             background-color: $haiku-color;
@@ -146,6 +151,10 @@ a {
                 box-shadow: 0 $button-extend-hover darken($discord-color, 10%);
             }
 
+            &.button-patreon {
+                box-shadow: 0 $button-extend-hover darken($patreon-color, 10%);
+            }
+
             &.button-haiku {
                 box-shadow: 0 $button-extend-hover darken($haiku-color, 20%);
             }
@@ -166,6 +175,10 @@ a {
 
             &.button-discord {
                 box-shadow: 0 $button-extend-pressed darken($discord-color, 10%);
+            }
+
+            &.button-patreon {
+                box-shadow: 0 $button-extend-pressed darken($patreon-color, 10%);
             }
 
             &.button-haiku {

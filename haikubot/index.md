@@ -30,12 +30,28 @@ HaikuBot has a few fun tricks and secrets, but mostly stays out of the way unles
     </a>
 </div>
 
+## Patreon
+
+Soon, you will be able to support HaikuBot on Patreon. By pledging a small amount of money each month to the ongoing development of HaikuBot you can gain access to a Patreon-only icon next to your signature for each haiku, as well as the option to change the color of the bar next to haikus that you make for silver members and higher.
+
+![HaikuBot on Patreon](/haikubot/img/haiku-patreon.png)
+
+<div class="button-row">
+    <a class="button button-patreon" href="https://www.patreon.com/ytnomsnrub">
+        View on Patreon
+    </a>
+    <a class="button" href="/haikubot/guides/patreon-customization">
+        Patreon Customization
+    </a>
+</div>
+
 ## Guides
 
 - [Restricting HaikuBot](/haikubot/guides/restricting-haikubot)
 - [Making a Haiku Log](/haikubot/guides/making-a-haiku-log)
 - [Changing a Server's Haiku Type](/haikubot/guides/changing-a-servers-haiku-type)
 - [HaikuBot Colors](/haikubot/guides/haikubot-colors)
+- [Patreon Customization](/haikubot/guides/patreon-customization)
 
 <div class="button-row">
     <a class="button" href="/haikubot/stats">
