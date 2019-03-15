@@ -46,7 +46,7 @@ $header-heading-color: $text-color-alt;
 $header-bg-color: darken($primary-color, 7.5%);
 // Shadows
 @mixin header-shadow-page {
-    box-shadow: 0 -4px 6px rgba(0, 0 ,0, 0.15);
+    box-shadow: 0 -5px 5px rgba(0, 0 ,0, 0.15);
 }
 @mixin header-shadow-fixed {
     box-shadow: none;
