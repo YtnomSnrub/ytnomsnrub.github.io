@@ -1,7 +1,9 @@
 @import "transitions";
 
-@import "page/header";
+@import "page/text";
 @import "page/content";
+@import "page/header";
+@import "page/panels";
 @import "page/color";
 @import "page/code";
 @import "page/anchors";
@@ -14,11 +16,16 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
 
+    margin: 0;
+    padding: 0;
+
     transition: opacity 0.2s ease;
 
     opacity: 1;
     color: $text-color;
     background-color: $background-color;
+
+    font-size: 1rem;
 
 @include font-body;
 }
@@ -34,13 +41,10 @@ a {
 img {
     overflow: hidden;
 
-    transform: scale(1.05);
-
     opacity: 0;
 
     &.visible {
-        transition: opacity 0.25s $m-ease, transform 0.4s $m-ease-out;
-        transform: scale(1);
+        transition: opacity 0.25s $m-ease;
 
         opacity: 1;
     }

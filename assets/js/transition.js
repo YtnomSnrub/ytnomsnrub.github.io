@@ -87,10 +87,19 @@ function addMarkdownAnchors() {
 
 function loadImages() {
     $('img').on('load', function () {
-        $(this).addClass("visible");
+        var $element = $(this);
+        window.setTimeout(function () {
+            if (!$element.hasClass("visible")) {
+                //$element.hide().slideDown(250);
+                window.setTimeout(function () {
+                    $element.addClass("visible");
+                }, 200);
+            }
+        }, 200);
     }).each(function () {
+        //$(this).hide();
         if (this.complete) {
-            $(this).trigger('load');
+            $(this).trigger("load");
         }
     });
 }

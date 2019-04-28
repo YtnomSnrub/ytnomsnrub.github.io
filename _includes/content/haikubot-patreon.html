@@ -1,0 +1,25 @@
+<div class="content-panel panel-patreon">
+    {% if include.title %}
+    {% if include.title_type %}
+    <{{ include.title_type }}>{{ include.title }}</{{ include.title_type }}>
+    {% else %}
+    <h2>{{ include.title }}</h2>
+    {% endif %}
+    {% endif %}
+
+    <p>You can also support HaikuBot on Patreon. By pledging a small amount of money each month to the ongoing
+        development of HaikuBot you can gain access to a Patreon-only icon next to your signature for each haiku, as
+        well as the option to change the color of the bar next to haikus that you make for silver members and higher.
+    </p>
+
+    <img src="/haikubot/img/haiku-patreon.png" alt="HaikuBot on Patreon">
+
+    <div class="button-row">
+        <a class="button" href="/haikubot/guides/patreon-customization">
+            Patreon Customization
+        </a>
+        <a class="button button-patreon" href="https://www.patreon.com/ytnomsnrub">
+            View on Patreon
+        </a>
+    </div>
+</div>

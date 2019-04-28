@@ -1,26 +1,26 @@
-$color-block-size: 2.8em;
-$color-block-padding: 0.6em;
-$color-block-text-padding: 0.6em;
+$color-block-size: 2.8rem;
+$color-block-padding: 0.6rem;
+$color-block-text-padding: 0.6rem;
 
 table.color-block-table {
-    overflow: visible;
     position: relative;
 
-    padding: 1em;
-    background-color: $discord-background-color;
-    border-color: $border-color;
-    border-radius: $border-radius;
+    display: table;
+    overflow: visible;
+
+    padding: 1rem;
 
     color: $text-color-alt;
-
-    display: table;
+    border-color: $border-color;
+    border-radius: $border-radius;
+    background-color: $discord-background-color;
 
     tbody {
         width: 100%;
     }
 
     td {
-        border: 1em solid transparent;
+        border: 1rem solid transparent;
     }
 
     @media screen and (max-width: $medium-breakpoint) {

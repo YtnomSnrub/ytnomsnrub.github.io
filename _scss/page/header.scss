@@ -4,7 +4,9 @@
 
     padding: 0;
     padding-top: 92px;
-    padding-bottom: 80px;
+    padding-bottom: 108px;
+
+    text-align: center;
 
     background: none;
     background-color: $header-bg-color;
@@ -42,19 +44,19 @@
 @include font-title;
 
         @media (max-width: $large-breakpoint) {
-            font-size: 5.5em;
+            font-size: 4.5rem;
         }
 
         @media (max-width: $medium-breakpoint) {
-            font-size: 3.5em;
+            font-size: 3.5rem;
         }
 
         @media (max-width: $small-breakpoint) {
-            font-size: 2.5em;
+            font-size: 2.5rem;
         }
 
         @media (max-width: $tiny-breakpoint) {
-            font-size: 2.0em;
+            font-size: 2.0rem;
         }
     }
 
@@ -62,6 +64,14 @@
         opacity: 0.9;
 
 @include font-subtitle;
+
+        @media (max-width: $medium-breakpoint) {
+            font-size: 1.2rem;
+        }
+
+        @media (max-width: $small-breakpoint) {
+            font-size: 1.0rem;
+        }
     }
 }
 
@@ -108,7 +118,7 @@
         display: table-cell;
 
         margin: 0;
-        padding: 0 1em;
+        padding: 0 1rem;
 
         transition: background-color 0.1s $m-ease, color 0.1s $m-ease;
         text-align: center;
@@ -116,10 +126,6 @@
         text-decoration: none;
 
         font-weight: 400;
-
-        @media (max-width: $tiny-breakpoint) {
-            min-width: 100vw;
-        }
 
         @media (min-width: $small-breakpoint) {
             min-width: 100px;

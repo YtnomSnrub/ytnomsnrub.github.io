@@ -6,19 +6,26 @@ $m-ease-in-out: cubic-bezier(0.4, 0.0, 0.6, 1);
 
 // Colors
 $primary-color: #2e2f34;
-$secondary-color: #0055aa;
+$secondary-color: #f84655;
+$secondary-color-alt: #ff7480;
 $background-color: #ffffff;
 $background-color-alt: #2e2f34;
 $text-color: rgba(0, 0, 0, 0.87);
-$text-color-alt: rgba(255, 255, 255, 1);
+$text-color-alt: rgba(255, 255, 255, 0.95);
 // Site color
 $discord-color: #7287dd;
 $discord-background-color: #36393f;
 $patreon-color: #f96854;
+$patreon-color-background-1: #cc4433;
+$patreon-color-background-2: #cc2255;
 $modis-color: #0088ff;
+$modis-color-background-1: #0066bb;
+$modis-color-background-2: #00bb66;
 $kingdom-color: #1676d8;
 $haiku-color: #ffcc4d;
 $haiku-color-text: #643f00;
+$haiku-color-background-1: adjust-hue(#ffcc4d, 5deg);
+$haiku-color-background-2: adjust-hue(#ffcc4d, -15deg);
 $heart-color: #ff7a8e;
 $heart-color-dark: #4b141c;
 $heart-color-text: #6b242e;
@@ -74,14 +81,14 @@ $border-radius: 0.5rem;
 @import "fonts";
 
 // Breakpoints
-$large-breakpoint: 44rem;
-$medium-breakpoint: 36rem;
-$small-breakpoint: 28rem;
-$tiny-breakpoint: 12rem;
+$large-breakpoint: 1200px;
+$medium-breakpoint: 800px;
+$small-breakpoint: 600px;
+$tiny-breakpoint: 400px;
 
 // Sizes
-$tabs-height: 3em;
-$tabs-height-small: 2.4em;
+$tabs-height: 48px;
+$tabs-height-small: 40px;
 // Buttons
 $button-extend: 2px;
 $button-extend-hover: 6px;

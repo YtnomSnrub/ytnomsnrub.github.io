@@ -9,19 +9,19 @@
 
 @mixin font-subtitle {
     font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
     font-weight: 300;
 }
 
 @mixin font-heading {
-    margin-left: -0.07em;
+    margin-left: -0.05em;
 
     font-family: "Roboto", Arial, Helvetica, sans-serif;
-    font-size: 3rem;
     font-weight: 300;
 }
 
 @mixin font-subheading {
-    margin-left: -0.04em;
+    margin-left: -0.03em;
 
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-weight: 400;
