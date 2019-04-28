@@ -127,8 +127,12 @@
 
         font-weight: 400;
 
-        @media (min-width: $small-breakpoint) {
+        @media (min-width: $tiny-breakpoint) {
             min-width: 100px;
+        }
+
+        @media (min-width: $small-breakpoint) {
+            min-width: 150px;
         }
 
         @media (min-width: $medium-breakpoint) {
