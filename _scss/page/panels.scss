@@ -6,20 +6,6 @@
     padding-top: 24px;
     padding-bottom: 32px;
 
-    &,
-    h1,
-    h2 {
-        color: $text-color-alt;
-    }
-
-    a:not(.button) {
-        color: $secondary-color-alt;
-    }
-
-    &::before {
-        background: $background-color-alt;
-    }
-
     &::before {
         position: absolute;
         z-index: -1;
@@ -51,12 +37,32 @@
     }
 
     &.panel-patreon {
+        &,
+        h1,
+        h2 {
+            color: $text-color-alt;
+        }
+
+        a:not(.button) {
+            color: $secondary-color-alt;
+        }
+
         &::before {
             background: linear-gradient(45deg, $patreon-color-background-1 0%, $patreon-color-background-2 100%);
         }
     }
 
     &.panel-modis {
+        &,
+        h1,
+        h2 {
+            color: $text-color-alt;
+        }
+
+        a:not(.button) {
+            color: $secondary-color-alt;
+        }
+
         &::before {
             background: linear-gradient(45deg, $modis-color-background-1 0%, $modis-color-background-2 100%);
         }
