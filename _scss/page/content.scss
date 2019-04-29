@@ -1,9 +1,13 @@
 .main-content {
-    max-width: 960px;
+    position: relative;
+
+    max-width: 880px;
     min-height: calc(100vh);
     margin: auto;
     padding: 2rem 1.5rem;
     padding-top: $tabs-height-small;
+
+    font-size: 1.1rem;
 
     @media screen and (max-width: $large-breakpoint) {
         max-width: 720px;
@@ -44,6 +48,7 @@
 
         display: block;
 
+        max-width: 100%;
         margin: auto;
         margin-bottom: 1.5em;
 
@@ -108,7 +113,7 @@
         background-color: $primary-color;
         box-shadow: 0 $button-extend darken($primary-color, 10%);
 
-        font-size: 1.1rem;
+        font-weight: 400;
 
         &.button-discord {
             background-color: $discord-color;
@@ -187,43 +192,6 @@
             &.button-kingdom {
                 box-shadow: 0 $button-extend-pressed darken($kingdom-color, 10%);
             }
-        }
-    }
-
-    a :not(button) {
-        position: relative;
-
-        &::before {
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-
-            margin: -4px;
-
-            content: "";
-            transition: background-color 0.15s $m-ease, border-color 0.15s $m-ease, transform 0.15s $m-ease-in;
-            transform: scale(1.5);
-            pointer-events: none;
-
-            border: 1px solid transparent;
-            border-radius: 4px;
-            background-color: transparent;
-        }
-
-        &:focus::before {
-            transition: background-color 0.15s $m-ease, border-color 0.15s $m-ease, transform 0.15s $m-ease-out;
-            transform: scale(1);
-
-            border-color: $table-border-color;
-            background-color: rgba($background-color-alt, 0.12);
-        }
-
-        &:active::before {
-            transition: background-color 0.1s $m-ease, border-color 0.1s $m-ease, transform 0s linear;
-
-            background-color: transparent;
         }
     }
 }

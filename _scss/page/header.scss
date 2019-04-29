@@ -3,8 +3,8 @@
     z-index: 1;
 
     padding: 0;
-    padding-top: 92px;
-    padding-bottom: 108px;
+    padding-top: 72px;
+    padding-bottom: 96px;
 
     text-align: center;
 
@@ -39,6 +39,8 @@
     }
 
     .project-name {
+        margin-bottom: 0;
+
         opacity: 1;
 
 @include font-title;
@@ -66,11 +68,7 @@
 @include font-subtitle;
 
         @media (max-width: $medium-breakpoint) {
-            font-size: 1.2rem;
-        }
-
-        @media (max-width: $small-breakpoint) {
-            font-size: 1.0rem;
+            font-size: 1rem;
         }
     }
 }

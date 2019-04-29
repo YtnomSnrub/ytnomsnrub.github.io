@@ -17,7 +17,6 @@ header_pages:
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-cayman
 # Analytics
 google_analytics: UA-105356258-3
 
