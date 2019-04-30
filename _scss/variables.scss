@@ -5,13 +5,18 @@ $m-ease-out: cubic-bezier(0.0, 0.0, 0.2, 1);
 $m-ease-in-out: cubic-bezier(0.4, 0.0, 0.6, 1);
 
 // Colors
-$primary-color: #2e2f34;
-$secondary-color: #f84655;
-$secondary-color-alt: #ff7480;
-$background-color: #ffffff;
+$primary-color: #f84655;
+$primary-color-alt: #ff7480;
+$secondary-color: #6478c9;
+$secondary-color-alt: #7287dd;
+$background-color: #f7f7f7;
 $background-color-alt: #2e2f34;
+$foreground-color: #fbfbfb;
 $text-color: rgba(0, 0, 0, 0.87);
+$text-color-detail: rgba(0, 0, 0, 0.6);
 $text-color-alt: rgba(255, 255, 255, 0.95);
+$text-color-dark: rgba(0, 0, 0, 0.87);
+$text-color-light: rgba(255, 255, 255, 0.95);
 // Site color
 $discord-color: #7287dd;
 $discord-background-color: #36393f;
@@ -50,7 +55,7 @@ $patreon-color-pink: #ff4db4;
 
 // Heading
 $header-heading-color: $text-color-alt;
-$header-bg-color: darken($primary-color, 7.5%);
+$header-bg-color: darken($background-color-alt, 7.5%);
 // Shadows
 @mixin header-shadow-page {
     box-shadow: 0 -5px 5px rgba(0, 0 ,0, 0.15);
@@ -60,13 +65,10 @@ $header-bg-color: darken($primary-color, 7.5%);
 }
 
 // Code
-$code-bg-color: rgba($background-color-alt, 0.05);
-$code-text-color: $text-color;
+$code-bg-color: rgba($secondary-color, 0.05);
+$code-border-color: rgba($secondary-color, 0.15);
+$code-text-color: $secondary-color;
 
-// Text
-$section-headings-color: $primary-color;
-$body-text-color: $text-color-alt;
-$body-link-color: $secondary-color;
 // Stat text
 $color-positive: #33b339;
 $color-negative: #b33c33;
@@ -75,7 +77,7 @@ $color-negative: #b33c33;
 $border-color: rgba($background-color-alt, 0.15);
 $table-border-color: rgba($background-color-alt, 0.25);
 $hr-border-color: rgba($background-color-alt, 0.15);
-$border-radius: 0.5rem;
+$border-radius: 1rem;
 
 // Fonts
 @import "fonts";

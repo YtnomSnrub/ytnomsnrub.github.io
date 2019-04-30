@@ -5,13 +5,10 @@ $color-block-text-padding: 0.6rem;
 table.color-block-table {
     position: relative;
 
-    display: table;
-    overflow: visible;
-
     padding: 1rem;
 
     color: $text-color-alt;
-    border-color: $border-color;
+    border: none;
     border-radius: $border-radius;
     background-color: $discord-background-color;
 
@@ -20,7 +17,7 @@ table.color-block-table {
     }
 
     td {
-        border: 1rem solid transparent;
+        border: 1.5rem solid transparent;
     }
 
     @media screen and (max-width: $medium-breakpoint) {
@@ -86,11 +83,11 @@ table.color-block-table {
 
 .color-alt {
     &::before {
-        background-color: $primary-color;
+        background-color: $background-color-alt;
     }
 
     &::after {
-        content: "#{$primary-color}";
+        content: "#{$background-color-alt}";
     }
 }
 

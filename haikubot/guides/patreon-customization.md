@@ -52,7 +52,7 @@ Now, all of your haikus in any server on Discord will be in the color you select
 
 ## Issues
 
-There are a couple of reasons why your Patreon benefits might now show up.
+There are a couple of reasons why your Patreon benefits might not show up.
 
 - Your Discord account must be linked to your Patreon account
 - You must be part of the HaikuBot Discord Server, since this is how HaikuBot knows that you are a Patreon supporter

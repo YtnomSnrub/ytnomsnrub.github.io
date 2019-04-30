@@ -27,17 +27,6 @@
         margin-bottom: 2rem;
     }
 
-    code {
-        padding: 0.2rem 0.4rem;
-
-        color: $code-text-color;
-        background-color: $code-bg-color;
-
-        font-size: 1rem;
-
-@include font-code;
-    }
-
     p {
         margin-bottom: 1.5em;
     }
@@ -48,6 +37,7 @@
 
         display: block;
 
+        width: auto;
         max-width: 100%;
         margin: auto;
         margin-bottom: 1.5em;
@@ -60,11 +50,35 @@
         }
     }
 
+    table {
+        position: relative;
+
+        display: table;
+        overflow: visible;
+
+        width: 100%;
+        max-width: 100%;
+
+        border-spacing: 0;
+
+        border-collapse: collapse;
+
+        tr {
+            margin: 0;
+            padding: 0;
+        }
+
+        td {
+            margin: 0;
+            padding: 0.5rem 1rem;
+        }
+    }
+
     blockquote {
         padding: 0;
         padding-left: 0.6rem;
 
-        color: transparentize($text-color, 0.3);
+        color: $text-color-detail;
         border-left: 4px solid $border-color;
     }
 
@@ -110,8 +124,8 @@
 
         color: $text-color-alt;
         border-radius: $border-radius;
-        background-color: $primary-color;
-        box-shadow: 0 $button-extend darken($primary-color, 10%);
+        background-color: $background-color-alt;
+        box-shadow: 0 $button-extend darken($background-color-alt, 10%);
 
         font-weight: 400;
 
@@ -145,7 +159,7 @@
         &:focus {
             top: -$button-extend-hover;
 
-            box-shadow: 0 $button-extend-hover darken($primary-color, 10%);
+            box-shadow: 0 $button-extend-hover darken($background-color-alt, 10%);
 
             &.button-discord {
                 box-shadow: 0 $button-extend-hover darken($discord-color, 10%);
@@ -171,7 +185,7 @@
         &:active {
             top: -$button-extend-pressed;
 
-            box-shadow: 0 $button-extend-pressed darken($primary-color, 10%);
+            box-shadow: 0 $button-extend-pressed darken($background-color-alt, 10%);
 
             &.button-discord {
                 box-shadow: 0 $button-extend-pressed darken($discord-color, 10%);
@@ -196,14 +210,12 @@
     }
 }
 
-.highlight {
-    background-color: transparent;
-}
+.site-footer {
+    margin-top: 2rem;
 
-.main-content .highlight pre,
-.main-content code {
-    border: 1px solid $border-color;
-    border-radius: $border-radius;
+    color: $text-color-detail;
+
+    font-size: 0.9rem;
 }
 
 .discord-bot-widget {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: " en-US " }}">
+<html lang="{{ site.lang | default:" en-US" }}">
 
     {% assign default_paths = site.pages | map: "path" %} {% assign page_paths = site.header_pages | default: default_paths %}
 
@@ -21,6 +21,9 @@
         <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
 
         <script defer src="{{site.baseurl}}/assets/js/jquery.smoothState.min.js"></script>
+
+        <script defer src="{{site.baseurl}}/assets/js/anchors.js"></script>
+        <script defer src="{{site.baseurl}}/assets/js/images.js"></script>
 
         <script defer src="{{site.baseurl}}/assets/js/transition.js"></script>
         <script defer src="{{site.baseurl}}/assets/js/numberpage.js"></script>

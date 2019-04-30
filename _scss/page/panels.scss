@@ -24,11 +24,11 @@
         &,
         h1,
         h2 {
-            color: $text-color;
+            color: $text-color-dark;
         }
 
         a:not(.button) {
-            color: $secondary-color;
+            color: $primary-color;
         }
 
         &::before {
@@ -40,11 +40,28 @@
         &,
         h1,
         h2 {
-            color: $text-color-alt;
+            color: $text-color-light;
         }
 
         a:not(.button) {
-            color: $secondary-color-alt;
+            color: $text-color-light;
+
+            &:hover::before,
+            &:hover i::before {
+                border-color: rgba($text-color-light, 0.25);
+            }
+
+            &:focus::before,
+            &:focus i::before {
+                border-color: rgba($text-color-light, 0.25);
+                background-color: rgba($text-color-light, 0.12);
+            }
+
+            &:active::before,
+            &:active i::before {
+                border-color: rgba($text-color-light, 0.25);
+                background-color: rgba($text-color-light, 0.12);
+            }
         }
 
         &::before {
@@ -56,11 +73,11 @@
         &,
         h1,
         h2 {
-            color: $text-color-alt;
+            color: $text-color-light;
         }
 
         a:not(.button) {
-            color: $secondary-color-alt;
+            color: $primary-color-alt;
         }
 
         &::before {

@@ -49,42 +49,85 @@ h4 {
 @include font-subheading;
 }
 
-p {
+p,
+li,
+pre {
     line-height: 1.5;
 }
 
 a {
     text-decoration: none;
 
-    color: $secondary-color;
+    color: $primary-color;
     outline: none;
 
     font-weight: 700;
 }
 
+li {
+    margin: 0.6rem 0;
+}
+
+code {
+    padding: 0.02rem 0.5rem;
+
+    white-space: nowrap;
+
+    color: $code-text-color;
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    background-color: $code-bg-color;
+
+    font-size: 1rem;
+
+@include font-code;
+}
+
+.highlight {
+    background-color: transparent;
+}
+
+.highlight pre {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+}
+
 .main-content a:not(.button) {
     position: relative;
 
-    &::before {
+    white-space: nowrap;
+
+    &::before,
+    i::before {
         position: absolute;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
 
-        margin: -4px;
+        margin: -0.3rem -0.6rem;
 
         content: "";
-        transition: background-color 0.15s $m-ease, border-color 0.15s $m-ease, transform 0.15s $m-ease-in;
-        transform: scale(1.5);
+        transition: background-color 0.2s $m-ease, border-color 0.2s $m-ease, transform 0.2s $m-ease-in;
+        transform: scale(1.25);
         pointer-events: none;
 
         border: 1px solid transparent;
-        border-radius: 4px;
+        border-radius: $border-radius;
         background-color: transparent;
     }
 
-    &:focus::before {
+    &:hover::before,
+    &:hover i::before {
+        transition: background-color 0.15s $m-ease, border-color 0.15s $m-ease, transform 0s linear;
+        transform: scale(1);
+
+        border-color: $table-border-color;
+        background-color: transparent;
+    }
+
+    &:focus::before,
+    &:focus i::before {
         transition: background-color 0.15s $m-ease, border-color 0.15s $m-ease, transform 0.15s $m-ease-out;
         transform: scale(1);
 
@@ -92,9 +135,11 @@ a {
         background-color: rgba($background-color-alt, 0.12);
     }
 
-    &:active::before {
+    &:active::before,
+    &:active i::before {
         transition: background-color 0.1s $m-ease, border-color 0.1s $m-ease, transform 0s linear;
 
-        background-color: transparent;
+        border-color: $table-border-color;
+        background-color: rgba($background-color-alt, 0.12);
     }
 }

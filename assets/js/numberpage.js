@@ -66,7 +66,7 @@ const chartOptions = {
     }
 };
 
-$(function () {
+$(document).on("transition", function () {
     setupStats();
 });
 

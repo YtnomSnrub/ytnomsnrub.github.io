@@ -39,6 +39,12 @@
 
     border-top: 1px solid $table-border-color;
     border-bottom: 1px solid $table-border-color;
+    background: linear-gradient(90deg,
+    $background-color 0%,
+    $foreground-color 10%,
+    $foreground-color 90%,
+    $background-color 100%
+    );
 
     &.stat-table-small {
         display: none;
@@ -184,7 +190,7 @@
 
     &.server-count {
         color: $text-color-alt;
-        background-color: $primary-color;
+        background-color: $background-color-alt;
     }
 
     &.heart-count {

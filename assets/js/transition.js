@@ -25,12 +25,8 @@ $(function () {
                 // Inject the new content
                 $container.html($newContent);
 
-                // Add the anchors
-                addMarkdownAnchors();
-                // Reload the stats
-                setupStats();
-                // Load images
-                loadImages();
+                // Trigger transition events
+                $(document).trigger("transition");
 
                 // Scroll to top
                 var $mainContent = $(".main-content");
@@ -63,46 +59,12 @@ $(function () {
 
     // Update tab bar
     updateTabs();
-    // Load images
-    loadImages();
-
-    // Add the anchors
-    addMarkdownAnchors();
-
     // Update tabs on scroll
     window.addEventListener('scroll', updateTabs);
+
+    // Trigger transition events
+    $(document).trigger("transition");
 });
-
-function addMarkdownAnchors() {
-    return $("h2, h3, h4, h5, h6").each(function (i, el) {
-        var $el, icon, id;
-        $el = $(el);
-        id = $el.attr('id');
-        icon = '<i class="material-icons">link</i>';
-        if (id) {
-            return $el.append($("<a/>").addClass("header-link").attr("href", "#" + id).html(icon));
-        }
-    });
-}
-
-function loadImages() {
-    $('img').on('load', function () {
-        var $element = $(this);
-        window.setTimeout(function () {
-            if (!$element.hasClass("visible")) {
-                //$element.hide().slideDown(250);
-                window.setTimeout(function () {
-                    $element.addClass("visible");
-                }, 200);
-            }
-        }, 200);
-    }).each(function () {
-        //$(this).hide();
-        if (this.complete) {
-            $(this).trigger("load");
-        }
-    });
-}
 
 function updateTabs() {
     var $mainContent = $(".main-content");

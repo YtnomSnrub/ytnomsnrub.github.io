@@ -8,10 +8,9 @@ title: "HaikuBot"
 
 {% include content/haikubot-guides.html %}
 
+If you still have questions, or a problem that isn't covered, the best place to ask is in the HaikuBot Discord Server. Please remember to try and provide as many details as you can for the best chance at resolving your issue.
+
 <div class="button-row">
-    <a class="button" href="/haikubot/stats">
-        View all Stats
-    </a>
     <a class="button button-haiku" href="https://discord.gg/Cm5v93M">
         Join Official Server
     </a>
