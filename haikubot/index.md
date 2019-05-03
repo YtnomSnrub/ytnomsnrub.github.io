@@ -12,6 +12,6 @@ If you still have questions, or a problem that isn't covered, the best place to 
 
 <div class="button-row">
     <a class="button button-haiku" href="https://discord.gg/Cm5v93M">
-        Join Official Server
+        <span class="button-inner">Join Official Server</span>
     </a>
 </div>
