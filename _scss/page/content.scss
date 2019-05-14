@@ -112,106 +112,6 @@
             min-width: 80%;
         }
     }
-
-    a.button {
-        position: relative;
-        top: -$button-extend;
-
-        display: inline-block;
-
-        margin: 0.4rem;
-        padding: 0.8rem 1.6rem;
-
-        transition: top 0.07s $m-ease-in-out, box-shadow 0.07s $m-ease-in-out;
-        text-align: center;
-        text-decoration: none;
-
-        color: $text-color-alt;
-        border-radius: $border-radius;
-        background-color: $background-color-alt;
-        box-shadow: 0 $button-extend darken($background-color-alt, 10%);
-
-        font-weight: 400;
-
-        &.button-discord {
-            background-color: $discord-color;
-            box-shadow: 0 $button-extend darken($discord-color, 10%);
-        }
-
-        &.button-patreon {
-            background-color: $patreon-color;
-            box-shadow: 0 $button-extend darken($patreon-color, 10%);
-        }
-
-        &.button-haiku {
-            color: $haiku-color-text;
-            background-color: $haiku-color;
-            box-shadow: 0 $button-extend darken($haiku-color, 20%);
-        }
-
-        &.button-modis {
-            background-color: $modis-color;
-            box-shadow: 0 $button-extend darken($modis-color, 10%);
-        }
-
-        &.button-kingdom {
-            background-color: $kingdom-color;
-            box-shadow: 0 $button-extend darken($kingdom-color, 10%);
-        }
-
-        &:hover,
-        &:focus {
-            top: -$button-extend-hover;
-
-            box-shadow: 0 $button-extend-hover darken($background-color-alt, 10%);
-
-            &.button-discord {
-                box-shadow: 0 $button-extend-hover darken($discord-color, 10%);
-            }
-
-            &.button-patreon {
-                box-shadow: 0 $button-extend-hover darken($patreon-color, 10%);
-            }
-
-            &.button-haiku {
-                box-shadow: 0 $button-extend-hover darken($haiku-color, 20%);
-            }
-
-            &.button-modis {
-                box-shadow: 0 $button-extend-hover darken($modis-color, 10%);
-            }
-
-            &.button-kingdom {
-                box-shadow: 0 $button-extend-hover darken($kingdom-color, 10%);
-            }
-        }
-
-        &:active {
-            top: -$button-extend-pressed;
-
-            box-shadow: 0 $button-extend-pressed darken($background-color-alt, 10%);
-
-            &.button-discord {
-                box-shadow: 0 $button-extend-pressed darken($discord-color, 10%);
-            }
-
-            &.button-patreon {
-                box-shadow: 0 $button-extend-pressed darken($patreon-color, 10%);
-            }
-
-            &.button-haiku {
-                box-shadow: 0 $button-extend-pressed darken($haiku-color, 20%);
-            }
-
-            &.button-modis {
-                box-shadow: 0 $button-extend-pressed darken($modis-color, 10%);
-            }
-
-            &.button-kingdom {
-                box-shadow: 0 $button-extend-pressed darken($kingdom-color, 10%);
-            }
-        }
-    }
 }
 
 .site-footer {
@@ -220,11 +120,4 @@
     color: $text-color-detail;
 
     font-size: 0.9rem;
-}
-
-.discord-bot-widget {
-    width: 100%;
-    height: 12rem;
-
-    filter: drop-shadow(0 $button-extend 2px rgba(0, 0, 0, 0.4));
 }

@@ -8,7 +8,7 @@ Kingdom is a smart random card picker for the Dominion card game. Using its deep
 
 <div class="button-row">
     <a class="button button-kingdom" href="https://kingdomcardpicker.github.io">
-        Go to Kingdom
+        <span class="button-inner">Go to Kingdom</span>
     </a>
 </div>
 
