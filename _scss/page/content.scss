@@ -10,12 +10,16 @@
     font-size: 1.1rem;
 
     @media screen and (max-width: $large-breakpoint) {
-        max-width: 720px;
+        max-width: $medium-breakpoint;
     }
 
     @media screen and (max-width: $medium-breakpoint) {
-        max-width: 520px;
+        max-width: $small-breakpoint;
         padding-top: $tabs-height-small;
+    }
+
+    @media screen and (max-width: $small-breakpoint) {
+        overflow-x: hidden;
     }
 
     .container {
