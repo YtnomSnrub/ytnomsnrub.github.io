@@ -1,0 +1,69 @@
+
+
+::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+
+    background: darken($background-color, 5%);
+
+    appearance: none;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-track-piece {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 3px solid darken($background-color, 5%);
+    background: linear-gradient(180deg, $secondary-color-alt 0%, $secondary-color 100%);
+    background-clip: padding-box;
+
+    &:hover {
+        background: linear-gradient(180deg, mix($secondary-color-alt, $background-color, 85%) 0%, mix($secondary-color, $background-color, 85%) 100%);
+        background-clip: padding-box;
+    }
+
+    &:active {
+        background: linear-gradient(180deg, mix($secondary-color-alt, $background-color, 70%) 0%, mix($secondary-color, $background-color, 70%) 100%);
+        background-clip: padding-box;
+    }
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+::-webkit-scrollbar-button {
+    width: 0;
+    height: 20px;
+
+    border: 3px solid transparent;
+    background: transparent;
+}
+
+::-webkit-scrollbar-button:hover {
+    border: 4px solid transparent;
+}
+
+::-webkit-scrollbar-button:active {
+    border: 5px solid transparent;
+}
+
+::-webkit-scrollbar-button:single-button {
+    display: none;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+    background: url("/assets/img/arrow_up.png") no-repeat center center;
+    background-size: cover;
+}
+
+
+::-webkit-scrollbar-button:single-button:vertical:increment {
+    background: url("/assets/img/arrow_down.png") no-repeat center center;
+    background-size: cover;
+}

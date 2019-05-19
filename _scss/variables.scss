@@ -8,7 +8,7 @@ $m-ease-in-out: cubic-bezier(0.4, 0.0, 0.6, 1);
 $primary-color: #f84655;
 $primary-color-alt: #ff7480;
 $secondary-color: #6478c9;
-$secondary-color-alt: #7287dd;
+$secondary-color-alt: #8599e9;
 $background-color: #f7f7f7;
 $background-color-alt: #2e2f34;
 $foreground-color: #fbfbfb;
@@ -96,6 +96,7 @@ $button-inset: 3px;
 $button-extend: 2px;
 $button-extend-hover: 6px;
 $button-extend-active: 3px;
+
 @mixin button($color, $text-color, $dark-extend) {
     color: $text-color;
     background-color: $color;

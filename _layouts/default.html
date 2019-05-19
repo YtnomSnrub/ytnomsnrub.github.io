@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default:" en-US" }}">
 
-    {% assign default_paths = site.pages | map: "path" %} {% assign page_paths = site.header_pages | default: default_paths %}
+    {% assign default_paths = site.pages | map: "path" %}
+    {% assign page_paths = site.header_pages | default: default_paths %}
 
     <head>
         <meta charset="UTF-8">
@@ -18,7 +19,8 @@
 
         <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script defer type="text/javascript" src="{{site.baseurl}}/assets/js/moment.min.js"></script>
-        <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+        <script defer type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
 
         <script defer src="{{site.baseurl}}/assets/js/jquery.smoothState.min.js"></script>
 
@@ -38,7 +40,8 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700" rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,700" rel='stylesheet' type='text/css'>
 
-        <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+        <link rel="stylesheet"
+            href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
         <!-- Google Analytics -->
         {% if site.google_analytics %}
@@ -64,7 +67,7 @@
                 var name = cname + "=";
                 var decodedCookie = decodeURIComponent(document.cookie);
                 var ca = decodedCookie.split(';');
-                for(var i = 0; i <ca.length; i++) {
+                for (var i = 0; i < ca.length; i++) {
                     var c = ca[i];
                     while (c.charAt(0) == ' ') {
                         c = c.substring(1);
@@ -79,7 +82,7 @@
         {% endif %}
     </head>
 
-    <body>
+    <body class="{{ page.theme }}">
         <div id="main" class="main">
             <!-- Header -->
             {% include header.html %}
