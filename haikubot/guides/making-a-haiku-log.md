@@ -16,9 +16,9 @@ For example: to set the Haiku Log channel to a channel named `my-haiku-log`, the
 
 To clear an existing Haiku Log, just type `!haiku log` (without any channel), and HaikuBot will stop logging haikus for your server.
 
-## Only Sending Messages to the Haiku Log
+## Sending Haikus to just the Haiku Log
 
-If you want messages to show up in the Haiku Log, but not in other channels, you can change HaikuBot's permissions in those channels/categories so that it doesn't have the 'Send Messages' permission, but still has the 'Read Messages' permission.
+If you want haikus to show up in the Haiku Log, but not in other channels, you can change HaikuBot's permissions in those channels/categories so that it doesn't have the 'Send Messages' permission, but still has the 'Read Messages' permission. HaikuBot will search for haikus in all channels where it has the 'Read Messages' permission, but will not send any haikus in channels where it does not have the 'Send Messages' permission.
 
 > For information on how to change channel and category permissions, see [this guide](./restricting-haikubot). Just remember to leave the 'Read Messages' checkbox on if you still want messages in the Haiku Log.
 
