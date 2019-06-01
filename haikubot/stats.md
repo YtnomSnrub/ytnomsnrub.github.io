@@ -22,6 +22,13 @@
     </div>
 </div>
 
+<div class="button-row">
+    <div class="stat-count unique-user-count">
+        <p class="stat-counter unique-user-counter loading" data-api="uniqueusercount" data-loop-time="60000">.</p>
+        <p>Unique users</p>
+    </div>
+</div>
+
 <table class="stat-table stat-table-single">
     <tbody>
         <tr>

@@ -206,6 +206,11 @@
         color: $message-color-text;
         background-color: $message-color;
     }
+
+    &.unique-user-count {
+        color: $user-color-text;
+        background-color: $user-color;
+    }
 }
 
 .stat-graph {
