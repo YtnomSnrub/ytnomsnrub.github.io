@@ -12,20 +12,13 @@
 </div>
 
 <div class="button-row">
-    <div class="stat-count heart-count">
-        <p class="stat-counter heart-counter loading" data-api="heartcount" data-loop-time="10000">.</p>
-        <p>Hearts given</p>
-    </div>
-    <div class="stat-count broken-heart-count">
-        <p class="stat-counter broken-heart-counter loading" data-api="brokenheartcount" data-loop-time="10000">.</p>
-        <p>Broken hearts</p>
-    </div>
-</div>
-
-<div class="button-row">
     <div class="stat-count unique-user-count">
         <p class="stat-counter unique-user-counter loading" data-api="uniqueusercount" data-loop-time="60000">.</p>
         <p>Unique users</p>
+    </div>
+    <div class="stat-count heart-count">
+        <p class="stat-counter heart-counter loading" data-api="heartcount" data-loop-time="10000">.</p>
+        <p>Hearts given</p>
     </div>
 </div>
 
