@@ -13,7 +13,7 @@
 
 <div class="button-row">
     <div class="stat-count unique-user-count">
-        <p class="stat-counter unique-user-counter loading" data-api="uniqueusercount" data-loop-time="60000">.</p>
+        <p class="stat-counter unique-user-counter loading" data-api="uniqueusercount" data-loop-time="20000">.</p>
         <p>Unique users</p>
     </div>
     <div class="stat-count heart-count">
