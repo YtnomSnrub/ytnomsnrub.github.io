@@ -1,26 +1,6 @@
 # Stats
 
-<div class="button-row">
-    <div class="stat-count haiku-count">
-        <p class="stat-counter haiku-counter loading" data-api="haikucount" data-loop-time="10000">.</p>
-        <p>Haikus found</p>
-    </div>
-    <div class="stat-count server-count">
-        <p class="stat-counter server-counter loading" data-api="servercount" data-loop-time="300000">.</p>
-        <p>Servers</p>
-    </div>
-</div>
-
-<div class="button-row">
-    <div class="stat-count unique-user-count">
-        <p class="stat-counter unique-user-counter loading" data-api="uniqueusercount" data-loop-time="20000">.</p>
-        <p>Unique users</p>
-    </div>
-    <div class="stat-count heart-count">
-        <p class="stat-counter heart-counter loading" data-api="heartcount" data-loop-time="10000">.</p>
-        <p>Hearts given</p>
-    </div>
-</div>
+{% include stats/haikubot-stats.html extra_stats=true %}
 
 <table class="stat-table stat-table-single">
     <tbody>
