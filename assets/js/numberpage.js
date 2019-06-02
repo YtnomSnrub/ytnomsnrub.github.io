@@ -58,6 +58,11 @@ const chartOptions = {
                 return numberWithCommas(value) + " " + data.datasets[0].label.toLowerCase();
             }
         }
+    },
+    responsive: true,
+    maintainAspectRatio: true,
+    legend: {
+        onClick: (e) => e.stopPropagation()
     }
 };
 
