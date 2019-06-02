@@ -27,6 +27,16 @@ body {
 @include font-body;
 }
 
+::selection {
+    color: $foreground-color;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+::-moz-selection {
+    color: $foreground-color;
+    background: rgba(0, 0, 0, 0.5);
+}
+
 input,
 textarea,
 button,
