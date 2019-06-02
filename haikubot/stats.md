@@ -6,15 +6,6 @@ wide: true
 
 {% include stats/haikubot-stats.html extra_stats=true %}
 
-<table class="stat-table stat-table-single">
-    <tbody>
-        <tr>
-            <td>Messages parsed</td>
-            <td class="stat-counter loading" data-api="messagecount" data-loop-time="4000">.</td>
-        </tr>
-    </tbody>
-</table>
-
 <table class="stat-table stat-table-large">
     <tbody>
         <tr>

@@ -156,9 +156,25 @@ function setStatFieldValue(statField, statValue) {
     if (statField.html() != statValue) {
         statField.addClass("hidden");
         setTimeout(function () {
+            let prevWidth = statField.width();
             statField.removeClass("loading");
             statField.html(statValue);
-            statField.removeClass("hidden");
+            // Animate width
+            if (statField.hasClass("stat-large")) {
+                let newWidth = statField.width();
+                if (prevWidth != newWidth) {
+                    statField.width(prevWidth);
+                    statField.animate({
+                        width: newWidth
+                    }, 250, function () {
+                        statField.removeClass("hidden");
+                    });
+                } else {
+                    statField.removeClass("hidden");
+                }
+            } else {
+                statField.removeClass("hidden");
+            }
         }, statDelay);
     }
 }
