@@ -1,3 +1,7 @@
+---
+wide: true
+---
+
 # Stats
 
 {% include stats/haikubot-stats.html extra_stats=true %}
@@ -84,7 +88,7 @@
 
 <canvas class="stat-graph stat-graph-day" data-color="#ffcc4d" data-column="haikuCount" data-label="Haikus" width="1200" height="600"></canvas>
 <canvas class="stat-graph stat-graph-day" data-color="#2e2f34" data-column="serverCount" data-label="Servers" width="1200" height="600"></canvas>
-<!--<canvas class="stat-graph stat-graph-day" data-color="#ff774d" data-column="uniqueUserCount" data-label="Unique Users" width="1200" height="600"></canvas>-->
+<canvas class="stat-graph stat-graph-day" data-color="#ff774d" data-column="uniqueUserCount" data-label="Unique Users" width="1200" height="600"></canvas>
 
 ## Hourly Stats
 

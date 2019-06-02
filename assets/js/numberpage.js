@@ -226,10 +226,13 @@ function setupDayCharts() {
                 let statLabels = [];
                 let statCounts = [];
                 for (let i = 0; i < data.length; ++i) {
-                    // Add the label
-                    statLabels[i] = moment(new Date(data[i].dayStartTime));
-                    // Add the data
-                    statCounts[i] = data[i][$statGraph.attr("data-column")];
+                    let count = data[i][$statGraph.attr("data-column")];
+                    if (count >= 0) {
+                        // Add the label
+                        statLabels[i] = moment(new Date(data[i].dayStartTime));
+                        // Add the data
+                        statCounts[i] = count;
+                    }
                 }
 
                 // Update the chart
@@ -288,7 +291,6 @@ function setupHourCharts() {
 
                 // Set x-axis format
                 statChart.options.scales.xAxes[0].time.unit = 'hour';
-                //statChart.options.scales.xAxes[0].time.stepSize = 12;
                 // Set y-axis to start at 0 for haikus
                 statChart.options.scales.yAxes[0].ticks.beginAtZero = true;
                 statChart.options.scales.yAxes[0].ticks.beginAtZero = true;
@@ -298,10 +300,13 @@ function setupHourCharts() {
                 let statLabels = [];
                 let statCounts = [];
                 for (let i = 0; i < data.length; ++i) {
-                    // Add the label
-                    statLabels[i] = moment(new Date(data[i].hourStartTime));
-                    // Add the data
-                    statCounts[i] = data[i][$statGraph.attr("data-column")];
+                    let count = data[i][$statGraph.attr("data-column")];
+                    if (count >= 0) {
+                        // Add the label
+                        statLabels.push(moment(new Date(data[i].hourStartTime)));
+                        // Add the data
+                        statCounts.push(count);
+                    }
                 }
 
                 // Update the chart

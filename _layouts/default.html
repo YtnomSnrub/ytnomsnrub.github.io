@@ -82,11 +82,21 @@
         {% endif %}
     </head>
 
-    <body class="{{ page.theme }}">
+    <body>
         <div id="main" class="main">
             <!-- Header -->
             {% include header.html %}
 
+            {% if page.wide %}
+            <section class="main-content content-wide">
+                <div class="container">
+                    <!-- Content -->
+                    {{ content }}
+                    <!-- Footer -->
+                    {% include footer.html %}
+                </div>
+            </section>
+            {% else %}
             <section class="main-content">
                 <div class="container">
                     <!-- Content -->
@@ -95,6 +105,7 @@
                     {% include footer.html %}
                 </div>
             </section>
+            {% endif %}
         </div>
     </body>
 
