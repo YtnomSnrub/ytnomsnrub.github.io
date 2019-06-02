@@ -82,10 +82,11 @@
 <p>All stats are measured and displayed in UTC.</p>
 <p class="time time-utc">...</p>
 
-<canvas id="HaikuChart" class="stat-graph" width="1200" height="600"></canvas>
-<canvas id="ServerChart" class="stat-graph" width="1200" height="600"></canvas>
+<canvas class="stat-graph stat-graph-day" data-color="#ffcc4d" data-column="haikuCount" data-label="Haikus" width="1200" height="600"></canvas>
+<canvas class="stat-graph stat-graph-day" data-color="#2e2f34" data-column="serverCount" data-label="Servers" width="1200" height="600"></canvas>
+<!--<canvas class="stat-graph stat-graph-day" data-color="#ff774d" data-column="uniqueUserCount" data-label="Unique Users" width="1200" height="600"></canvas>-->
 
 ## Hourly Stats
 
-<canvas id="HaikuHourChart" class="stat-graph" width="1200" height="600"></canvas>
-<canvas id="MessageHourChart" class="stat-graph" width="1200" height="600"></canvas>
+<canvas class="stat-graph stat-graph-hour" data-color="#ffcc4d" data-column="haikuCount" data-label="Haikus" width="1200" height="600"></canvas>
+<canvas class="stat-graph stat-graph-hour" data-color="#4da0ff" data-column="messagesCount" data-label="Messages" width="1200" height="600"></canvas>
