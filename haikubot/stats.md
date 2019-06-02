@@ -38,6 +38,29 @@ wide: true
     </tbody>
 </table>
 
+<table class="stat-table stat-table-large">
+    <tbody>
+        <tr>
+            <td>Messages this week</td>
+            <td class="stat-counter loading" data-api="messagecountweek" data-loop-time="4000">.</td>
+            <td>Messages last week</td>
+            <td class="stat-counter loading" data-api="messagecountlastweek" data-loop-time="300000">.</td>
+        </tr>
+        <tr>
+            <td>Messages per day</td>
+            <td class="stat-counter loading stat-counter-messages-day">.</td>
+            <td>Messages per hour</td>
+            <td class="stat-counter loading stat-counter-messages-hour">.</td>
+        </tr>
+        <tr>
+            <td>Messages per minute</td>
+            <td class="stat-counter loading stat-counter-messages-minute">.</td>
+            <td>Messages per second</td>
+            <td class="stat-counter loading stat-counter-messages-second">.</td>
+        </tr>
+    </tbody>
+</table>
+
 <table class="stat-table stat-table-small">
     <tbody>
         <tr>

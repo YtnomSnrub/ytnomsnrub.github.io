@@ -140,10 +140,22 @@ function updateStatField(statField) {
                 let haikusHour = haikusDay / 24;
                 let haikusMinute = haikusHour / 60;
                 let haikusSecond = haikusMinute / 60;
-                setStatFieldValue($(".stat-counter-haikus-day"), haikusDay.toFixed(0));
-                setStatFieldValue($(".stat-counter-haikus-hour"), haikusHour.toFixed(0));
-                setStatFieldValue($(".stat-counter-haikus-minute"), haikusMinute.toFixed(2));
-                setStatFieldValue($(".stat-counter-haikus-second"), haikusSecond.toFixed(2));
+                setStatFieldValue($(".stat-counter-haikus-day"), numberWithCommas(haikusDay.toFixed(0)));
+                setStatFieldValue($(".stat-counter-haikus-hour"), numberWithCommas(haikusHour.toFixed(0)));
+                setStatFieldValue($(".stat-counter-haikus-minute"), numberWithCommas(haikusMinute.toFixed(2)));
+                setStatFieldValue($(".stat-counter-haikus-second"), numberWithCommas(haikusSecond.toFixed(2)));
+            }
+
+            // Update weekly messages
+            if (apiString === "messagecountlastweek") {
+                let messagesDay = data / 7;
+                let messagesHour = messagesDay / 24;
+                let messagesMinute = messagesHour / 60;
+                let messagesSecond = messagesMinute / 60;
+                setStatFieldValue($(".stat-counter-messages-day"), numberWithCommas(messagesDay.toFixed(0)));
+                setStatFieldValue($(".stat-counter-messages-hour"), numberWithCommas(messagesHour.toFixed(0)));
+                setStatFieldValue($(".stat-counter-messages-minute"), numberWithCommas(messagesMinute.toFixed(0)));
+                setStatFieldValue($(".stat-counter-messages-second"), numberWithCommas(messagesSecond.toFixed(0)));
             }
         }
     ).fail(function () {
