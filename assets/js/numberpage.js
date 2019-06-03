@@ -258,7 +258,7 @@ function setupCharts() {
         // Update live charts
         chartIntervals.push(setInterval(function () {
             updateChart();
-        }, 10000));
+        }, chart.htmlData.updateFrequency));
     });
 }
 
@@ -354,7 +354,8 @@ function createChart(statGraph) {
     statChart.htmlData = {
         column: $statGraph.attr("data-column"),
         columnTime: $statGraph.attr("data-column-time"),
-        apiEndpoint: $statGraph.attr("data-endpoint")
+        apiEndpoint: $statGraph.attr("data-endpoint"),
+        updateFrequency: $statGraph.attr("data-loop-time")
     };
 
     // Set default data

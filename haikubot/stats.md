@@ -106,8 +106,9 @@ wide: true
 
 ## Live Stats
 
-<canvas class="stat-graph stat-graph-live" data-color="#ffcc4d" data-endpoint="haikuCount" data-label="Haikus" data-tensionless="true" width="1200" height="600"></canvas>
-<canvas class="stat-graph stat-graph-live" data-color="#4da0ff" data-endpoint="messageCount" data-label="Messages" width="1200" height="600"></canvas>
+<canvas class="stat-graph stat-graph-live" data-color="#ffcc4d" data-endpoint="haikuCount" data-label="Haikus" data-loop-time="10000" data-tensionless="true" width="1200" height="600"></canvas>
+<canvas class="stat-graph stat-graph-live" data-color="#4da0ff" data-endpoint="messageCount" data-label="Messages" data-loop-time="10000" width="1200" height="600"></canvas>
+<canvas class="stat-graph stat-graph-live" data-color="#ff774d" data-endpoint="uniqueUserCount" data-label="Unique Users" data-loop-time="30000" width="1200" height="600"></canvas>
 
 ## Daily Stats
 
