@@ -66,6 +66,10 @@ const chartOptions = {
     }
 };
 
+$(document).on("ready", function () {
+    setupStats();
+});
+
 $(document).on("transition", function () {
     setupStats();
 });
@@ -262,9 +266,9 @@ function setupDayCharts() {
                     let count = data[i][$statGraph.attr("data-column")];
                     if (count >= 0) {
                         // Add the label
-                        statLabels[i] = moment(new Date(data[i].dayStartTime));
+                        statLabels.push(moment(new Date(data[i].dayStartTime)));
                         // Add the data
-                        statCounts[i] = count;
+                        statCounts.push(count);
                     }
                 }
 
