@@ -220,65 +220,73 @@ function setupCharts() {
     Chart.defaults.global.defaultFontSize = 14;
 
     // Setup charts
-    setupDayCharts();
-    setupHourCharts();
+    let liveCharts = setupLiveCharts();
+    let dayCharts = setupDayCharts();
+    let hourCharts = setupHourCharts();
     // Update charts on loop
     chartIntervals.push(setInterval(function () {
-        updateDayChartsData();
-        updateHourChartsData();
+        updateChartsData(dayCharts, "daystats");
+        updateChartsData(hourCharts, "hourstats");
     }, 300000));
+
+    // Update live charts
+    liveCharts.forEach(chart => {
+        const LIVE_MAX_POINTS = 400;
+        let chartLabels = [];
+        let chartCounts = [];
+
+        function updateChart() {
+            // Get the data from the api
+            getString = "https://haikubotapi.apphb.com/api/" + chart.htmlData.apiEndpoint;
+            $.ajax({
+                url: getString,
+                success: function (data) {
+                    chartLabels.push(moment(new Date()));
+                    chartCounts.push(data);
+                    // Cull earlier entries
+                    chartLabels = chartLabels.slice(-LIVE_MAX_POINTS);
+                    chartCounts = chartCounts.slice(-LIVE_MAX_POINTS);
+                    // Update the chart
+                    chart.data.datasets[0].data = chartCounts;
+                    chart.data.labels = chartLabels;
+                    chart.update();
+                }
+            });
+        }
+
+        updateChart();
+        // Update live charts
+        chartIntervals.push(setInterval(function () {
+            updateChart();
+        }, 10000));
+    });
+}
+
+function setupLiveCharts() {
+    let liveCharts = [];
+    $(".stat-graph-live").each(function () {
+        let statGraph = this;
+        let statChart = createChart(statGraph);
+        // Add to charts
+        liveCharts.push(statChart);
+    });
+
+    return liveCharts;
 }
 
 function setupDayCharts() {
-    // Get the data from the api
-    getString = "https://haikubotapi.apphb.com/api/daystats";
-    $.ajax({
-        url: getString,
-        success: function (data) {
-            $(".stat-graph-day").each(function () {
-                let statGraph = this;
-                let $statGraph = $(this);
-                let statGraphCanvas = statGraph.getContext('2d');
-                let statChart = new Chart(statGraphCanvas, {
-                    type: 'line',
-                    data: {
-                        datasets: [{
-                            label: $statGraph.attr("data-label"),
-                            backgroundColor: $statGraph.attr("data-color") + "77",
-                            borderColor: $statGraph.attr("data-color"),
-                            pointRadius: 0,
-                            pointHoverBackgroundColor: $statGraph.attr("data-color"),
-                            pointHoverBorderColor: $statGraph.attr("data-color"),
-                            pointHoverRadius: 0,
-                            borderWidth: 3,
-                            lineTension: LINE_TENSION
-                        }]
-                    },
-                    options: chartOptions
-                });
-
-                // Set scale options
-                statChart.options.scales.xAxes[0].time.unit = 'day';
-
-                let statLabels = [];
-                let statCounts = [];
-                for (let i = 0; i < data.length; ++i) {
-                    let count = data[i][$statGraph.attr("data-column")];
-                    if (count >= 0) {
-                        // Add the label
-                        statLabels.push(moment(new Date(data[i].dayStartTime)));
-                        // Add the data
-                        statCounts.push(count);
-                    }
-                }
-
-                // Update the chart
-                statChart.data.datasets[0].data = statCounts;
-                statChart.data.labels = statLabels;
-                statChart.update();
-            });
-        }
+    let dayCharts = [];
+    $(".stat-graph-day").each(function () {
+        let statGraph = this;
+        let statChart = createChart(statGraph);
+        // Set scale options
+        statChart.options.scales.xAxes[0].time.unit = 'day';
+        // Add to charts
+        dayCharts.push(statChart);
     });
+
+    updateChartsData(dayCharts, "daystats");
+    return dayCharts;
 }
 
 function setupHourCharts() {
@@ -299,48 +307,78 @@ function setupHourCharts() {
         }
     };
 
+    let hourCharts = [];
+    $(".stat-graph-hour").each(function () {
+        let statGraph = this;
+        let statChart = createChart(statGraph);
+        // Set x-axis format
+        statChart.options.scales.xAxes[0].time.unit = 'hour';
+        // Set y-axis to start at 0 for haikus
+        statChart.options.scales.yAxes[0].ticks.beginAtZero = true;
+        statChart.options.scales.yAxes[0].ticks.beginAtZero = true;
+        // Set tooltips
+        statChart.options.tooltips.callbacks = hourCallbacks;
+        // Add to charts
+        hourCharts.push(statChart);
+    });
+
+    // Update charts
+    updateChartsData(hourCharts, "hourstats");
+    return hourCharts;
+}
+
+function createChart(statGraph) {
+    let $statGraph = $(statGraph);
+    let statGraphCanvas = statGraph.getContext('2d');
+
+    let tension = $statGraph.attr("data-tensionless") ? 0 : LINE_TENSION;
+    let statChart = new Chart(statGraphCanvas, {
+        type: 'line',
+        data: {
+            datasets: [{
+                label: $statGraph.attr("data-label"),
+                backgroundColor: $statGraph.attr("data-color") + "77",
+                borderColor: $statGraph.attr("data-color"),
+                pointRadius: 0,
+                pointHoverBackgroundColor: $statGraph.attr("data-color"),
+                pointHoverBorderColor: $statGraph.attr("data-color"),
+                pointHoverRadius: 0,
+                borderWidth: 3,
+                lineTension: tension
+            }]
+        },
+        options: chartOptions
+    });
+
+    // Set internal data
+    statChart.htmlData = {
+        column: $statGraph.attr("data-column"),
+        columnTime: $statGraph.attr("data-column-time"),
+        apiEndpoint: $statGraph.attr("data-endpoint")
+    };
+
+    // Set default data
+    statChart.data.datasets[0].data = [];
+    statChart.data.labels = [];
+    statChart.update();
+    return statChart;
+}
+
+function updateChartsData(charts, apiEndpoint) {
     // Get the data from the api
-    getString = "https://haikubotapi.apphb.com/api/hourstats";
+    getString = "https://haikubotapi.apphb.com/api/" + apiEndpoint;
     $.ajax({
         url: getString,
         success: function (data) {
-            $(".stat-graph-hour").each(function () {
-                let statGraph = this;
-                let $statGraph = $(this);
-                let statGraphCanvas = statGraph.getContext('2d');
-                let statChart = new Chart(statGraphCanvas, {
-                    type: 'line',
-                    data: {
-                        datasets: [{
-                            label: $statGraph.attr("data-label"),
-                            backgroundColor: $statGraph.attr("data-color") + "77",
-                            borderColor: $statGraph.attr("data-color"),
-                            pointRadius: 0,
-                            pointHoverBackgroundColor: $statGraph.attr("data-color"),
-                            pointHoverBorderColor: $statGraph.attr("data-color"),
-                            pointHoverRadius: 0,
-                            borderWidth: 3,
-                            lineTension: LINE_TENSION
-                        }]
-                    },
-                    options: chartOptions
-                });
-
-                // Set x-axis format
-                statChart.options.scales.xAxes[0].time.unit = 'hour';
-                // Set y-axis to start at 0 for haikus
-                statChart.options.scales.yAxes[0].ticks.beginAtZero = true;
-                statChart.options.scales.yAxes[0].ticks.beginAtZero = true;
-                // Set tooltips
-                statChart.options.tooltips.callbacks = hourCallbacks;
-
+            charts.forEach(statChart => {
                 let statLabels = [];
                 let statCounts = [];
                 for (let i = 0; i < data.length; ++i) {
-                    let count = data[i][$statGraph.attr("data-column")];
+                    let count = data[i][statChart.htmlData.column];
+                    let time = data[i][statChart.htmlData.columnTime];
                     if (count >= 0) {
                         // Add the label
-                        statLabels.push(moment(new Date(data[i].hourStartTime)));
+                        statLabels.push(moment(time));
                         // Add the data
                         statCounts.push(count);
                     }
@@ -351,116 +389,6 @@ function setupHourCharts() {
                 statChart.data.labels = statLabels;
                 statChart.update();
             });
-        }
-    });
-}
-
-function setupHourChartsz() {
-    // Setup the haiku chart
-    let haikuChartCanvas = document.getElementById("HaikuHourChart").getContext('2d');
-    haikuHourChart = new Chart(haikuChartCanvas, {
-        type: 'line',
-        data: {
-            datasets: [{
-                label: 'New Haikus',
-                backgroundColor: 'rgba(255, 204, 77, 0.5)',
-                borderColor: '#ffcc4d',
-                pointRadius: 4,
-                pointHoverBackgroundColor: '#ffcc4d',
-                pointHoverBorderColor: '#ffcc4d',
-                pointHoverRadius: 6,
-                borderWidth: 2,
-                lineTension: LINE_TENSION
-            }]
-        },
-        options: chartOptions
-    });
-
-    // Setup the message chart
-    let messageChartCanvas = document.getElementById("MessageHourChart").getContext('2d');
-    messageHourChart = new Chart(messageChartCanvas, {
-        type: 'line',
-        data: {
-            datasets: [{
-                label: 'Messages Parsed',
-                backgroundColor: 'rgba(77, 157, 255, 0.5)',
-                borderColor: '#4da0ff',
-                pointRadius: 4,
-                pointHoverBackgroundColor: '#4da0ff',
-                pointHoverBorderColor: '#4da0ff',
-                pointHoverRadius: 6,
-                borderWidth: 2,
-                lineTension: LINE_TENSION
-            }]
-        },
-        options: chartOptions
-    });
-
-    // Set x-axis format
-    haikuHourChart.options.scales.xAxes[0].time.unit = 'hour';
-    haikuHourChart.options.scales.xAxes[0].time.stepSize = 12;
-    messageHourChart.options.scales.xAxes[0].time.unit = 'hour';
-    messageHourChart.options.scales.xAxes[0].time.stepSize = 12;
-    // Set y-axis to start at 0 for haikus
-    haikuHourChart.options.scales.yAxes[0].ticks.beginAtZero = true;
-    messageHourChart.options.scales.yAxes[0].ticks.beginAtZero = true;
-
-    // Set tooltips
-    let hourCallbacks = {
-        beforeTitle: function (tooltipItem, data) {
-            let value = moment(new Date(tooltipItem[0].xLabel));
-            return value.format("MMMM D");
-        },
-        title: function (tooltipItem, data) {
-            let value = moment(new Date(tooltipItem[0].xLabel));
-            let prevValue = moment(value).add(-3, 'hours');
-            return prevValue.format("h a") + " - " + value.format("h a");
-        },
-        label: function (tooltipItem, data) {
-            let value = data.datasets[0].data[tooltipItem.index];
-            return numberWithCommas(value) + " " + data.datasets[0].label.toLowerCase();
-        }
-    };
-
-    haikuHourChart.options.tooltips.callbacks = hourCallbacks;
-    messageHourChart.options.tooltips.callbacks = hourCallbacks;
-
-    // Update chart data
-    updateHourChartsData();
-}
-
-function updateHourChartsData() {
-    // Get haiku counts for past hours
-    let haikuCounts = haikuHourChart.data.datasets[0].data;
-    let haikuLabels = haikuHourChart.data.labels;
-    // Get message counts for past hours
-    let messageCounts = messageHourChart.data.datasets[0].data;
-    let messageLabels = messageHourChart.data.labels
-
-    // Get the data from the api
-    getString = "https://haikubotapi.apphb.com/api/hourstats";
-    $.ajax({
-        url: getString,
-        success: function (data) {
-            for (let i = 0; i < data.length; ++i) {
-                // Add the label
-                let labelDate = moment(new Date(data[i].hourStartTime));
-                haikuLabels[i] = labelDate;
-                messageLabels[i] = labelDate;
-                // Add the data
-                haikuCounts[i] = data[i].haikuCount;
-                messageCounts[i] = data[i].messagesCount;
-                // Update the charts
-                haikuHourChart.data.datasets[0].data = haikuCounts;
-                haikuHourChart.data.labels = haikuLabels;
-                messageHourChart.data.datasets[0].data = messageCounts;
-                messageHourChart.data.labels = messageLabels;
-                haikuHourChart.update();
-                messageHourChart.update();
-            }
-        },
-        error: function () {
-            console.log("Failed to get daily resource, retrying...");
         }
     });
 }
