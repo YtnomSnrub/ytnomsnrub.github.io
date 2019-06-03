@@ -40,24 +40,10 @@ const chartOptions = {
         footerFontColor: "rgba(255, 255, 255, 1)",
         footerFontSize: 12,
         // Border
-        borderColor: "rgba(46, 47, 52, 0.5)",
-        borderWidth: 2,
+        borderColor: "rgba(46, 47, 52, 1)",
+        borderWidth: 3,
         // Text
-        displayColors: false,
-        callbacks: {
-            title: function (tooltipItem, data) {
-                let value = moment(new Date(tooltipItem[0].xLabel));
-                return value.format("dddd");
-            },
-            afterTitle: function (tooltipItem, data) {
-                let value = moment(new Date(tooltipItem[0].xLabel));
-                return value.format("MMMM D");
-            },
-            label: function (tooltipItem, data) {
-                let value = data.datasets[0].data[tooltipItem.index];
-                return numberWithCommas(value) + " " + data.datasets[0].label.toLowerCase();
-            }
-        }
+        displayColors: false
     },
     responsive: true,
     maintainAspectRatio: true,
@@ -263,10 +249,30 @@ function setupCharts() {
 }
 
 function setupLiveCharts() {
+    // Set tooltips callback
+    let liveCallbacks = {
+        title: function (tooltipItem, data) {
+            let value = moment(new Date(tooltipItem[0].xLabel));
+            return value.format("h:mm:ss a");
+        },
+        afterTitle: function (tooltipItem, data) {
+            let value = moment(new Date(tooltipItem[0].xLabel));
+            return value.format("MMMM D");
+        },
+        label: function (tooltipItem, data) {
+            let value = data.datasets[0].data[tooltipItem.index];
+            return numberWithCommas(value) + " " + data.datasets[0].label.toLowerCase();
+        }
+    };
+
     let liveCharts = [];
     $(".stat-graph-live").each(function () {
         let statGraph = this;
         let statChart = createChart(statGraph);
+        // Set scale options
+        statChart.options.scales.xAxes[0].time.unit = 'second';
+        // Set tooltips
+        statChart.options.tooltips.callbacks = liveCallbacks;
         // Add to charts
         liveCharts.push(statChart);
     });
@@ -275,12 +281,30 @@ function setupLiveCharts() {
 }
 
 function setupDayCharts() {
+    // Set tooltips callback
+    let dayCallbacks = {
+        title: function (tooltipItem, data) {
+            let value = moment(new Date(tooltipItem[0].xLabel));
+            return value.format("dddd");
+        },
+        afterTitle: function (tooltipItem, data) {
+            let value = moment(new Date(tooltipItem[0].xLabel));
+            return value.format("MMMM D");
+        },
+        label: function (tooltipItem, data) {
+            let value = data.datasets[0].data[tooltipItem.index];
+            return numberWithCommas(value) + " " + data.datasets[0].label.toLowerCase();
+        }
+    };
+
     let dayCharts = [];
     $(".stat-graph-day").each(function () {
         let statGraph = this;
         let statChart = createChart(statGraph);
         // Set scale options
         statChart.options.scales.xAxes[0].time.unit = 'day';
+        // Set tooltips
+        statChart.options.tooltips.callbacks = dayCallbacks;
         // Add to charts
         dayCharts.push(statChart);
     });
