@@ -104,11 +104,6 @@ wide: true
     </tbody>
 </table>
 
-## Live Stats
-
-<canvas class="stat-graph stat-graph-live" data-color="#ffcc4d" data-endpoint="haikuCount" data-label="Haikus" data-loop-time="10000" data-tensionless="true" width="1200" height="600"></canvas>
-<canvas class="stat-graph stat-graph-live" data-color="#4da0ff" data-endpoint="messageCount" data-label="Messages" data-loop-time="10000" width="1200" height="600"></canvas>
-
 ## Daily Stats
 
 <canvas class="stat-graph stat-graph-day" data-color="#ffcc4d" data-column="haikuCount" data-column-time="dayStartTime" data-label="Haikus" width="1200" height="600"></canvas>
@@ -122,3 +117,8 @@ wide: true
 
 <canvas class="stat-graph stat-graph-hour" data-color="#ffcc4d" data-column="haikuCount" data-column-time="hourStartTime" data-label="Haikus" width="1200" height="600"></canvas>
 <canvas class="stat-graph stat-graph-hour" data-color="#4da0ff" data-column="messagesCount" data-column-time="hourStartTime" data-label="Messages" width="1200" height="600"></canvas>
+
+## Live Stats
+
+<canvas class="stat-graph stat-graph-live" data-color="#ffcc4d" data-endpoint="haikuCount" data-label="Haikus" data-loop-time="10000" data-tensionless="true" width="1200" height="600"></canvas>
+<canvas class="stat-graph stat-graph-live" data-color="#4da0ff" data-endpoint="messageCount" data-label="Messages" data-loop-time="10000" width="1200" height="600"></canvas>
