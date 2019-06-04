@@ -1,16 +1,25 @@
 $(function () {
     'use strict';
     var $page = $("#main");
-    var target = "";
     var options = {
         debug: true,
         scroll: false,
         cacheLength: 2,
+        onBefore: function ($anchor, $container) {
+            // Animate tabs in and out
+            $(".page-tabs a").each(function () {
+                let $pageTab = $(this);
+                console.log($pageTab.href, $anchor.href);
+                if ($anchor.attr("href") === $pageTab.attr("href")) {
+                    $pageTab.addClass("page-link-current");
+                } else {
+                    $pageTab.removeClass("page-link-current");
+                }
+            })
+        },
         onStart: {
-            duration: 200,
+            duration: 150,
             render: function ($container) {
-                // Animate tabs out
-                $(".page-tabs a").removeClass("page-link-current");
                 // Add your CSS animation reversing class
                 $container.addClass('page-out');
                 // Restart your animation
@@ -50,12 +59,6 @@ $(function () {
     }
 
     var smoothState = $page.smoothState(options).data('smoothState');
-
-    $page.on('click', ".page-tabs a", function () {
-        if ($page.hasClass("page-out")) {
-            $(this).addClass("page-link-current");
-        }
-    });
 
     // Update tab bar
     updateTabs();

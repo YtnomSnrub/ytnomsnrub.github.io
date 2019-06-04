@@ -1,12 +1,12 @@
 @keyframes page-in {
     from {
-        transform: translateY(32px);
+        transform: translateY(24px);
 
         opacity: 0;
     }
 
     to {
-        transform: translateY(0);
+        transform: none;
 
         opacity: 1;
     }
@@ -14,24 +14,24 @@
 
 @keyframes page-out {
     from {
-        transform: translateY(0);
+        transform: none;
 
         opacity: 1;
     }
 
     to {
-        transform: translateY(-32px);
+        transform: translateY(-24px);
 
         opacity: 0;
     }
 }
 
 .main {
-    .main-content {
+    .main-content .content-container {
         animation-name: page-in;
-        animation-duration: 0.15s;
+        animation-duration: 0.125s;
         animation-timing-function: $m-ease-out;
-        animation-fill-mode: both;
+        animation-fill-mode: forwards;
     }
 
     .page-tabs a {
@@ -79,7 +79,7 @@
 }
 
 .main.page-out {
-    .main-content {
+    .main-content .content-container {
         animation-name: page-out;
         animation-timing-function: $m-ease-in;
 
