@@ -7,7 +7,7 @@ $(function () {
         scroll: false,
         cacheLength: 2,
         onStart: {
-            duration: 100,
+            duration: 200,
             render: function ($container) {
                 // Animate tabs out
                 $(".page-tabs a").removeClass("page-link-current");
