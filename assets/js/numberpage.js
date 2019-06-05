@@ -270,7 +270,7 @@ function setupLiveCharts() {
         let statGraph = this;
         let statChart = createChart(statGraph);
         // Set scale options
-        statChart.options.scales.xAxes[0].time.unit = 'second';
+        statChart.options.scales.xAxes[0].time.unit = 'minute';
         // Set tooltips
         statChart.options.tooltips.callbacks = liveCallbacks;
         // Add to charts
@@ -322,7 +322,15 @@ function setupHourCharts() {
         },
         title: function (tooltipItem, data) {
             let value = moment(new Date(tooltipItem[0].xLabel));
-            let prevValue = moment(value).add(-3, 'hours');
+            let prevValue = value;
+            // Get prev value
+            let index = tooltipItem[0].index;
+            if (index > 0) {
+                prevValue = moment(data.labels[index - 1]);
+            } else {
+                prevValue = moment(value).add(-moment(data.labels[index + 1]).add(-moment(value)));
+            }
+
             return prevValue.format("h a") + " - " + value.format("h a");
         },
         label: function (tooltipItem, data) {
@@ -336,7 +344,7 @@ function setupHourCharts() {
         let statGraph = this;
         let statChart = createChart(statGraph);
         // Set x-axis format
-        statChart.options.scales.xAxes[0].time.unit = 'hour';
+        statChart.options.scales.xAxes[0].time.unit = 'day';
         // Set y-axis to start at 0 for haikus
         statChart.options.scales.yAxes[0].ticks.beginAtZero = true;
         statChart.options.scales.yAxes[0].ticks.beginAtZero = true;
