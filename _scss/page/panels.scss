@@ -20,6 +20,14 @@ $panel-width: calc(100vw + 64px);
         transform: translateX(-50%);
     }
 
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
     &.panel-haikubot {
         &,
         h1,
