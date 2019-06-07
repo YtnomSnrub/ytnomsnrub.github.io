@@ -15,3 +15,5 @@ If you still have questions, or a problem that isn't covered, the best place to 
         <span class="button-inner">Join Official Server</span>
     </a>
 </div>
+
+{% include content/haikubot-tumblr.html %}

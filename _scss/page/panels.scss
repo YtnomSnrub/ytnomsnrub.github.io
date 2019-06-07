@@ -6,6 +6,16 @@ $panel-width: calc(100vw + 64px);
     padding-top: 24px;
     padding-bottom: 32px;
 
+    &,
+    h1,
+    h2 {
+        color: $text-color-dark;
+    }
+
+    a:not(.button) {
+        color: $primary-color;
+    }
+
     &::before {
         position: absolute;
         z-index: -1;
@@ -28,23 +38,9 @@ $panel-width: calc(100vw + 64px);
         font-size: 2.2rem;
     }
 
-    &.panel-haikubot {
-        &,
-        h1,
-        h2 {
-            color: $text-color-dark;
-        }
-
-        a:not(.button) {
-            color: $primary-color;
-        }
-
-        &::before {
-            background: linear-gradient(45deg, $haiku-color-background-1 0%, $haiku-color-background-2 100%);
-        }
-    }
-
-    &.panel-patreon {
+    &.panel-patreon,
+    &.panel-tumblr,
+    &.panel-modis {
         &,
         h1,
         h2 {
@@ -71,23 +67,33 @@ $panel-width: calc(100vw + 64px);
                 background-color: rgba($text-color-light, 0.12);
             }
         }
+    }
 
+    &.panel-haikubot {
+        &::before {
+            background: linear-gradient(45deg, $haiku-color-background-1 0%, $haiku-color-background-2 100%);
+        }
+    }
+
+    &.panel-patreon {
         &::before {
             background: linear-gradient(45deg, $patreon-color-background-1 0%, $patreon-color-background-2 100%);
         }
     }
 
+    &.panel-patreon {
+        &::before {
+            background: linear-gradient(45deg, $patreon-color-background-1 0%, $patreon-color-background-2 100%);
+        }
+    }
+
+    &.panel-tumblr {
+        &::before {
+            background: linear-gradient(45deg, $tumblr-color-background-1 0%, $tumblr-color-background-2 100%);
+        }
+    }
+
     &.panel-modis {
-        &,
-        h1,
-        h2 {
-            color: $text-color-light;
-        }
-
-        a:not(.button) {
-            color: $primary-color-alt;
-        }
-
         &::before {
             background: linear-gradient(45deg, $modis-color-background-1 0%, $modis-color-background-2 100%);
         }

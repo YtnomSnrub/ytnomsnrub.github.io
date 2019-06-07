@@ -169,6 +169,10 @@ code {
         @include button($patreon-color, $text-color-alt, false);
     }
 
+    &.button-tumblr {
+        @include button($tumblr-color, $text-color-alt, false);
+    }
+
     &.button-haiku {
         @include button($haiku-color, $haiku-color-text, true);
     }
