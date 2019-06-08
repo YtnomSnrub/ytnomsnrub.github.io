@@ -72,7 +72,7 @@ wide: true
             <td>
                 <div class="stat-table-container">
                     <span>Servers this week</span>
-                    <span class="stat-counter loading" data-api="servercountweek" data-loop-time="300000">.</span>
+                    <span class="stat-counter loading" data-api="servercountweek" data-change="true" data-loop-time="300000">.</span>
                 </div>
             </td>
         </tr>
