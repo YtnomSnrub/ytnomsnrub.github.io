@@ -6,100 +6,135 @@ wide: true
 
 {% include stats/haikubot-stats.html extra_stats=true %}
 
-<table class="stat-table stat-table-single">
+<table class="stat-table">
     <tbody>
         <tr>
-            <td>Messages parsed</td>
-            <td class="stat-counter loading" data-api="messagecount" data-loop-time="4000">.</td>
+            <td>
+                <div class="stat-table-container">
+                    <span>Messages parsed</span>
+                    <span class="stat-counter loading" data-api="messagecount" data-loop-time="4000">.</span>
+                </div>
+            </td>
         </tr>
     </tbody>
 </table>
 
-<table class="stat-table stat-table-large">
+<table class="stat-table">
     <tbody>
         <tr>
-            <td>Haikus this week</td>
-            <td class="stat-counter loading" data-api="haikucountweek" data-loop-time="10000">.</td>
-            <td>Haikus last week</td>
-            <td class="stat-counter loading" data-api="haikucountlastweek" data-loop-time="300000">.</td>
-        </tr>
-        <tr>
-            <td>Haikus per day</td>
-            <td class="stat-counter loading stat-counter-haikus-day">.</td>
-            <td>Haikus per hour</td>
-            <td class="stat-counter loading stat-counter-haikus-hour">.</td>
-        </tr>
-        <tr>
-            <td>Haikus per minute</td>
-            <td class="stat-counter loading stat-counter-haikus-minute">.</td>
-            <td>Servers this week</td>
-            <td class="stat-counter loading" data-api="servercountweek" data-change="true"  data-loop-time="300000">.</td>
+            <td>
+                <div class="stat-table-container">
+                    <span>Haiku to message ratio</span>
+                    <span class="stat-counter loading stat-counter-messages-haiku">.</span>
+                </div>
+            </td>
         </tr>
     </tbody>
 </table>
 
-<table class="stat-table stat-table-large">
+<table class="stat-table">
     <tbody>
         <tr>
-            <td>Messages this week</td>
-            <td class="stat-counter loading" data-api="messagecountweek" data-loop-time="4000">.</td>
-            <td>Messages last week</td>
-            <td class="stat-counter loading" data-api="messagecountlastweek" data-loop-time="300000">.</td>
+            <td>
+                <div class="stat-table-container">
+                    <span>Haikus this week</span>
+                    <span class="stat-counter loading" data-api="haikucountweek" data-loop-time="10000">.</span>
+                </div>
+            </td>
+            <td>
+                <div class="stat-table-container">
+                    <span>Haikus last week</span>
+                    <span class="stat-counter loading" data-api="haikucountlastweek" data-loop-time="300000">.</span>
+                </div>
+            </td>
         </tr>
         <tr>
-            <td>Messages per day</td>
-            <td class="stat-counter loading stat-counter-messages-day">.</td>
-            <td>Messages per hour</td>
-            <td class="stat-counter loading stat-counter-messages-hour">.</td>
+            <td>
+                <div class="stat-table-container">
+                    <span>Haikus per day</span>
+                    <span class="stat-counter loading stat-counter-haikus-day">.</span>
+                </div>
+            </td>
+            <td>
+                <div class="stat-table-container">
+                    <span>Haikus per hour</span>
+                    <span class="stat-counter loading stat-counter-haikus-hour">.</span>
+                </div>
+            </td>
         </tr>
         <tr>
-            <td>Messages per minute</td>
-            <td class="stat-counter loading stat-counter-messages-minute">.</td>
-            <td>Messages per second</td>
-            <td class="stat-counter loading stat-counter-messages-second">.</td>
+            <td>
+                <div class="stat-table-container">
+                    <span>Haikus per minute</span>
+                    <span class="stat-counter loading stat-counter-haikus-minute">.</span>
+                </div>
+            </td>
+            <td>
+                <div class="stat-table-container">
+                    <span>Servers this week</span>
+                    <span class="stat-counter loading" data-api="servercountweek" data-loop-time="300000">.</span>
+                </div>
+            </td>
         </tr>
     </tbody>
 </table>
 
-<table class="stat-table stat-table-small">
+<table class="stat-table">
     <tbody>
         <tr>
-            <td>Haikus this week</td>
-            <td class="stat-counter loading" data-api="haikucountweek" data-loop-time="10000">.</td>
+            <td>
+                <div class="stat-table-container">
+                    <span>Messages this week</span>
+                    <span class="stat-counter loading" data-api="messagecountweek" data-loop-time="4000">.</span>
+                </div>
+            </td>
+            <td>
+                <div class="stat-table-container">
+                    <span>Messages last week</span>
+                    <span class="stat-counter loading" data-api="messagecountlastweek" data-loop-time="300000">.</span>
+                </div>
+            </td>
         </tr>
         <tr>
-            <td>Haikus last week</td>
-            <td class="stat-counter loading" data-api="haikucountlastweek" data-loop-time="300000">.</td>
+            <td>
+                <div class="stat-table-container">
+                    <span>Messages per day</span>
+                    <span class="stat-counter loading stat-counter-messages-day">.</span>
+                </div>
+            </td>
+            <td>
+                <div class="stat-table-container">
+                    <span>Messages per hour</span>
+                    <span class="stat-counter loading stat-counter-messages-hour">.</span>
+                </div>
+            </td>
         </tr>
         <tr>
-            <td>Servers this week</td>
-            <td class="stat-counter loading" data-api="servercountweek" data-change="true" data-loop-time="300000">.</td>
+            <td>
+                <div class="stat-table-container">
+                    <span>Messages per minute</span>
+                    <span class="stat-counter loading stat-counter-messages-minute">.</span>
+                </div>
+            </td>
+            <td>
+                <div class="stat-table-container">
+                    <span>Messages per second</span>
+                    <span class="stat-counter loading stat-counter-messages-second">.</span>
+                </div>
+            </td>
         </tr>
     </tbody>
 </table>
 
-<table class="stat-table stat-table-small">
+<table class="stat-table">
     <tbody>
         <tr>
-            <td>Haikus per day</td>
-            <td class="stat-counter loading stat-counter-haikus-day">.</td>
-        </tr>
-        <tr>
-            <td>Haikus per hour</td>
-            <td class="stat-counter loading stat-counter-haikus-hour">.</td>
-        </tr>
-        <tr>
-            <td>Haikus per minute</td>
-            <td class="stat-counter loading stat-counter-haikus-minute">.</td>
-        </tr>
-    </tbody>
-</table>
-
-<table class="stat-table stat-table-single">
-    <tbody>
-        <tr>
-            <td>Servers with a Haiku Log</td>
-            <td class="stat-counter loading" data-api="haikulogcount" data-loop-time="30000">.</td>
+            <td>
+                <div class="stat-table-container">
+                    <span>Servers with a Haiku Log</span>
+                    <span class="stat-counter loading" data-api="haikulogcount" data-loop-time="30000">.</span>
+                </div>
+            </td>
         </tr>
     </tbody>
 </table>

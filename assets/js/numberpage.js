@@ -105,9 +105,8 @@ function updateStatField(statField) {
         getString = "https://haikubotapi.apphb.com/api/" + apiString;
     }
 
-    $.get(
-        getString,
-        function (data) {
+    $.get(getString)
+        .done(function (data) {
             let dataValue = useDbl ? data[apiString] : data;
             let statValue = numberWithCommas(dataValue);
             // Handle change values
@@ -147,13 +146,25 @@ function updateStatField(statField) {
                 setStatFieldValue($(".stat-counter-messages-minute"), numberWithCommas(messagesMinute.toFixed(0)));
                 setStatFieldValue($(".stat-counter-messages-second"), numberWithCommas(messagesSecond.toFixed(0)));
             }
-        }
-    ).fail(function () {
-        console.log("Failed to get resource, retrying...");
-        setTimeout(function () {
-            updateStatField(statField);
-        }, 5000);
-    });
+
+            // Update messages per haiku
+            if (apiString === "haikucount" || apiString === "messagecount") {
+                setTimeout(function () {
+                    let messageCount = parseFloat($(".stat-counter[data-api=\"messagecount\"]").html().split(",").join(""));
+                    let haikuCount = parseFloat($(".stat-counter[data-api=\"haikucount\"]").html().split(",").join(""));
+                    let messagesHaiku = messageCount / haikuCount;
+                    if (!isNaN(messagesHaiku)) {
+                        setStatFieldValue($(".stat-counter-messages-haiku"), "1 : " + messagesHaiku.toFixed(0));
+                    }
+                }, 500);
+            }
+        })
+        .fail(function () {
+            console.log("Failed to get resource, retrying...");
+            setTimeout(function () {
+                updateStatField(statField);
+            }, 5000);
+        });
 }
 
 function setStatFieldValue(statField, statValue) {
