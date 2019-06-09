@@ -5,7 +5,7 @@ $(function () {
     var options = {
         debug: true,
         scroll: false,
-        cacheLength: 2,
+        cacheLength: 0,
         onBefore: function ($anchor, $container) {
             // Animate tabs in and out
             $(".page-tabs a").each(function () {
