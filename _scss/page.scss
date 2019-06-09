@@ -3,8 +3,10 @@
 @import "page/header";
 @import "page/panels";
 @import "page/color";
+@import "page/buttons";
 @import "page/code";
 @import "page/anchors";
+@import "page/loading";
 @import "page/stats";
 
 @import "transitions";
@@ -43,23 +45,4 @@ button,
 select,
 a {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
-}
-
-img {
-    z-index: 1;
-
-    overflow: hidden;
-
-    transform: translateY(12px);
-
-    opacity: 0;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0);
-
-    &.visible {
-        transition: opacity 0.25s $m-ease-out, transform 0.2s $m-ease-out, box-shadow 0.5s $m-ease-out 0.1s;
-        transform: none;
-
-        opacity: 1;
-        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
-    }
 }

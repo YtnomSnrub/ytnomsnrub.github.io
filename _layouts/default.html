@@ -87,12 +87,12 @@
     </head>
 
     <body>
-        <div id="main" class="main">
+        <div id="Loading" class="content-loading"></div>
+        <div id="Main" class="main">
             <!-- Header -->
             {% include header.html %}
 
-            {% if page.wide %}
-            <section class="main-content content-wide">
+            <section class="main-content{% if page.wide %} content-wide{% endif %}">
                 <div class="content-container">
                     <!-- Content -->
                     {{ content }}
@@ -100,16 +100,6 @@
                     {% include footer.html %}
                 </div>
             </section>
-            {% else %}
-            <section class="main-content">
-                <div class="content-container">
-                    <!-- Content -->
-                    {{ content }}
-                    <!-- Footer -->
-                    {% include footer.html %}
-                </div>
-            </section>
-            {% endif %}
         </div>
     </body>
 

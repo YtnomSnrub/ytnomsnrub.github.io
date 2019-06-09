@@ -150,11 +150,17 @@ function updateStatField(statField) {
             // Update messages per haiku
             if (apiString === "haikucount" || apiString === "messagecount") {
                 setTimeout(function () {
-                    let messageCount = parseFloat($(".stat-counter[data-api=\"messagecount\"]").html().split(",").join(""));
-                    let haikuCount = parseFloat($(".stat-counter[data-api=\"haikucount\"]").html().split(",").join(""));
-                    let messagesHaiku = messageCount / haikuCount;
-                    if (!isNaN(messagesHaiku)) {
-                        setStatFieldValue($(".stat-counter-messages-haiku"), "1 : " + messagesHaiku.toFixed(0));
+                    // Get stat counters
+                    let $messageCounter = $(".stat-counter[data-api=\"messagecount\"]");
+                    let $haikuCounter = $(".stat-counter[data-api=\"haikucount\"]");
+                    // Check stat counters
+                    if ($messageCounter.length && $haikuCounter.length) {
+                        let messageCount = parseFloat($messageCounter.html().split(",").join(""));
+                        let haikuCount = parseFloat($haikuCounter.html().split(",").join(""));
+                        let messagesHaiku = messageCount / haikuCount;
+                        if (!isNaN(messagesHaiku)) {
+                            setStatFieldValue($(".stat-counter-messages-haiku"), "1 : " + messagesHaiku.toFixed(0));
+                        }
                     }
                 }, 500);
             }

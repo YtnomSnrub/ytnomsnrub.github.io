@@ -1,0 +1,77 @@
+$loading-size: 2rem;
+$loading-border: 2px;
+$loading-padding: 2px;
+$loading-time: 0.15s;
+
+@keyframes loading-animation {
+    0% {
+        transform: rotate(0deg);
+
+        border-right-color: $primary-color;
+        border-left-color: $primary-color;
+    }
+
+    50% {
+        transform: rotate(180deg);
+
+        border-right-color: $secondary-color;
+        border-left-color: $secondary-color;
+    }
+
+    100% {
+        transform: rotate(360deg);
+
+        border-right-color: $primary-color;
+        border-left-color: $primary-color;
+    }
+}
+
+.content-loading {
+    position: fixed;
+    z-index: 12;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    width: $loading-size;
+    height: $loading-size;
+    margin: auto;
+
+    transition: opacity $loading-time $m-ease-in 0s;
+    animation: loading-animation 1.4s $m-ease-in-out 0s infinite normal forwards;
+
+    opacity: 0;
+    border: $loading-border solid transparent;
+    border-radius: $loading-size;
+    background-color: transparent;
+
+    &::before {
+        position: absolute;
+        left: $loading-padding;
+        right: $loading-padding;
+        top: $loading-padding;
+        bottom: $loading-padding;
+
+        content: "";
+        transition: opacity $loading-time $m-ease-in 0.1s;
+        animation: loading-animation 1.4s $m-ease-in-out 0s infinite normal forwards;
+
+        opacity: 0;
+        border: $loading-border solid transparent;
+        border-radius: $loading-size;
+        background-color: transparent;
+    }
+
+    &.visible {
+        transition: opacity $loading-time $m-ease-out 0.3s;
+
+        opacity: 1;
+
+        &::before {
+            transition: opacity $loading-time $m-ease-out 0.2s;
+
+            opacity: 1;
+        }
+    }
+}

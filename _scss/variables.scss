@@ -102,43 +102,6 @@ $button-extend: 2px;
 $button-extend-hover: 6px;
 $button-extend-active: 3px;
 
-@mixin button($color, $text-color, $dark-extend) {
-    color: $text-color;
-    background-color: $color;
-
-    @if ($dark-extend) {
-        background-color: darken($color, 20%);
-    } @else {
-        background-color: darken($color, 10%);
-    }
-
-    .button-inner {
-        display: block;
-
-        padding: 0.8rem 1.6rem;
-
-        content: "";
-        transition: transform 0.07s $m-ease;
-        transform: translateY(-$button-extend);
-
-        border-radius: $border-radius;
-        background-color: $color;
-    }
-
-    &:hover,
-    &:focus {
-        .button-inner {
-            transform: translateY(-$button-extend-hover);
-        }
-    }
-
-    &:active {
-        .button-inner {
-            transform: translateY(-$button-extend-active);
-        }
-    }
-}
-
 // Header
 @mixin header-background {
     background-color: $background-color;

@@ -38,15 +38,6 @@
         position: relative;
     }
 
-    h1 {
-        margin-top: calc(#{$tabs-height} + 1rem);
-        margin-bottom: 2rem;
-    }
-
-    p {
-        margin-bottom: 1.5em;
-    }
-
     img {
         position: relative;
         left: 0;
@@ -89,40 +80,24 @@
             padding: 0.5rem 1rem;
         }
     }
+}
 
-    blockquote {
-        padding: 0;
-        padding-left: 0.6rem;
+img {
+    z-index: 1;
 
-        color: $text-color-detail;
-        border-left: 4px solid $border-color;
-    }
+    overflow: hidden;
 
-    .topright {
-        position: absolute;
-        right: 0;
-        top: 0;
+    transform: translateY(12px);
 
-        @media (min-width: $small-breakpoint) {
-            top: 1.2rem;
-        }
-    }
+    opacity: 0;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0);
 
-    .button-row {
-        display: flex;
-        flex-direction: row;
+    &.visible {
+        transition: opacity 0.25s $m-ease-out, transform 0.2s $m-ease-out, box-shadow 0.5s $m-ease-out 0.1s;
+        transform: none;
 
-        margin: auto;
-        margin-bottom: 1.4rem;
-
-        align-items: center;
-        justify-content: center;
-
-        @media (max-width: $small-breakpoint) {
-            flex-direction: column;
-
-            min-width: 80%;
-        }
+        opacity: 1;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
     }
 }
 

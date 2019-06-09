@@ -1,0 +1,98 @@
+.button-row {
+    display: flex;
+    flex-direction: row;
+
+    margin: auto;
+    margin-bottom: 1.4rem;
+
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: $small-breakpoint) {
+        flex-direction: column;
+
+        min-width: 80%;
+    }
+}
+
+@mixin button($color, $text-color, $dark-extend) {
+    color: $text-color;
+    background-color: $color;
+
+    @if ($dark-extend) {
+        background-color: darken($color, 20%);
+    } @else {
+        background-color: darken($color, 10%);
+    }
+
+    .button-inner {
+        display: block;
+
+        padding: 0.8rem 1.6rem;
+
+        content: "";
+        transition: transform 0.05s $m-ease;
+        transform: translateY(-$button-extend);
+
+        border-radius: $border-radius;
+        background-color: $color;
+    }
+
+    &:hover,
+    &:focus {
+        .button-inner {
+            transform: translateY(-$button-extend-hover);
+        }
+    }
+
+    &:active {
+        .button-inner {
+            transform: translateY(-$button-extend-active);
+        }
+    }
+}
+
+a.button {
+    position: relative;
+
+    display: inline-block;
+
+    margin: 0.4rem;
+
+    text-align: center;
+    text-decoration: none;
+
+    border-radius: $border-radius;
+
+    font-weight: 400;
+
+@include button($background-color-alt, $text-color-alt, false);
+
+    &::before {
+        content: none;
+    }
+
+    &.button-discord {
+        @include button($discord-color, $text-color-alt, false);
+    }
+
+    &.button-patreon {
+        @include button($patreon-color, $text-color-alt, false);
+    }
+
+    &.button-tumblr {
+        @include button($tumblr-color, $text-color-alt, false);
+    }
+
+    &.button-haiku {
+        @include button($haiku-color, $haiku-color-text, true);
+    }
+
+    &.button-modis {
+        @include button($modis-color, $text-color-alt, false);
+    }
+
+    &.button-kingdom {
+        @include button($kingdom-color, $text-color-alt, false);
+    }
+}

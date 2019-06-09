@@ -92,96 +92,73 @@ code {
     border-radius: $border-radius;
 }
 
-.main-content a:not(.button) {
-    position: relative;
+blockquote {
+    padding: 0;
+    padding-left: 0.6rem;
 
-    white-space: nowrap;
-
-    &::before,
-    i::before {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 0;
-        bottom: 0;
-
-        margin: -0.3rem -0.6rem;
-
-        content: "";
-        transition: background-color 0.15s $m-ease, border-color 0.15s $m-ease, transform 0.15s $m-ease-in;
-        transform: scale(1.25);
-        pointer-events: none;
-
-        border: 1px solid transparent;
-        border-radius: $border-radius;
-        background-color: transparent;
-    }
-
-    &:hover::before,
-    &:hover i::before {
-        transition: background-color 0.15s $m-ease, border-color 0.15s $m-ease, transform 0s linear;
-        transform: scale(1);
-
-        border-color: $table-border-color;
-        background-color: transparent;
-    }
-
-    &:focus::before,
-    &:focus i::before {
-        transition: background-color 0.15s $m-ease, border-color 0.15s $m-ease, transform 0.15s $m-ease-out;
-        transform: scale(1);
-
-        border-color: $table-border-color;
-        background-color: rgba($background-color-alt, 0.12);
-    }
-
-    &:active::before,
-    &:active i::before {
-        transition: background-color 0.1s $m-ease, border-color 0.1s $m-ease, transform 0s linear;
-
-        border-color: $table-border-color;
-        background-color: rgba($background-color-alt, 0.12);
-    }
+    color: $text-color-detail;
+    border-left: 4px solid $border-color;
 }
 
-.main-content a.button {
-    position: relative;
-
-    display: inline-block;
-
-    margin: 0.4rem;
-
-    transition: transform 0.07s $m-ease;
-    text-align: center;
-    text-decoration: none;
-
-    border-radius: $border-radius;
-
-    font-weight: 400;
-
-@include button($background-color-alt, $text-color-alt, false);
-
-    &.button-discord {
-        @include button($discord-color, $text-color-alt, false);
+.main-content {
+    h1 {
+        margin-top: calc(#{$tabs-height} + 1rem);
+        margin-bottom: 2rem;
     }
 
-    &.button-patreon {
-        @include button($patreon-color, $text-color-alt, false);
+    p {
+        margin-bottom: 1.5em;
     }
 
-    &.button-tumblr {
-        @include button($tumblr-color, $text-color-alt, false);
-    }
+    a {
+        position: relative;
 
-    &.button-haiku {
-        @include button($haiku-color, $haiku-color-text, true);
-    }
+        white-space: nowrap;
 
-    &.button-modis {
-        @include button($modis-color, $text-color-alt, false);
-    }
+        &::before,
+        i::before {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
 
-    &.button-kingdom {
-        @include button($kingdom-color, $text-color-alt, false);
+            margin: -0.3rem -0.6rem;
+
+            content: "";
+            transition: background-color 0.1s $m-ease-in, border-color 0.1s $m-ease-in, transform 0.1s $m-ease-in;
+            transform: scale(1.05);
+            pointer-events: none;
+
+            border: 1px solid transparent;
+            border-radius: $border-radius;
+            background-color: transparent;
+        }
+
+        &:hover::before,
+        &:hover i::before {
+            transition: background-color 0.1s $m-ease-out, border-color 0.1s $m-ease-out, transform 0s linear;
+            transform: scale(1);
+
+            border-color: $table-border-color;
+            background-color: transparent;
+        }
+
+        &:focus::before,
+        &:focus i::before {
+            transition: background-color 0.1s $m-ease-out, border-color 0.1s $m-ease-out, transform 0.1s $m-ease-out;
+            transform: scale(1);
+
+            border-color: $table-border-color;
+            background-color: rgba($background-color-alt, 0.12);
+        }
+
+        &:active::before,
+        &:active i::before {
+            transition: background-color 0.1s $m-ease, border-color 0.1s $m-ease, transform 0s linear;
+
+            border-color: $table-border-color;
+            background-color: rgba($background-color-alt, 0.12);
+        }
     }
 }
