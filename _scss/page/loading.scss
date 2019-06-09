@@ -39,7 +39,7 @@ $loading-time: 0.15s;
     margin: auto;
 
     transition: opacity $loading-time $m-ease-in 0s;
-    animation: loading-animation 1.4s $m-ease-in-out 0s infinite normal forwards;
+    animation: loading-animation 1.4s $m-ease-in-out 0s infinite;
 
     opacity: 0;
     border: $loading-border solid transparent;
@@ -55,7 +55,7 @@ $loading-time: 0.15s;
 
         content: "";
         transition: opacity $loading-time $m-ease-in 0.1s;
-        animation: loading-animation 1.4s $m-ease-in-out 0s infinite normal forwards;
+        animation: loading-animation 1.4s $m-ease-in-out 0s infinite;
 
         opacity: 0;
         border: $loading-border solid transparent;
