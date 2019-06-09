@@ -18,7 +18,7 @@ $(function () {
             });
         },
         onStart: {
-            duration: 150,
+            duration: 250,
             render: function ($container) {
                 $container.addClass('page-out');
                 $loading.addClass('visible');
@@ -29,31 +29,35 @@ $(function () {
         onReady: {
             duration: 0,
             render: function ($container, $newContent) {
-                $container.removeClass('page-out');
-                $loading.removeClass('visible');
-                // Inject the new content
-                $container.html($newContent);
+                $loading.addClass('hidden');
+                setTimeout(function () {
+                    $loading.removeClass('visible');
+                    $loading.removeClass('hidden');
+                    $container.removeClass('page-out');
+                    // Inject the new content
+                    $container.html($newContent);
 
-                // Trigger transition events
-                $(document).trigger("transition");
+                    // Trigger transition events
+                    $(document).trigger("transition");
 
-                // Scroll to top
-                var $mainContent = $(".main-content");
-                var t = $mainContent.offset().top + 1;
-                if (window.scrollY > t) {
-                    window.scrollTo(0, t);
-                }
-
-                if (location.hash !== "") {
-                    var dest = 0;
-                    if ($(location.hash).offset().top > $(document).height() - $(window).height()) {
-                        dest = $(document).height() - $(window).height();
-                    } else {
-                        dest = $(location.hash).offset().top;
+                    // Scroll to top
+                    var $mainContent = $(".main-content");
+                    var t = $mainContent.offset().top + 1;
+                    if (window.scrollY > t) {
+                        window.scrollTo(0, t);
                     }
 
-                    window.scrollTo(0, dest);
-                }
+                    if (location.hash !== "") {
+                        var dest = 0;
+                        if ($(location.hash).offset().top > $(document).height() - $(window).height()) {
+                            dest = $(document).height() - $(window).height();
+                        } else {
+                            dest = $(location.hash).offset().top;
+                        }
+
+                        window.scrollTo(0, dest);
+                    }
+                }, 200);
             }
         }
     }

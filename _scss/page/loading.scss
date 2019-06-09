@@ -39,7 +39,6 @@ $loading-time: 0.15s;
     margin: auto;
 
     transition: opacity $loading-time $m-ease-in 0s;
-    animation: loading-animation 1.4s $m-ease-in-out 0s infinite;
 
     opacity: 0;
     border: $loading-border solid transparent;
@@ -55,7 +54,6 @@ $loading-time: 0.15s;
 
         content: "";
         transition: opacity $loading-time $m-ease-in 0.1s;
-        animation: loading-animation 1.4s $m-ease-in-out 0s infinite;
 
         opacity: 0;
         border: $loading-border solid transparent;
@@ -64,14 +62,22 @@ $loading-time: 0.15s;
     }
 
     &.visible {
-        transition: opacity $loading-time $m-ease-out 0.3s;
+        transition: opacity $loading-time $m-ease-out 0.1s;
+        animation: loading-animation 1.4s $m-ease-in-out 0s infinite;
 
         opacity: 1;
 
         &::before {
-            transition: opacity $loading-time $m-ease-out 0.2s;
+            transition: opacity $loading-time $m-ease-out 0s;
+            animation: loading-animation 1.4s $m-ease-in-out 0s infinite;
 
             opacity: 1;
         }
+    }
+
+    &.hidden {
+        transition: opacity $loading-time $m-ease-in 0s;
+
+        opacity: 0;
     }
 }
