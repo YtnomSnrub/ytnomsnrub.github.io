@@ -6,7 +6,7 @@ title: "HaikuBot"
     {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "url": "/",
+    "url": "/haikubot/",
     "logo": "/assets/favicon/android-chrome-512x512.png"
     }
 </script>
