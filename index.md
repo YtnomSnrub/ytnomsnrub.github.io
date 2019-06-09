@@ -2,6 +2,15 @@
 title: "Home"
 ---
 
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "url": "{{site.baseurl}}",
+    "logo": "{{site.baseurl}}/assets/favicon/android-chrome-512x512.png"
+    }
+</script>
+
 # YtnomSnrub
 
 This is my GitHub page with the projects I'm working on.

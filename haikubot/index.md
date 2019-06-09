@@ -2,6 +2,15 @@
 title: "HaikuBot"
 ---
 
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "url": "{{site.baseurl}}",
+    "logo": "{{site.baseurl}}/assets/favicon/android-chrome-512x512.png"
+    }
+</script>
+
 {% include content/haikubot-info.html show_widget=true title="<h1>HaikuBot</h1>" %}
 
 {% include content/haikubot-patreon.html %}
