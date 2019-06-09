@@ -4,16 +4,26 @@
 
     padding: 0;
     padding-top: 72px;
-    padding-bottom: 96px;
+    padding-bottom: 88px;
 
     text-align: center;
 
     background: none;
     background-color: $header-bg-color;
 
+    @media (max-width: $large-breakpoint) {
+        padding-top: 56px;
+        padding-bottom: 64px;
+    }
+
     @media (max-width: $medium-breakpoint) {
-        padding-top: 72px;
-        padding-bottom: 60px;
+        padding-top: 48px;
+        padding-bottom: 56px;
+    }
+
+    @media (max-width: $small-breakpoint) {
+        padding-top: 32px;
+        padding-bottom: 40px;
     }
 
     .background {
