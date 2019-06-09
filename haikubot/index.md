@@ -6,8 +6,8 @@ title: "HaikuBot"
     {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "url": "{{site.baseurl}}",
-    "logo": "{{site.baseurl}}/assets/favicon/android-chrome-512x512.png"
+    "url": "/",
+    "logo": "/assets/favicon/android-chrome-512x512.png"
     }
 </script>
 
