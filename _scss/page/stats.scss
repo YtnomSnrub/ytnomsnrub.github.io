@@ -231,7 +231,8 @@
 
 
 .main-content .discord-bot-widget {
-    height: 12rem;
+    width: 100%;
+    max-width: 24rem;
 
     border-radius: 6px;
 }
