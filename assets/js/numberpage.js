@@ -13,7 +13,7 @@ const chartOptions = {
                 }
             },
             afterFit: function (scaleInstance) {
-                scaleInstance.width = 80;
+                scaleInstance.width = 120;
             }
         }],
         xAxes: [{
