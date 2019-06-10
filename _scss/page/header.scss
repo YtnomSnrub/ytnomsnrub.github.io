@@ -101,7 +101,7 @@
         height: $tabs-height;
         margin: auto;
 
-        transition: height 0.15s $m-ease;
+        transition: height 0.15s $m-ease-in-out;
         text-align: center;
     }
 
@@ -128,7 +128,7 @@
         margin: 0;
         padding: 0 1rem;
 
-        transition: background-color 0.1s $m-ease, color 0.1s $m-ease;
+        transition: background-color 0.1s $m-ease-in-out, color 0.1s $m-ease-in-out;
         text-align: center;
         vertical-align: middle;
         text-decoration: none;
@@ -156,7 +156,7 @@
             bottom: 0;
 
             content: "";
-            transition: transform 0.1s $m-ease;
+            transition: transform 0.1s $m-ease-in-out;
             transform: scaleY(0);
             transform-origin: 50% 100%;
 

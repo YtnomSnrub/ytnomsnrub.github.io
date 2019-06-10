@@ -31,7 +31,7 @@
         padding: 0.8rem 1.6rem;
 
         content: "";
-        transition: transform 0.05s $m-ease;
+        transition: transform 0.1s $m-ease;
         transform: translateY(-$button-extend);
 
         border-radius: $border-radius;

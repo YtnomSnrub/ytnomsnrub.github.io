@@ -218,7 +218,7 @@ function setupCharts() {
 
     // Setup fonts
     Chart.defaults.global.defaultFontColor = "rgba(0, 0, 0, 0.8)";
-    Chart.defaults.global.defaultFontFamily = "'Work Sans', 'Arial', sans-serif";
+    Chart.defaults.global.defaultFontFamily = "'Nunito', 'Arial', sans-serif";
     Chart.defaults.global.defaultFontStyle = "400";
     Chart.defaults.global.defaultFontSize = 14;
 
