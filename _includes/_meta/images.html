@@ -2,11 +2,24 @@
     $('img').on('load', function () {
         var $element = $(this);
         window.setTimeout(function () {
-            $element.slideDown(400, function () {
-                if (!$element.hasClass("visible")) {
-                    $element.addClass("visible");
-                }
-            });
+            let $loading = $element.prev();
+            if ($loading.length > 0 && $loading.hasClass("loading-image")) {
+                $loading.addClass("hidden");
+                $loading.slideUp(200, function () {
+                    $loading.remove();
+                    $element.slideDown(400, function () {
+                        if (!$element.hasClass("visible")) {
+                            $element.addClass("visible");
+                        }
+                    });
+                });
+            } else {
+                $element.slideDown(400, function () {
+                    if (!$element.hasClass("visible")) {
+                        $element.addClass("visible");
+                    }
+                });
+            }
         }, 150);
     }).each(function () {
         var $element = $(this);
@@ -18,6 +31,7 @@
             }, 150);
         } else {
             $element.hide();
+            $("<div class=\"loading-image\"></div>").insertBefore($element);
         }
     });
 </script>

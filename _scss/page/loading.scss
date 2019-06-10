@@ -26,13 +26,10 @@ $loading-time: 0.15s;
     }
 }
 
-.content-loading {
-    position: fixed;
-    z-index: -1;
+.loading-indicator {
+    position: absolute;
     left: 0;
     right: 0;
-    top: 0;
-    bottom: 0;
 
     width: $loading-size;
     height: $loading-size;
@@ -44,6 +41,15 @@ $loading-time: 0.15s;
     border: $loading-border solid transparent;
     border-radius: $loading-size;
     background-color: transparent;
+
+    &.content-loading {
+        position: fixed;
+        z-index: -1;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
 
     &::before {
         position: absolute;
@@ -78,6 +84,67 @@ $loading-time: 0.15s;
     &.hidden {
         transition: opacity $loading-time $m-ease-in 0s;
 
+        opacity: 0;
+    }
+}
+
+
+$loading-image-size: 1.5rem;
+$loading-image-time: 1.2s;
+
+@keyframes loading-image-animation {
+    0% {
+        z-index: 1;
+
+        transform: scale(1);
+    }
+
+    50% {
+        z-index: 0;
+
+        transform: scale(0.5);
+    }
+
+    100% {
+        z-index: 1;
+
+        transform: scale(1);
+    }
+}
+
+.loading-image {
+    height: $loading-image-size;
+    padding-bottom: 1rem;
+
+    transition: opacity 0.1s $m-ease-in;
+
+    &::before,
+    &::after {
+        position: absolute;
+        left: 0;
+        right: 0;
+
+        width: $loading-image-size;
+        height: $loading-image-size;
+        margin: auto;
+
+        content: "";
+        animation: loading-image-animation $loading-image-time $m-ease-in-out 0s infinite;
+
+        border-radius: $loading-size;
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    &::before {
+        animation-delay: 0s;
+    }
+
+    &::after {
+        animation-delay: $loading-image-time / 2;
+        animation-delay: -$loading-image-time / 2;
+    }
+
+    &.hidden {
         opacity: 0;
     }
 }
