@@ -44,9 +44,7 @@ Patreon supporters who are Silver tier or higher can change the color of the hai
 If you are a Silver supporter or higher for HaikuBot on Patreon, you can change the color of the haikus that you make.
 
 1. You must be in the HaikuBot Discord Server (which you can join [here](https://discord.gg/Cm5v93M)).
-1. In the `#commands` channel, use the `!haiku color [color]` command to change your color to one of the colors from the list above.
-
->For example: to change your haiku color to red, type `!haiku color red`. To change it to pink, type `!haiku color pink`, and so on.
+1. In the `#commands` channel, use the `!haiku color [color]` command to change your color to one of the colors from the list above. For example: to change your haiku color to red, type `!haiku color red`. To change it to pink, type `!haiku color pink`, and so on.
 
 Now, all of your haikus in any server on Discord will be in the color you selected!
 
