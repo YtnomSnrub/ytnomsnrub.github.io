@@ -10,9 +10,14 @@
         }, 150);
     }).each(function () {
         var $element = $(this);
-        $element.hide();
         if (this.complete) {
-            $element.trigger("load");
+            window.setTimeout(function () {
+                if (!$element.hasClass("visible")) {
+                    $element.addClass("visible");
+                }
+            }, 150);
+        } else {
+            $element.hide();
         }
     });
 </script>
