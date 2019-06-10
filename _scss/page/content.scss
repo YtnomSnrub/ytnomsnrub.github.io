@@ -61,29 +61,32 @@
         margin-top: 1rem;
         margin-bottom: 1.5rem;
     }
+}
 
-    table {
-        position: relative;
+table {
+    position: relative;
 
-        display: table;
-        overflow: visible;
+    display: table;
+    overflow: visible;
 
-        width: 100%;
-        max-width: 100%;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 
-        border-spacing: 0;
+    border-spacing: 0;
 
-        border-collapse: collapse;
+    border: none;
+    border-collapse: collapse;
 
-        tr {
-            margin: 0;
-            padding: 0;
-        }
+    tr {
+        margin: 0;
+        padding: 0;
+    }
 
-        td {
-            margin: 0;
-            padding: 0.5rem 1rem;
-        }
+    td {
+        margin: 0;
+        padding: 0.5rem 1rem;
     }
 }
 

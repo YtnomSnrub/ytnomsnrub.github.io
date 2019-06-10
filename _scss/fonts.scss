@@ -14,7 +14,7 @@
 }
 
 @mixin font-heading {
-    margin-left: -0.05em;
+    margin-left: -0.07em;
 
     font-family: "Quicksand", Arial, Helvetica, sans-serif;
     font-weight: 300;
@@ -24,7 +24,7 @@
     margin-left: -0.03em;
 
     font-family: "Quicksand", Arial, Helvetica, sans-serif;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 @mixin font-body {

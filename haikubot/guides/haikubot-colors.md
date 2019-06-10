@@ -6,11 +6,30 @@ title: "HaikuBot Colors"
 
 Do you want to know the colors used for HaikuBot? You can use these for all sorts of things, like setting HaikuBot's role color to be the same as the bot's icon color!
 
-<p class="color-block color-haiku">HaikuBot Color</p>
-<p class="color-block color-haiku-text">HaikuBot Dark Color</p>
-<p class="color-block color-alt">Alternate Color</p>
-<p class="color-block color-heart">Heart Color</p>
-<p class="color-block color-discord">Discord Color</p>
+<table class="color-block-table color-value-table">
+    <tbody>
+        <tr>
+            <td class="color-block color-primary">Accent Color</td>
+            <td class="color-block-value">#f84655</td>
+        </tr>
+        <tr>
+            <td class="color-block color-secondary">Secondary Color</td>
+            <td class="color-block-value">#6478c9</td>
+        </tr>
+        <tr>
+            <td class="color-block color-haiku">Haiku Color</td>
+            <td class="color-block-value">#ffcc4d</td>
+        </tr>
+        <tr>
+            <td class="color-block color-haiku-text">Haiku Text</td>
+            <td class="color-block-value">#643f00</td>
+        </tr>
+        <tr>
+            <td class="color-block color-alt">Background Color</td>
+            <td class="color-block-value">#2e2f34</td>
+        </tr>
+    </tbody>
+</table>
 
 ## Changing a Role Color
 

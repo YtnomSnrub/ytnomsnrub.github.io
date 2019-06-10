@@ -6,7 +6,7 @@ title: "Patreon Customization"
 
 Patreon supporters who are Silver tier or higher can change the color of the haikus that they make in any server on Discord. These are the colors that Patreon supporters can choose from:
 
-<table class="color-block-table">
+<table class="color-block-table color-patreon-table">
     <tbody>
         <tr>
             <td class="color-block color-patreon-red">Red</td>
