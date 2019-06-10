@@ -89,7 +89,7 @@ $loading-time: 0.15s;
 }
 
 
-$loading-image-size: 1.5rem;
+$loading-image-size: 1.0rem;
 $loading-image-time: 1.2s;
 
 @keyframes loading-image-animation {
@@ -132,7 +132,7 @@ $loading-image-time: 1.2s;
         animation: loading-image-animation $loading-image-time $m-ease-in-out 0s infinite;
 
         border-radius: $loading-size;
-        background-color: rgba(0, 0, 0, 0.25);
+        background-color: rgba(0, 0, 0, 0.1);
     }
 
     &::before {
