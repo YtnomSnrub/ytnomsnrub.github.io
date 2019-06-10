@@ -42,7 +42,7 @@ $(function () {
 
                     // Scroll to top
                     var $mainContent = $(".main-content");
-                    var t = $mainContent.offset().top + 1;
+                    var t = $mainContent.offset().top;
                     if (window.scrollY > t) {
                         window.scrollTo(0, t);
                     }
