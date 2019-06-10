@@ -2,9 +2,9 @@
 // Fonts
 // Update html to include these fonts when adding new fonts
 @mixin font-title {
-    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    font-family: "Quicksand", Arial, Helvetica, sans-serif;
     font-size: 5.5rem;
-    font-weight: 200;
+    font-weight: 300;
 }
 
 @mixin font-subtitle {
@@ -16,14 +16,14 @@
 @mixin font-heading {
     margin-left: -0.05em;
 
-    font-family: "Nunito", Arial, Helvetica, sans-serif;
-    font-weight: 200;
+    font-family: "Quicksand", Arial, Helvetica, sans-serif;
+    font-weight: 300;
 }
 
 @mixin font-subheading {
     margin-left: -0.03em;
 
-    font-family: "Nunito", Arial, Helvetica, sans-serif;
+    font-family: "Quicksand", Arial, Helvetica, sans-serif;
     font-weight: 400;
 }
 
