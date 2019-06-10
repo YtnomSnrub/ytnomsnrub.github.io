@@ -2,7 +2,7 @@
     position: relative;
 
     max-width: 880px;
-    min-height: calc(100vh);
+    min-height: calc(100vh - #{$tabs-height-small} - 2rem);
     margin: auto;
     padding: 2rem 1.5rem;
     padding-top: $tabs-height-small;
@@ -47,7 +47,7 @@
         width: auto;
         max-width: 100%;
         margin: auto;
-        margin-bottom: 1.5em;
+        margin-bottom: 1.5rem;
 
         border-radius: $border-radius;
 
@@ -55,6 +55,11 @@
             width: auto;
             height: 4vh;
         }
+    }
+
+    li img {
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     table {
@@ -87,7 +92,7 @@ img {
 
     overflow: hidden;
 
-    transform: translateY(12px);
+    transform: translateY(-24px);
 
     opacity: 0;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0);

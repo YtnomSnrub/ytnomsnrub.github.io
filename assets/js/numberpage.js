@@ -52,10 +52,6 @@ const chartOptions = {
     }
 };
 
-$(document).on("ready", function () {
-    setupStats();
-});
-
 $(document).on("transition", function () {
     setupStats();
 });

@@ -1,0 +1,18 @@
+<script>
+    $('img').on('load', function () {
+        var $element = $(this);
+        window.setTimeout(function () {
+            $element.slideDown(400, function () {
+                if (!$element.hasClass("visible")) {
+                    $element.addClass("visible");
+                }
+            });
+        }, 150);
+    }).each(function () {
+        var $element = $(this);
+        $element.hide();
+        if (this.complete) {
+            $element.trigger("load");
+        }
+    });
+</script>
