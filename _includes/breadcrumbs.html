@@ -1,6 +1,6 @@
 {% assign url_parts = page.url | remove: ".html" | split:'/' %}
 
-{% assign previous="" %}
+{% assign previous=site.url %}
 {% assign position = 1 %}
 
 {% if url_parts.size > 0 %}
