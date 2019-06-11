@@ -8,6 +8,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.6.0)
       public_suffix (>= 2.0.2, < 4.0)
+    breadcrumbs (0.1.7)
+      i18n
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -244,6 +246,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  breadcrumbs
   github-pages
   tzinfo-data
 

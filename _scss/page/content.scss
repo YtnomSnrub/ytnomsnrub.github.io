@@ -4,8 +4,7 @@
     max-width: 880px;
     min-height: calc(100vh - #{$tabs-height-small} - 1.5rem);
     margin: auto;
-    padding: 2rem 1.5rem;
-    padding-top: $tabs-height-small;
+    padding: $tabs-height-small 1.5rem 2rem;
 
     font-size: 1.1rem;
 
@@ -15,7 +14,7 @@
 
     @media screen and (max-width: $medium-breakpoint) {
         max-width: $small-breakpoint;
-        padding: $tabs-height-small 1rem;
+        padding: $tabs-height-small 1rem 2rem;
     }
 
     @media screen and (max-width: $small-breakpoint) {
@@ -23,7 +22,7 @@
     }
 
     @media screen and (max-width: $tiny-breakpoint) {
-        padding: $tabs-height-small 0.75rem;
+        padding: $tabs-height-small 0.75rem 2rem;
     }
 
     &.content-wide {
@@ -99,7 +98,7 @@ img {
 
     overflow: hidden;
 
-    transform: translateY(-24px);
+    transform: translateY(-12px);
 
     opacity: 0;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0);

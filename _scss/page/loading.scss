@@ -114,7 +114,7 @@ $loading-image-time: 1.8s;
 
 .loading-image {
     height: $loading-image-size;
-    padding-bottom: 1rem;
+    padding: 1rem 0;
 
     transition: opacity 0.1s $m-ease-in;
 
