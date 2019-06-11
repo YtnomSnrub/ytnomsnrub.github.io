@@ -129,7 +129,7 @@ $loading-image-time: 1.8s;
         margin: auto;
 
         content: "";
-        animation: loading-image-animation $loading-image-time $m-ease-in-out 0s infinite;
+        animation: loading-image-animation $loading-image-time $m-ease 0s infinite;
 
         border-radius: $loading-size;
         background-color: rgba(0, 0, 0, 0.1);

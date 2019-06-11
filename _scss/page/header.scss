@@ -45,6 +45,9 @@
         position: relative;
         z-index: 2;
 
+        margin: 0;
+        padding: 0;
+
         color: $header-heading-color;
     }
 
@@ -73,6 +76,8 @@
     }
 
     .project-tagline {
+        margin-top: 1rem;
+
         opacity: 0.9;
 
 @include font-subtitle;
