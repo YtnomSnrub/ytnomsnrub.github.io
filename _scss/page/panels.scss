@@ -3,9 +3,6 @@ $panel-width: 100vw;
 .main-content .content-panel {
     position: relative;
 
-    margin-top: -$tabs-height + $tabs-height-small;
-    padding-top: $tabs-height - $tabs-height-small;
-
     &,
     h1,
     h2 {
@@ -13,7 +10,7 @@ $panel-width: 100vw;
     }
 
     h2:first-child {
-        padding-top: 2rem;
+        padding-top: 1.5rem;
     }
 
     a:not(.button):not(.header-link) {
@@ -30,8 +27,22 @@ $panel-width: 100vw;
         width: $panel-width;
         margin: auto;
 
-        content: "";
         transform: translateX(-50%);
+
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    &.panel-haikubot,
+    &.panel-patreon,
+    &.panel-tumblr,
+    &.panel-modis {
+        & + .site-footer {
+            border-top: none;
+        }
+
+        &::before {
+            content: "";
+        }
     }
 
     &.panel-patreon,
@@ -66,30 +77,32 @@ $panel-width: 100vw;
     }
 
     &.panel-haikubot {
+        z-index: 4;
+
         &::before {
             background: linear-gradient(45deg, $haiku-color-background-1 0%, $haiku-color-background-2 100%);
         }
     }
 
     &.panel-patreon {
-        &::before {
-            background: linear-gradient(45deg, $patreon-color-background-1 0%, $patreon-color-background-2 100%);
-        }
-    }
+        z-index: 5;
 
-    &.panel-patreon {
         &::before {
             background: linear-gradient(45deg, $patreon-color-background-1 0%, $patreon-color-background-2 100%);
         }
     }
 
     &.panel-tumblr {
+        z-index: 1;
+
         &::before {
             background: linear-gradient(45deg, $tumblr-color-background-1 0%, $tumblr-color-background-2 100%);
         }
     }
 
     &.panel-modis {
+        z-index: 1;
+
         &::before {
             background: linear-gradient(45deg, $modis-color-background-1 0%, $modis-color-background-2 100%);
         }

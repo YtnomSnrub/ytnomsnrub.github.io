@@ -1,5 +1,9 @@
 <div class="content-panel panel-haikubot">
+    {% if include.title %}
     {{ include.title }}
+    {% else %}
+    <h2 id="HaikuBot" class="panel-heading">HaikuBot</h2>
+    {% endif %}
 
     {% include stats/haikubot-stats.html %}
 

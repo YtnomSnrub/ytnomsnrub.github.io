@@ -2,9 +2,9 @@
     position: relative;
 
     max-width: 880px;
-    min-height: calc(100vh - #{$tabs-height} - 1.5rem);
+    min-height: calc(100vh - #{$tabs-height-small} - 1.5rem);
     margin: auto;
-    padding: $tabs-height 1.5rem 2rem;
+    padding: $tabs-height-small 1.5rem 2rem;
 
     font-size: 1.1rem;
 
@@ -14,7 +14,7 @@
 
     @media screen and (max-width: $medium-breakpoint) {
         max-width: $small-breakpoint;
-        padding: $tabs-height 1rem 2rem;
+        padding: $tabs-height-small 1rem 2rem;
     }
 
     @media screen and (max-width: $small-breakpoint) {
@@ -107,9 +107,11 @@ img {
 }
 
 .site-footer {
-    margin-top: 2rem;
+    margin-top: 0.5rem;
+    padding-top: 2rem;
 
     color: $text-color-detail;
+    border-top: 1px solid $border-color;
 
     font-size: 0.9rem;
 }

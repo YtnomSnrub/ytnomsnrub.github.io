@@ -1,5 +1,9 @@
 <div class="content-panel">
+    {% if include.title %}
+    {{ include.title }}
+    {% else %}
     <h2 id="Guides" class="panel-heading">Guides</h2>
+    {% endif %}
 
     <ul>
         <li><a href="/haikubot/guides/restricting-haikubot">Restricting HaikuBot</a></li>

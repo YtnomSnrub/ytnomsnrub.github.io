@@ -10,7 +10,12 @@ $(function () {
             // Animate tabs in and out
             $(".page-tabs a").each(function () {
                 let $pageTab = $(this);
-                if ($anchor.attr("href") === $pageTab.attr("href")) {
+                let anchorRef = $anchor.attr("href").replace(window.location.origin, "");
+                let tabRef = $pageTab.attr("href").replace(window.location.origin, "");
+
+                console.log(anchorRef, tabRef);
+
+                if (anchorRef === tabRef) {
                     $pageTab.addClass("page-link-current");
                 } else {
                     $pageTab.removeClass("page-link-current");
