@@ -37,6 +37,8 @@ $panel-width: 100vw;
     &.panel-tumblr,
     &.panel-modis {
         & + .site-footer {
+            margin-top: 0;
+
             border-top: none;
         }
 
