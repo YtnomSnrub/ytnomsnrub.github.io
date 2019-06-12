@@ -161,7 +161,7 @@
             bottom: 0;
 
             content: "";
-            transition: transform 0.1s $m-ease-in-out;
+            transition: transform 0.1s $m-ease-in-out, background-color 0.1s $m-ease-in-out, color 0.1s $m-ease-in-out;
             transform: scaleY(0);
             transform-origin: 50% 100%;
 
