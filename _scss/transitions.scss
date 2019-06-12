@@ -104,12 +104,6 @@
                     background-color: $background-color;
                 }
             }
-
-            &:hover {
-                &::before {
-                    background-color: darken($background-color, 3%);
-                }
-            }
         }
     }
 }

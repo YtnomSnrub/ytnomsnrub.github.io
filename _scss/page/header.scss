@@ -133,7 +133,7 @@
         margin: 0;
         padding: 0 1rem;
 
-        transition: background-color 0.05s $m-ease-in-out, color 0.05s $m-ease-in-out;
+        transition: background-color 0.1s $m-ease, color 0.1s $m-ease;
         text-align: center;
         vertical-align: middle;
         text-decoration: none;
@@ -161,7 +161,7 @@
             bottom: 0;
 
             content: "";
-            transition: transform 0.1s $m-ease-in-out, background-color 0.05s $m-ease-in-out, color 0.05s $m-ease-in-out;
+            transition: transform 0.15s $m-ease, background-color 0.1s $m-ease, color 0.1s $m-ease;
             transform: scaleY(0);
             transform-origin: 50% 100%;
 
