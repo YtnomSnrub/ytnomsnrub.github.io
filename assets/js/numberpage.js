@@ -2,6 +2,7 @@ var statIntervals = [];
 var chartIntervals = [];
 
 const LINE_TENSION = 0.2;
+const STAT_Y_PADDING = 0.1;
 
 const chartOptions = {
     scales: {
@@ -28,7 +29,7 @@ const chartOptions = {
     },
     tooltips: {
         enabled: true,
-        mode: "index",
+        mode: "nearest",
         intersect: false,
         // Background
         backgroundColor: "rgba(46, 47, 52, 0.8)",
@@ -360,7 +361,6 @@ function setupHourCharts() {
         statChart.options.scales.xAxes[0].time.unit = 'day';
         // Set y-axis to start at 0 for haikus
         statChart.options.scales.yAxes[0].ticks.beginAtZero = true;
-        statChart.options.scales.yAxes[0].ticks.beginAtZero = true;
         // Set tooltips
         statChart.options.tooltips.callbacks = hourCallbacks;
         // Add to charts
@@ -428,6 +428,17 @@ function updateChartsData(charts, apiEndpoint) {
                         // Add the data
                         statCounts.push(count);
                     }
+                }
+
+                // Update min/max values for y-axis
+                let minCount = Math.min(...statCounts);
+                let maxCount = Math.max(...statCounts);
+                let diff = maxCount - minCount;
+                let suggestedMax = maxCount + (diff * STAT_Y_PADDING);
+                statChart.options.scales.yAxes[0].ticks.suggestedMax = suggestedMax;
+                if (!statChart.options.scales.yAxes[0].ticks.beginAtZero) {
+                    let suggestedMin = minCount - (diff * STAT_Y_PADDING);
+                    statChart.options.scales.yAxes[0].ticks.suggestedMin = suggestedMin;
                 }
 
                 // Update the chart
