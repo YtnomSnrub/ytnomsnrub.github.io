@@ -141,8 +141,8 @@ code {
             margin: -0.3rem -0.6rem;
 
             content: "";
-            transition: background-color 0.1s $m-ease-in, border-color 0.1s $m-ease-in, transform 0.1s $m-ease-in;
-            transform: scale(1.05);
+            transition: background-color 0.1s $m-ease-in, border-color 0.1s $m-ease-in, transform 0.2s $m-ease-in;
+            transform: scale(1.25);
             pointer-events: none;
 
             border: 1px solid transparent;
