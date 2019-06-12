@@ -3,13 +3,17 @@ $panel-width: 100vw;
 .main-content .content-panel {
     position: relative;
 
-    padding-top: 24px;
-    padding-bottom: 32px;
+    margin-top: -$tabs-height + $tabs-height-small;
+    padding-top: $tabs-height - $tabs-height-small;
 
     &,
     h1,
     h2 {
         color: $text-color-dark;
+    }
+
+    h2:first-child {
+        padding-top: 2rem;
     }
 
     a:not(.button):not(.header-link) {

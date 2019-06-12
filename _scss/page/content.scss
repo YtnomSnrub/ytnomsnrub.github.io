@@ -2,9 +2,9 @@
     position: relative;
 
     max-width: 880px;
-    min-height: calc(100vh - #{$tabs-height-small} - 1.5rem);
+    min-height: calc(100vh - #{$tabs-height} - 1.5rem);
     margin: auto;
-    padding: $tabs-height-small 1.5rem 2rem;
+    padding: $tabs-height 1.5rem 2rem;
 
     font-size: 1.1rem;
 
@@ -14,15 +14,13 @@
 
     @media screen and (max-width: $medium-breakpoint) {
         max-width: $small-breakpoint;
-        padding: $tabs-height-small 1rem 2rem;
+        padding: $tabs-height 1rem 2rem;
     }
 
     @media screen and (max-width: $small-breakpoint) {
         overflow-x: hidden;
-    }
 
-    @media screen and (max-width: $tiny-breakpoint) {
-        padding: $tabs-height-small 0.75rem 2rem;
+        max-width: 100vw;
     }
 
     &.content-wide {
@@ -30,10 +28,6 @@
 
         @media screen and (max-width: 1400px) {
             max-width: 880px;
-        }
-
-        @media screen and (max-width: 880px) {
-            max-width: 100vw;
         }
     }
 

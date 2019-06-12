@@ -12,7 +12,7 @@ h6 {
 }
 
 h1 {
-    padding-top: calc(#{$tabs-height} + 1rem);
+    padding-top: 2.5rem;
     padding-bottom: 2rem;
 
     font-size: 4.0rem;
@@ -20,6 +20,8 @@ h1 {
 @include font-heading;
 
     @media (max-width: $large-breakpoint) {
+        padding-top: 2rem;
+
         font-size: 3.5rem;
     }
 

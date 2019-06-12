@@ -98,6 +98,18 @@
 
         a.page-link-current {
             color: $text-color;
+
+            &:focus {
+                &::before {
+                    background-color: $background-color;
+                }
+            }
+
+            &:hover {
+                &::before {
+                    background-color: darken($background-color, 3%);
+                }
+            }
         }
     }
 }
