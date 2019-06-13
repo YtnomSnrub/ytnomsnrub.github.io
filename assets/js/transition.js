@@ -62,12 +62,13 @@ $(function () {
 
                         window.scrollTo(0, dest);
                     }
+
+                    setTimeout(function () {
+                        // Trigger transition events
+                        $(document).trigger("transition");
+                    }, 150);
                 }, 200);
             }
-        },
-        onAfter: function ($container, $newContent) {
-            // Trigger transition events
-            $(document).trigger("transition");
         }
     }
 
