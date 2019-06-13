@@ -32,7 +32,7 @@
 
         content: "";
         transition: transform 0.1s $m-ease;
-        transform: translateY(-$button-extend);
+        transform: translate3d(0, -$button-extend, 0);
 
         border-radius: $border-radius;
         background-color: $color;
@@ -41,13 +41,13 @@
     &:hover,
     &:focus {
         .button-inner {
-            transform: translateY(-$button-extend-hover);
+            transform: translate3d(0, -$button-extend-hover, 0);
         }
     }
 
     &:active {
         .button-inner {
-            transform: translateY(-$button-extend-active);
+            transform: translate3d(0, -$button-extend-active, 0);
         }
     }
 }

@@ -90,11 +90,11 @@
 
 .page-tabs {
     position: absolute;
-    z-index: 1;
+    z-index: 100;
 
     width: 100%;
 
-    transform: translateZ(0);
+    transform: translate3d(0, 0, 0);
 
     background-color: $background-color-alt;
 
@@ -112,7 +112,6 @@
 
     &.fixed {
         position: fixed;
-        z-index: 1;
         left: 0;
         right: 0;
         top: 0;
@@ -162,7 +161,7 @@
 
             content: "";
             transition: transform 0.15s $m-ease, background-color 0.1s $m-ease, color 0.1s $m-ease;
-            transform: scaleY(0);
+            transform: scale3d(1, 0, 1);
             transform-origin: 50% 100%;
 
             border-radius: 0;

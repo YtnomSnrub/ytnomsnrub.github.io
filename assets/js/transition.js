@@ -3,7 +3,7 @@ $(function () {
     var $page = $("#Main");
     var $loading = $("#Loading")
     var options = {
-        debug: true,
+        debug: false,
         scroll: false,
         cacheLength: 0,
         onBefore: function ($anchor, $container) {
@@ -13,8 +13,6 @@ $(function () {
                 let anchorRef = $anchor.attr("href").replace(window.location.origin, "");
                 let tabRef = $pageTab.attr("href").replace(window.location.origin, "");
 
-                console.log(anchorRef, tabRef);
-
                 if (anchorRef === tabRef) {
                     $pageTab.addClass("page-link-current");
                 } else {
@@ -23,16 +21,21 @@ $(function () {
             });
         },
         onStart: {
-            duration: 250,
+            duration: 150,
             render: function ($container) {
                 $container.addClass('page-out');
-                $loading.addClass('visible');
                 // Restart your animation
                 smoothState.restartCSSAnimations();
             }
         },
-        onReady: {
+        onProgress: {
             duration: 0,
+            render: function ($container) {
+                $loading.addClass('visible');
+            }
+        },
+        onReady: {
+            duration: 150,
             render: function ($container, $newContent) {
                 $loading.addClass('hidden');
                 setTimeout(function () {
@@ -41,9 +44,6 @@ $(function () {
                     $container.removeClass('page-out');
                     // Inject the new content
                     $container.html($newContent);
-
-                    // Trigger transition events
-                    $(document).trigger("transition");
 
                     // Scroll to top
                     var $mainContent = $(".main-content");
@@ -64,6 +64,11 @@ $(function () {
                     }
                 }, 200);
             }
+        },
+        onAfter: function ($container, $newContent) {
+            console.log("onAfter");
+            // Trigger transition events
+            $(document).trigger("transition");
         }
     }
 

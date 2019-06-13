@@ -142,7 +142,7 @@ code {
 
             content: "";
             transition: background-color 0.1s $m-ease-in, border-color 0.1s $m-ease-in, transform 0.2s $m-ease-in;
-            transform: scale(1.25);
+            transform: scale3d(1.25, 1.25, 1.25);
             pointer-events: none;
 
             border: 1px solid transparent;
@@ -153,7 +153,7 @@ code {
         &:hover::before,
         &:hover i::before {
             transition: background-color 0.1s $m-ease-out, border-color 0.1s $m-ease-out, transform 0s linear;
-            transform: scale(1);
+            transform: scale3d(1, 1, 1);
 
             border-color: $table-border-color;
             background-color: transparent;
@@ -162,7 +162,7 @@ code {
         &:focus::before,
         &:focus i::before {
             transition: background-color 0.1s $m-ease-out, border-color 0.1s $m-ease-out, transform 0.1s $m-ease-out;
-            transform: scale(1);
+            transform: scale3d(1, 1, 1);
 
             border-color: $table-border-color;
             background-color: rgba($background-color-alt, 0.12);

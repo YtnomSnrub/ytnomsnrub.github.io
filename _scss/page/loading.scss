@@ -5,21 +5,21 @@ $loading-time: 0.15s;
 
 @keyframes loading-animation {
     0% {
-        transform: rotate(0deg);
+        transform: rotate(0deg) translate3d(0, 0, 0);
 
         border-right-color: $primary-color;
         border-left-color: $primary-color;
     }
 
     50% {
-        transform: rotate(180deg);
+        transform: rotate(180deg) translate3d(0, 0, 0);
 
         border-right-color: $secondary-color;
         border-left-color: $secondary-color;
     }
 
     100% {
-        transform: rotate(360deg);
+        transform: rotate(360deg) translate3d(0, 0, 0);
 
         border-right-color: $primary-color;
         border-left-color: $primary-color;
@@ -96,19 +96,19 @@ $loading-image-time: 1.8s;
     0% {
         z-index: 1;
 
-        transform: scale(1);
+        transform: scale3d(1, 1, 1);
     }
 
     50% {
         z-index: 0;
 
-        transform: scale(0.5);
+        transform: scale3d(0.5, 0.5, 0.5);
     }
 
     100% {
         z-index: 1;
 
-        transform: scale(1);
+        transform: scale3d(1, 1, 1);
     }
 }
 
