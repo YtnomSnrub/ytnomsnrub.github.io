@@ -35,7 +35,7 @@ $(function () {
             }
         },
         onReady: {
-            duration: 150,
+            duration: 400,
             render: function ($container, $newContent) {
                 $loading.addClass('hidden');
                 setTimeout(function () {
@@ -66,7 +66,6 @@ $(function () {
             }
         },
         onAfter: function ($container, $newContent) {
-            console.log("onAfter");
             // Trigger transition events
             $(document).trigger("transition");
         }
