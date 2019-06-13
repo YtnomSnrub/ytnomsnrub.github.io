@@ -37,7 +37,12 @@ $(function () {
         onReady: {
             duration: 400,
             render: function ($container, $newContent) {
-                $loading.addClass('hidden');
+                let delay = 0;
+                if ($loading.hasClass('visible')) {
+                    $loading.addClass('hidden');
+                    delay = 200;
+                }
+
                 setTimeout(function () {
                     $loading.removeClass('visible');
                     $loading.removeClass('hidden');
@@ -67,7 +72,7 @@ $(function () {
                         // Trigger transition events
                         $(document).trigger("transition");
                     }, 150);
-                }, 200);
+                }, delay);
             }
         }
     }
