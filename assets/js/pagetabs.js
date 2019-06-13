@@ -18,3 +18,7 @@ function updateTabs() {
 $(function () {
     updateTabs();
 });
+
+$(document).on("transition", function () {
+    updateTabs();
+});
