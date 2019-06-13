@@ -72,7 +72,7 @@
             }
 
             &::before {
-                transform: scale3d(1, 1, 1);
+                transform: scaleY(1);
             }
         }
     }
