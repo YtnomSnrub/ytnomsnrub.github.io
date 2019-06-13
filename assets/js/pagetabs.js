@@ -14,3 +14,7 @@ function updateTabs() {
         }
     }
 }
+
+$(function () {
+    updateTabs();
+});
