@@ -1,8 +1,8 @@
 $(function () {
     'use strict';
-    var $page = $("#Main");
-    var $loading = $("#Loading")
-    var options = {
+    let $page = $("#Main");
+    let $loading = $("#Loading")
+    let options = {
         debug: false,
         scroll: false,
         cacheLength: 0,
@@ -51,14 +51,14 @@ $(function () {
                     $container.html($newContent);
 
                     // Scroll to top
-                    var $mainContent = $(".main-content");
-                    var t = $mainContent.offset().top;
+                    let $mainContent = $(".main-content");
+                    let t = $mainContent.offset().top;
                     if (window.scrollY > t) {
                         window.scrollTo(0, t);
                     }
 
                     if (location.hash !== "") {
-                        var dest = 0;
+                        let dest = 0;
                         if ($(location.hash).offset().top > $(document).height() - $(window).height()) {
                             dest = $(document).height() - $(window).height();
                         } else {
@@ -77,8 +77,7 @@ $(function () {
         }
     }
 
-    var smoothState = $page.smoothState(options).data('smoothState');
-
+    let smoothState = $page.smoothState(options).data('smoothState');
     // Update tab bar
     updateTabs();
     // Update tabs on scroll
@@ -89,10 +88,11 @@ $(function () {
 });
 
 function updateTabs() {
-    var $mainContent = $(".main-content");
-    var $pageTabs = $("#PageTabs");
+    'use strict';
+    let $mainContent = $(".main-content");
+    let $pageTabs = $("#PageTabs");
 
-    var t = $mainContent.offset().top + 1;
+    let t = $mainContent.offset().top + 1;
     if (window.scrollY > t) {
         if (!$pageTabs.hasClass("fixed")) {
             $pageTabs.addClass("fixed")

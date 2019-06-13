@@ -1,6 +1,7 @@
 <script>
+    'use strict';
     $('img').on('load', function () {
-        var $element = $(this);
+        let $element = $(this);
         window.setTimeout(function () {
             let $loading = $element.prev();
             if ($loading.length > 0 && $loading.hasClass("loading-image")) {
@@ -17,7 +18,7 @@
             });
         }, 150);
     }).each(function () {
-        var $element = $(this);
+        let $element = $(this);
         if (this.complete) {
             window.setTimeout(function () {
                 if (!$element.hasClass("visible")) {

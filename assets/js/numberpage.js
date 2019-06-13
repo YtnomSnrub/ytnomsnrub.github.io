@@ -1,5 +1,5 @@
-var statIntervals = [];
-var chartIntervals = [];
+let statIntervals = [];
+let chartIntervals = [];
 
 const LINE_TENSION = 0.2;
 const STAT_Y_PADDING = 0.1;
