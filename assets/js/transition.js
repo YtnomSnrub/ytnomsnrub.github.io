@@ -35,14 +35,12 @@ $(function () {
             }
         },
         onReady: {
-            duration: 400,
+            duration: 0,
             render: function ($container, $newContent) {
                 let delay = 0;
                 if ($loading.hasClass('visible')) {
                     delay = 500;
-                    setTimeout(function () {
-                        $loading.addClass('hidden');
-                    }, 300);
+                    $loading.addClass('hidden');
                 }
 
                 setTimeout(function () {
