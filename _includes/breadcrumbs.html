@@ -1,20 +1,16 @@
 {% assign url_parts = page.url | remove: ".html" | split:'/' %}
 
-{% assign previous=site.url %}
+{% assign previous = site.url %}
 {% assign position = 1 %}
 
 {% if url_parts.size > 0 %}
 <ol class="navigation" vocab="https://schema.org/" typeof="BreadcrumbList">
     {% for part in url_parts %}
 
-    <!-- Add '/' to end of url, if there isn't one already -->
-    {% assign previous = previous | append: "/" %}
-
     <!-- Add the part to the url -->
     {% assign previous = previous | append: part %}
     <li property="itemListElement" typeof="ListItem">
-        {% assign href_length = previous.size | minus: 1 %}
-        <a property="item" typeof="WebPage" href="{{ previous | slice: 0, href_length }}">
+        <a property="item" typeof="WebPage" href="{{ previous }}">
             {% if part == "" %}
             <span property="name">home</span>
             {% else %}
@@ -25,7 +21,9 @@
         <meta property="position" content="{{ position }}">
         {% assign position = position | plus: 1 %}
     </li>
-    <p>{{previous}}</p>
+    <p>{{ previous }}</p>
+    <!-- Add '/' to end of url -->
+    {% assign previous = previous | append: "/" %}
     {% endfor %}
 </ol>
 {% endif %}
