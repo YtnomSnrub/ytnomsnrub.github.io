@@ -31,7 +31,11 @@ $(function () {
         onProgress: {
             duration: 0,
             render: function ($container) {
-                $loading.addClass('visible');
+                setTimeout(function () {
+                    if ($container.hasClass('page-out') && !$loading.hasClass('hidden')) {
+                        $loading.addClass('visible');
+                    }
+                }, 100);
             }
         },
         onReady: {
@@ -39,7 +43,11 @@ $(function () {
             render: function ($container, $newContent) {
                 let delay = 0;
                 if ($loading.hasClass('visible')) {
-                    delay = 500;
+                    delay = 400;
+                    setTimeout(function () {
+                        $loading.addClass('hidden');
+                    }, 250);
+                } else {
                     $loading.addClass('hidden');
                 }
 
