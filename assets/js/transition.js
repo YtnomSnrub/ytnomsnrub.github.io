@@ -39,8 +39,10 @@ $(function () {
             render: function ($container, $newContent) {
                 let delay = 0;
                 if ($loading.hasClass('visible')) {
-                    $loading.addClass('hidden');
-                    delay = 200;
+                    delay = 500;
+                    setTimeout(function () {
+                        $loading.addClass('hidden');
+                    }, 300);
                 }
 
                 setTimeout(function () {
