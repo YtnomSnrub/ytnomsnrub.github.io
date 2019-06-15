@@ -21,7 +21,6 @@
         <meta property="position" content="{{ position }}">
         {% assign position = position | plus: 1 %}
     </li>
-    <p>{{ previous }}</p>
     <!-- Add '/' to end of url -->
     {% assign previous = previous | append: "/" %}
     {% endfor %}
