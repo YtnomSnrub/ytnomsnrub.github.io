@@ -40,6 +40,14 @@
 @include header-background;
     }
 
+    .page-header-text {
+        @media screen and (max-width: $medium-breakpoint) {
+            transform: none !important;
+
+            opacity: 1 !important;
+        }
+    }
+
     .project-name,
     .project-tagline {
         position: relative;
