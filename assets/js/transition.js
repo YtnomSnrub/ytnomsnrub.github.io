@@ -1,7 +1,7 @@
 $(function () {
     'use strict';
     let $page = $("#Main");
-    let $loading = $("#Loading")
+    let $loading = $("#Loading");
     let options = {
         debug: false,
         scroll: false,
@@ -57,6 +57,8 @@ $(function () {
                     $container.removeClass('page-out');
                     // Inject the new content
                     $container.html($newContent);
+                    // Trigger transition events
+                    $(document).trigger("transition");
 
                     // Scroll to top
                     let $mainContent = $(".main-content");
@@ -75,21 +77,14 @@ $(function () {
 
                         window.scrollTo(0, dest);
                     }
-
-                    setTimeout(function () {
-                        // Trigger transition events
-                        $(document).trigger("transition");
-                    }, 150);
                 }, delay);
             }
         }
-    }
+    };
 
     let smoothState = $page.smoothState(options).data('smoothState');
     // Update tab bar
     updateTabs();
-    // Update tabs on scroll
-    window.addEventListener('scroll', updateTabs);
 
     // Trigger transition events
     $(document).trigger("transition");

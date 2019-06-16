@@ -1,8 +1,10 @@
 <div class="head">
     <header class="page-header">
         <div class="background visible"></div>
-        <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
-        <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+        <div class="page-header-text">
+            <h1 class="project-name">{{ site.title | default: site.github.repository_name }}</h1>
+            <h2 class="project-tagline">{{ site.description | default: site.github.project_tagline }}</h2>
+        </div>
     </header>
 
     <div id="PageTabs" class="page-tabs">
