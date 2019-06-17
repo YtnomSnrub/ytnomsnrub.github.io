@@ -49,7 +49,9 @@ const chartOptions = {
     responsive: true,
     maintainAspectRatio: true,
     legend: {
-        onClick: (e) => e.stopPropagation()
+        onClick: function (e) {
+            e.stopPropagation();
+        }
     }
 };
 
@@ -200,7 +202,7 @@ function setStatFieldValue(statField, statValue) {
     }
 }
 
-const numberWithCommas = (x) => {
+function numberWithCommas(x) {
     if (x === undefined) {
         return "Error";
     }
@@ -230,7 +232,7 @@ function setupCharts() {
     }, 300000));
 
     // Update live charts
-    liveCharts.forEach(chart => {
+    liveCharts.forEach(function (chart) {
         const LIVE_MAX_POINTS = 400;
         let chartLabels = [];
         let chartCounts = [];
@@ -410,13 +412,35 @@ function createChart(statGraph) {
     return statChart;
 }
 
+function findMin(arr) {
+    let min = null;
+    arr.forEach(function (x) {
+        if (min === null || x < min) {
+            min = x;
+        }
+    });
+
+    return min;
+}
+
+function findMax(arr) {
+    let max = null;
+    arr.forEach(function (x) {
+        if (max === null || x > max) {
+            max = x;
+        }
+    });
+
+    return max;
+}
+
 function updateChartsData(charts, apiEndpoint) {
     // Get the data from the api
     getString = "https://haikubotapi.apphb.com/api/" + apiEndpoint;
     $.ajax({
         url: getString,
         success: function (data) {
-            charts.forEach(statChart => {
+            charts.forEach(function (statChart) {
                 let statLabels = [];
                 let statCounts = [];
                 for (let i = 0; i < data.length; ++i) {
@@ -431,8 +455,8 @@ function updateChartsData(charts, apiEndpoint) {
                 }
 
                 // Update min/max values for y-axis
-                let minCount = Math.min(...statCounts);
-                let maxCount = Math.max(...statCounts);
+                let minCount = findMin(statCounts);
+                let maxCount = findMax(statCounts);
                 let diff = maxCount - minCount;
                 let suggestedMax = maxCount + (diff * STAT_Y_PADDING);
                 statChart.options.scales.yAxes[0].ticks.suggestedMax = suggestedMax;
