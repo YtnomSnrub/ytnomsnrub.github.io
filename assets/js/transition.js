@@ -11,7 +11,14 @@ $(function () {
             $(".page-tabs a").each(function () {
                 let $pageTab = $(this);
                 let anchorRef = $anchor.attr("href").replace(window.location.origin, "");
+                if (anchorRef.endsWith("/")) {
+                    anchorRef = anchorRef.slice(0, -1);
+                }
+
                 let tabRef = $pageTab.attr("href").replace(window.location.origin, "");
+                if (tabRef.endsWith("/")) {
+                    tabRef = tabRef.slice(0, -1);
+                }
 
                 if (anchorRef === tabRef) {
                     $pageTab.addClass("page-link-current");
