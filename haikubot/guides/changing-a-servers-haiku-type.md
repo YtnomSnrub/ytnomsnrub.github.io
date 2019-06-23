@@ -34,6 +34,14 @@ A smaller format for haikus. This option has no gap between lines.
 !haiku type tiny
 ```
 
-A super compact format for haikus, with a '\|\|' used to separate lines.
+A super compact format for haikus, with a '\|' used to separate lines.
 
 ![Normal Haiku Format](/haikubot/img/haiku-type-tiny.png)
+
+## React
+
+```command
+!haiku type react
+```
+
+Don't repost haikus at all, and instead just add a reaction to the message. This can work well with a [Haiku Log](./making-a-haiku-log) if you don't like HaikuBot interrupting your conversations.
