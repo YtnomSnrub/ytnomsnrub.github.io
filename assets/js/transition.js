@@ -11,12 +11,12 @@ $(function () {
             $(".page-tabs a").each(function () {
                 let $pageTab = $(this);
                 let anchorRef = $anchor.attr("href").replace(window.location.origin, "");
-                if (anchorRef.endsWith("/")) {
+                if (anchorRef.slice(-1) === "/") {
                     anchorRef = anchorRef.slice(0, -1);
                 }
 
                 let tabRef = $pageTab.attr("href").replace(window.location.origin, "");
-                if (tabRef.endsWith("/")) {
+                if (tabRef.slice(-1) === "/") {
                     tabRef = tabRef.slice(0, -1);
                 }
 
@@ -68,8 +68,9 @@ $(function () {
                     $(document).trigger("transition");
 
                     // Scroll to top
+                    let $pageTabs = $(".page-tabs");
                     let $mainContent = $(".main-content");
-                    let t = $mainContent.offset().top;
+                    let t = $mainContent.offset().top - $pageTabs.height();
                     if (window.scrollY > t) {
                         window.scrollTo(0, t);
                     }

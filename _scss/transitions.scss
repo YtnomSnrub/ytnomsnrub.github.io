@@ -93,7 +93,9 @@
 
     .page-tabs {
         .page-tabs-inner {
-            height: $tabs-height;
+            a {
+                padding: 0.8rem 1rem;
+            }
         }
 
         a.page-link-current {

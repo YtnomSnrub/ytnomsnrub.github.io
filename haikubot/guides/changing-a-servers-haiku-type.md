@@ -45,3 +45,11 @@ A super compact format for haikus, with a '\|' used to separate lines.
 ```
 
 Don't repost haikus at all, and instead just add a reaction to the message. This can work well with a [Haiku Log](./making-a-haiku-log) if you don't like HaikuBot interrupting your conversations.
+
+## None
+
+```command
+!haiku type none
+```
+
+Don't acknowledge haikus in the channel they were sent from, and only post them to the Haiku Log.

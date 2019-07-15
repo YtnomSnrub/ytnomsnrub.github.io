@@ -34,15 +34,10 @@ h6 {
         display: block;
 
         width: 0;
-        height: calc(#{$tabs-height} + 1.2rem);
-        margin-top: calc(#{-$tabs-height} - 1.2rem);
+        height: 1.2rem;
+        margin-top: -1.2rem;
 
         content: "";
-
-        @media (max-height: $medium-breakpoint), (max-width: $small-breakpoint) {
-            height: calc(#{$tabs-height-small} + 1.2rem);
-            margin-top: calc(#{-$tabs-height-small} - 1.2rem);
-        }
     }
 }
 

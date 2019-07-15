@@ -97,8 +97,9 @@
 }
 
 .page-tabs {
-    position: absolute;
+    position: sticky;
     z-index: 100;
+    top: 0;
 
     width: 100%;
 
@@ -109,23 +110,16 @@
     .page-tabs-inner {
         display: table;
 
-        height: $tabs-height;
         margin: auto;
 
-        transition: height 0.1s $m-ease-in-out;
         text-align: center;
     }
 
     &.fixed {
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
+        @include header-shadow-fixed;
 
-@include header-shadow-fixed;
-
-        .page-tabs-inner {
-            height: $tabs-height-small;
+        .page-tabs-inner a {
+            padding: 0.5rem 1rem;
         }
     }
 
@@ -135,10 +129,11 @@
 
         display: table-cell;
 
+        height: 100%;
         margin: 0;
-        padding: 0 1rem;
+        padding: 0.8rem 1rem;
 
-        transition: background-color 0.1s $m-ease, color 0.1s $m-ease;
+        transition: background-color 0.1s $m-ease, color 0.1s $m-ease, padding 0.1s $m-ease-in-out;
         text-align: center;
         vertical-align: middle;
         text-decoration: none;
@@ -162,8 +157,9 @@
             z-index: -1;
             left: 0;
             right: 0;
-            top: 0;
             bottom: 0;
+
+            height: 100%;
 
             content: "";
             transition: transform 0.15s $m-ease, background-color 0.1s $m-ease, color 0.1s $m-ease;

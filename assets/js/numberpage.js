@@ -4,7 +4,7 @@ let chartIntervals = [];
 const LINE_TENSION = 0.2;
 const STAT_Y_PADDING = 0.1;
 
-const chartOptions = {
+const CHART_OPTIONS = {
     scales: {
         yAxes: [{
             ticks: {
@@ -394,7 +394,7 @@ function createChart(statGraph) {
                 lineTension: tension
             }]
         },
-        options: chartOptions
+        options: CHART_OPTIONS
     });
 
     // Set internal data
