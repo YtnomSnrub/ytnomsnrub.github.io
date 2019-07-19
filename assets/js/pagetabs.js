@@ -3,7 +3,7 @@ function updateTabs() {
     let $mainContent = $(".main-content");
     let $pageTabs = $("#PageTabs");
 
-    let t = $mainContent.offset().top - $pageTabs.height();
+    let t = $mainContent.offset().top - ($pageTabs.height() / 2);
     if (window.scrollY > t) {
         if (!$pageTabs.hasClass("fixed")) {
             $pageTabs.addClass("fixed")

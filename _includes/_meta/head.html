@@ -48,28 +48,5 @@
 
     ga('create', '{{ site.google_analytics }}', 'auto')
     ga('send', 'pageview');
-
-    // Check for admin
-    let admin_cookie = getCookie("is_admin");
-    if (admin_cookie !== "" && admin_cookie !== undefined) {
-        console.log("Admin flag set for ga");
-        ga('set', 'dimension1', 'true');
-    }
-
-    function getCookie(cname) {
-        var name = cname + "=";
-        var decodedCookie = decodeURIComponent(document.cookie);
-        var ca = decodedCookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
-            var c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-            }
-        }
-        return "";
-    }
 </script>
 {% endif %}

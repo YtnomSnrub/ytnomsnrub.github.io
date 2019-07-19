@@ -1,9 +1,9 @@
 <script>
     'use strict';
     $('img').on('load', function () {
-        let $element = $(this);
+        var $element = $(this);
         window.setTimeout(function () {
-            let $loading = $element.prev();
+            var $loading = $element.prev();
             if ($loading.length > 0 && $loading.hasClass("loading-image")) {
                 $loading.addClass("hidden");
                 $loading.slideUp(400, function () {
@@ -18,7 +18,7 @@
             });
         }, 150);
     }).each(function () {
-        let $element = $(this);
+        var $element = $(this);
         if (this.complete) {
             window.setTimeout(function () {
                 if (!$element.hasClass("visible")) {
@@ -31,3 +31,16 @@
         }
     });
 </script>
+
+<noscript>
+    <style>
+img {
+    transform: none;
+
+    opacity: 1;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+
+    </style>
+</noscript>
