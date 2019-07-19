@@ -70,7 +70,7 @@ $(function () {
                     // Scroll to top
                     let $pageTabs = $(".page-tabs");
                     let $mainContent = $(".main-content");
-                    let t = $mainContent.offset().top - $pageTabs.height();
+                    let t = $mainContent.offset().top - $pageTabs.height() + 1;
                     if (window.scrollY > t) {
                         window.scrollTo(0, t);
                     }
