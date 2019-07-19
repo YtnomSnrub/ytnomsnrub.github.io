@@ -88,11 +88,15 @@ a.button {
         @include button($haiku-color, $haiku-color-text, true);
     }
 
-    &.button-modis {
-        @include button($modis-color, $text-color-alt, false);
+    &.button-oolong {
+        @include button($oolong-color-alt, $text-color, false);
     }
 
     &.button-kingdom {
         @include button($kingdom-color, $text-color-alt, false);
+    }
+
+    &.button-modis {
+        @include button($modis-color, $text-color-alt, false);
     }
 }

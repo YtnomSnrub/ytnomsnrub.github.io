@@ -1,5 +1,9 @@
 <div class="content-panel panel-kingdom">
+    {% if include.title %}
+    {{ include.title }}
+    {% else %}
     <h2 id="Kingdom" class="panel-heading">Kingdom</h2>
+    {% endif %}
 
     <p>Kingdom is a smart random card picker for the Dominion card game. Using its deep knowledge of what every single
         card in the game does, and how all the cards interact with one another, Kingdom creates dynamic and interesting
@@ -9,5 +13,10 @@
         <a class="button button-kingdom" href="https://kingdomcardpicker.github.io">
             <span class="button-inner">Go to Kingdom</span>
         </a>
+        {% if include.show_page_link %}
+        <a class="button" href="/kingdom/">
+            <span class="button-inner">Visit Page</span>
+        </a>
+        {% endif %}
     </div>
 </div>

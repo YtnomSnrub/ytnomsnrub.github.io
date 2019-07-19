@@ -1,12 +1,6 @@
-.main-content {
-    position: relative;
-
+.main-content,
+.page-tabs .page-tabs-inner {
     max-width: 880px;
-    min-height: 100vh;
-    margin: auto;
-    padding: 0 1.5rem 2rem;
-
-    font-size: 1.1rem;
 
     @media screen and (max-width: $large-breakpoint) {
         max-width: $medium-breakpoint;
@@ -14,13 +8,26 @@
 
     @media screen and (max-width: $medium-breakpoint) {
         max-width: $small-breakpoint;
-        padding: 0 1rem 2rem;
     }
+
+    @media screen and (max-width: $small-breakpoint) {
+        max-width: 100vw;
+    }
+}
+
+.main-content {
+    position: relative;
+
+    min-height: 100vh;
+    margin: auto;
+    padding: 0 1.5rem 2rem;
+
+    font-size: 1.1rem;
 
     @media screen and (max-width: $small-breakpoint) {
         overflow-x: hidden;
 
-        max-width: 100vw;
+        padding: 0 1rem 2rem;
     }
 
     &.content-wide {

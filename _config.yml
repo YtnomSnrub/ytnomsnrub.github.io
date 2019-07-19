@@ -12,6 +12,7 @@ sass:
 header_pages: 
 - index.md
 - haikubot/index.md
+- oolong/info/index.md
 - kingdom/index.md
 
 # Build settings

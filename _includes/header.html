@@ -7,6 +7,16 @@
 </header>
 
 <nav id="PageTabs" class="page-tabs">
+    <div class="page-tabs-menu">
+        {% if page.title %}
+        <a class="page-tabs-title" href="{{ page.url | relative_url }}">{{ page.title }}</a>
+        {% endif %}
+
+        <button class="page-tabs-expand">
+            <div class="page-tabs-hamburger"></div>
+        </button>
+    </div>
+
     <div class="page-tabs-inner">
         {% for path in page_paths %}
         {% assign header_page = site.pages | where: "path", path | first %}
@@ -18,3 +28,9 @@
         {% endfor %}
     </div>
 </nav>
+
+<script>
+    $(".page-tabs-expand").on("click", function () {
+        $(".page-tabs").toggleClass("expanded");
+    });
+</script>

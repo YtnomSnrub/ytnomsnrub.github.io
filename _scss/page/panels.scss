@@ -35,6 +35,7 @@ $panel-width: 100vw;
     &.panel-haikubot,
     &.panel-patreon,
     &.panel-tumblr,
+    &.panel-oolong,
     &.panel-modis {
         & + .site-footer {
             margin-top: 0;
@@ -49,6 +50,7 @@ $panel-width: 100vw;
 
     &.panel-patreon,
     &.panel-tumblr,
+    &.panel-oolong,
     &.panel-modis {
         &,
         h1,
@@ -99,6 +101,14 @@ $panel-width: 100vw;
 
         &::before {
             background: linear-gradient(45deg, $tumblr-color-background-1 0%, $tumblr-color-background-2 100%);
+        }
+    }
+
+    &.panel-oolong {
+        z-index: 1;
+
+        &::before {
+            background: linear-gradient(45deg, $oolong-color-background-1 0%, $oolong-color-background-2 100%);
         }
     }
 

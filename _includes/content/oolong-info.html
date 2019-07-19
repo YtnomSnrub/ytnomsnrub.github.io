@@ -1,0 +1,23 @@
+<div class="content-panel panel-oolong">
+    {% if include.title %}
+    {{ include.title }}
+    {% else %}
+    <h2 id="Kingdom" class="panel-heading">Oolong</h2>
+    {% endif %}
+
+    <p>Oolong is a random word generator that works by taking an input, and generating new words based on that input. Oolong works using Markov chains: a kind
+        of probability model that works by taking an input and giving the probability all possible outcomes. Currently, there are presets for city names in over
+        150 countries, and presets for first names categorised by decade. There's also the option to use your own inputs, either from text files or custom text.
+    </p>
+
+    <div class="button-row">
+        {% if include.show_page_link %}
+        <a class="button" href="/oolong/info">
+            <span class="button-inner">Visit Page</span>
+        </a>
+        {% endif %}
+        <a class="button button-oolong" href="/oolong/">
+            <span class="button-inner">Go to Oolong</span>
+        </a>
+    </div>
+</div>

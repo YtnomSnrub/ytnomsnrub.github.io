@@ -2,15 +2,7 @@
 title: "Kingdom"
 ---
 
-# Kingdom
-
-Kingdom is a smart random card picker for the Dominion card game. Using its deep knowledge of what every single card in the game does, and how all the cards interact with one another, Kingdom creates dynamic and interesting random setups each time you play to create a fun experience for new players and veterans alike.
-
-<div class="button-row">
-    <a class="button button-kingdom" href="https://kingdomcardpicker.github.io">
-        <span class="button-inner">Go to Kingdom</span>
-    </a>
-</div>
+{% include content/kingdom-info.html title="<h1>Kingdom</h1>" %}
 
 ![Kingdom App](/kingdom/img/kingdom.png)
 

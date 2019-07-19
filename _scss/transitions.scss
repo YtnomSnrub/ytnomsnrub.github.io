@@ -1,3 +1,13 @@
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 @keyframes page-in {
     from {
         transform: translate3d(0, 24px, 0);
@@ -34,45 +44,58 @@
         animation-fill-mode: both;
     }
 
-    .page-tabs a {
-        color: $text-color-alt;
-        background-color: transparent;
+    .page-tabs {
+        .page-tabs-title {
+            transition: opacity 0.125s $m-ease;
+            animation-name: fade-in;
+            animation-duration: 0.125s;
+            animation-timing-function: $m-ease-out;
+            animation-fill-mode: both;
 
-        &:focus {
-            background-color: darken($background-color-alt, 10%);
+            opacity: 1;
         }
 
-        &:hover {
-            background-color: darken($background-color-alt, 5%);
-        }
-
-        &:active {
-            background-color: darken($background-color-alt, 10%);
-        }
-
-        &.page-link-current {
-            color: $text-color;
+        button,
+        .page-tabs-inner a {
+            color: $text-color-alt;
+            background-color: transparent;
 
             &:focus {
-                &::before {
-                    background-color: darken($background-color, 5%);
-                }
+                background-color: darken($background-color-alt, 10%);
             }
 
             &:hover {
-                &::before {
-                    background-color: darken($background-color, 3%);
-                }
+                background-color: darken($background-color-alt, 5%);
             }
 
             &:active {
-                &::before {
-                    background-color: darken($background-color, 7%);
-                }
+                background-color: darken($background-color-alt, 10%);
             }
 
-            &::before {
-                transform: scaleY(1);
+            &.page-link-current {
+                color: $text-color;
+
+                &:focus {
+                    &::before {
+                        background-color: darken($background-color, 5%);
+                    }
+                }
+
+                &:hover {
+                    &::before {
+                        background-color: darken($background-color, 3%);
+                    }
+                }
+
+                &:active {
+                    &::before {
+                        background-color: darken($background-color, 7%);
+                    }
+                }
+
+                &::before {
+                    transform: scaleY(1);
+                }
             }
         }
     }
@@ -92,18 +115,40 @@
     }
 
     .page-tabs {
+        .page-tabs-title {
+            animation: none;
+
+            opacity: 0;
+        }
+
+        .page-tabs-menu {
+            padding: 0.8rem 1rem;
+        }
+
         .page-tabs-inner {
             a {
                 padding: 0.8rem 1rem;
             }
-        }
 
-        a.page-link-current {
-            color: $text-color;
+            a.page-link-current {
+                color: $text-color;
 
-            &:focus {
-                &::before {
-                    background-color: $background-color;
+                &:focus {
+                    &::before {
+                        background-color: $background-color;
+                    }
+                }
+            }
+
+            @media screen and (max-width: $small-breakpoint) {
+                opacity: 0;
+
+                a.page-link-current {
+                    color: $text-color-alt;
+
+                    &::before {
+                        transform: scaleY(0);
+                    }
                 }
             }
         }
