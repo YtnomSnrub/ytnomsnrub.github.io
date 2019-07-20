@@ -27,16 +27,49 @@
         {% include _meta/images.html %}
     </div>
 
+    <!-- Feature detection -->
+    <section id="ErrorBrowser" class="main-content" style="display: none;">
+        <div class="content-container">
+            <!-- Content -->
+            <h1>Browser not Supported</h1>
+            <p>Please update your browser to continue.</p>
+            <!-- Footer -->
+            {% include footer.html %}
+        </div>
+    </section>
+
+    <script>
+        try {
+            // Let/const
+            eval("let x = 0;");
+            eval("const X = 0;");
+            // Flexbox
+            if (!Modernizr.flexbox) {
+                throw new Error("No flexbox");
+            }
+        } catch (ex) {
+            $(".main").css("display", "none");
+            $("#ErrorBrowser").css("display", "block");
+        }
+    </script>
+
     <noscript>
         <style>
-.stat-table,
-.stat-count,
-.stat-graph {
-    display: none;
-}
-
+            .main {
+                display: none;
+            }
 
         </style>
+
+        <section class="main-content">
+            <div class="content-container">
+                <!-- Content -->
+                <h1>JavaScript not Enabled</h1>
+                <p>Please enable JavaScript and reload the page to continue.</p>
+                <!-- Footer -->
+                {% include footer.html %}
+            </div>
+        </section>
     </noscript>
 </body>
 
