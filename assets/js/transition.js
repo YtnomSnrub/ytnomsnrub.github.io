@@ -31,6 +31,9 @@ $(function () {
             duration: 150,
             render: function ($container) {
                 $container.addClass('page-out');
+                // Close menu
+                let $pageTabs = $(".page-tabs");
+                $pageTabs.removeClass("expanded");
                 // Restart your animation
                 smoothState.restartCSSAnimations();
             }

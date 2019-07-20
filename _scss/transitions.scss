@@ -115,6 +115,8 @@
     }
 
     .page-tabs {
+        pointer-events: none;
+
         .page-tabs-title {
             animation: none;
 
@@ -141,8 +143,6 @@
             }
 
             @media screen and (max-width: $small-breakpoint) {
-                opacity: 0;
-
                 a.page-link-current {
                     color: $text-color-alt;
 

@@ -44,4 +44,21 @@ $(function () {
 $(document).on("transition", function () {
     updateTabs();
     updateHeader();
+
+    // Setup expand button
+    let $pageTabs = $(".page-tabs");
+    $pageTabs.addClass("hidden");
+    $pageTabs.removeClass("expanded");
+    $(".page-tabs-expand").on("click", function () {
+        $pageTabs.toggleClass("expanded");
+        if ($pageTabs.hasClass("expanded")) {
+            $pageTabs.removeClass("hidden");
+        } else {
+            setTimeout(function () {
+                if (!$pageTabs.hasClass("expanded")) {
+                    $pageTabs.addClass("hidden");
+                }
+            }, 400);
+        }
+    });
 });

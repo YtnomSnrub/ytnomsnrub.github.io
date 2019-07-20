@@ -173,7 +173,7 @@
     @media screen and (max-width: $small-breakpoint) {
         &.fixed {
             .page-tabs-menu {
-                padding: 0.5rem 1rem;
+                padding: 0.8rem 1rem;
             }
 
             .page-tabs-inner a {
@@ -236,7 +236,9 @@
                     margin: auto;
 
                     content: "";
+                    transition: transform 0.1s $m-ease-in-out, opacity 0.1s $m-ease;
 
+                    opacity: 1;
                     border: none;
                     border-radius: 2px;
                     background-color: $text-color-alt;
@@ -261,7 +263,6 @@
 
             transition: opacity 0.2s $m-ease, transform 0.2s $m-ease-in;
             transform: translateY(-24px);
-            pointer-events: none;
 
             opacity: 0;
             background-color: $background-color-alt;
@@ -269,16 +270,26 @@
         }
 
         &.expanded {
-            .page-tabs-menu {
-                padding: 0.8rem 1rem;
-            }
-
             .page-tabs-inner {
                 transition: opacity 0.2s $m-ease, transform 0.2s $m-ease-out;
                 transform: translateY(0px);
-                pointer-events: all;
 
                 opacity: 1;
+            }
+
+            .page-tabs-hamburger {
+                &::before,
+                &::after {
+                    transform: translateY(0);
+
+                    opacity: 0;
+                }
+            }
+        }
+
+        &.hidden {
+            .page-tabs-inner {
+                visibility: hidden;
             }
         }
     }
