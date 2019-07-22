@@ -236,7 +236,7 @@
                     margin: auto;
 
                     content: "";
-                    transition: transform 0.1s $m-ease-in-out, opacity 0.1s $m-ease;
+                    transition: transform 0.2s $m-ease-in-out, opacity 0.2s $m-ease;
 
                     opacity: 1;
                     border: none;
@@ -267,6 +267,12 @@
             opacity: 0;
             background-color: $background-color-alt;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+
+            a {
+                &::before {
+                    display: none;
+                }
+            }
         }
 
         &.expanded {

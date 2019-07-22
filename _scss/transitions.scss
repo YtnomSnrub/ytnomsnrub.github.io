@@ -75,6 +75,10 @@
             &.page-link-current {
                 color: $text-color;
 
+                @media screen and (max-width: $small-breakpoint) {
+                    color: $text-color-alt;
+                }
+
                 &:focus {
                     &::before {
                         background-color: darken($background-color, 5%);
@@ -138,16 +142,6 @@
                 &:focus {
                     &::before {
                         background-color: $background-color;
-                    }
-                }
-            }
-
-            @media screen and (max-width: $small-breakpoint) {
-                a.page-link-current {
-                    color: $text-color-alt;
-
-                    &::before {
-                        transform: scaleY(0);
                     }
                 }
             }

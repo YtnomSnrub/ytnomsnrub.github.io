@@ -21,8 +21,8 @@ $panel-width: 100vw;
         position: absolute;
         z-index: -1;
         left: 50%;
-        top: 0;
-        bottom: 0;
+        top: -1px;
+        bottom: 1px;
 
         width: $panel-width;
         margin: auto;
