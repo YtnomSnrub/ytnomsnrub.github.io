@@ -137,7 +137,6 @@ function updateStatField(statField) {
                             };
 
                             statCounters[statId] = new CountUp(statId, statNumber, options);
-                            console.log("Created counter for '#" + statId + "' with value: " + statNumber);
                         }, 250);
                     } else if (statCounters[statId]) {
                         statCounters[statId].update(statNumber);
