@@ -1,4 +1,4 @@
-<div class="button-row stat-row">
+<div class="button-row{% if include.extra_stats %} stat-row{% endif %}">
     <div class="stat-count haiku-count">
         <p class="stat-counter stat-large haiku-counter loading" data-api="haikucount" data-loop-time="10000">.</p>
         <p>Haikus found</p>
