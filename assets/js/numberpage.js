@@ -1,3 +1,4 @@
+let statCounters = {};
 let statIntervals = [];
 let chartIntervals = [];
 
@@ -91,36 +92,62 @@ function setupStats() {
 function updateStatField(statField) {
     let getString = "";
     let apiString = statField.data("api");
-    let useDbl = statField.data("dbl") == true;
+    let loopTime = statField.data("loop-time");
     let isChange = statField.data("change") == true;
 
     if (apiString === undefined) {
         return;
     }
 
-    if (useDbl) {
-        getString = "https://discordbots.org/api/bots/372175794895585280/stats";
-    } else {
-        getString = "https://haikubotapi.apphb.com/api/" + apiString;
-    }
-
+    // Use haikubot api url
+    getString = "https://haikubotapi.apphb.com/api/" + apiString;
+    // Make request
     $.get(getString)
         .done(function (data) {
-            let dataValue = useDbl ? data[apiString] : data;
-            let statValue = numberWithCommas(dataValue);
+            let statValue = numberWithCommas(data);
             // Handle change values
             if (isChange) {
-                if (dataValue > 0) {
+                if (data > 0) {
                     statValue = "+" + statValue;
                     statField.removeClass("stat-change-negative");
                     statField.addClass("stat-change-positive");
-                } else if (dataValue < 0) {
+                } else if (data < 0) {
                     statField.removeClass("stat-change-positive");
                     statField.addClass("stat-change-negative");
                 }
             }
 
-            setStatFieldValue(statField, statValue);
+            // Handle countup
+            let statCountup = statField.data("countup");
+            if (statCountup) {
+                let statId = statField.attr("id");
+                if (statId) {
+                    let statNumber = parseInt(data);
+                    if (!statCounters[statId] && loopTime) {
+                        setStatFieldValue(statField, statValue);
+                        setTimeout(function () {
+                            let options = {
+                                duration: (loopTime * 1.25) / 1000,
+                                startVal: statNumber,
+                                // Easing
+                                useEasing: true,
+                                easingFn: function (t, b, c, d) {
+                                    return c * t / d + b;
+                                }
+                            };
+
+                            statCounters[statId] = new CountUp(statId, statNumber, options);
+                            console.log("Created counter for '#" + statId + "' with value: " + statNumber);
+                        }, 250);
+                    } else if (statCounters[statId]) {
+                        statCounters[statId].update(statNumber);
+                    }
+                } else {
+                    console.error("'id' attribute must be set for stat field with countup attribute");
+                }
+            } else {
+                setStatFieldValue(statField, statValue);
+            }
 
             // Update weekly haikus
             if (apiString === "haikucountlastweek") {
