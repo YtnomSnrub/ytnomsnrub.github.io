@@ -111,10 +111,6 @@
 
     &.fixed {
         @include header-shadow-fixed;
-
-        .page-tabs-inner a {
-            padding: 0.5rem 0;
-        }
     }
 
     .page-tabs-inner {
@@ -171,16 +167,6 @@
     }
 
     @media screen and (max-width: $small-breakpoint) {
-        &.fixed {
-            .page-tabs-menu {
-                padding: 0.8rem 1rem;
-            }
-
-            .page-tabs-inner a {
-                padding: 0.8rem 0;
-            }
-        }
-
         .page-tabs-menu {
             z-index: 101;
 
