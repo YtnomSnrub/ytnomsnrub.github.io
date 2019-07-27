@@ -61,8 +61,17 @@ $(document).on("transition", function () {
 });
 
 function setupStats() {
+    // Clear stat counters
+    statCounters = {};
+
+    // Clear stat intervals
     while (statIntervals.length > 0) {
         clearInterval(statIntervals.pop());
+    }
+
+    // Clear chart intervals
+    while (chartIntervals.length > 0) {
+        clearInterval(chartIntervals.pop());
     }
 
     // Setup stat counters
