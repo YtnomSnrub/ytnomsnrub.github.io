@@ -136,7 +136,7 @@ function updateStatField(statField) {
                         statField.addClass("hidden");
                         setTimeout(function () {
                             let options = {
-                                duration: (loopTime * 1.5) / 1000,
+                                duration: loopTime / 1000,
                                 startVal: statNumber,
                                 // Easing
                                 useEasing: true,
