@@ -104,6 +104,8 @@
             transition: opacity 0.1s $m-ease;
             text-align: left;
 
+            opacity: 1;
+
 @include font-stat;
 
             &.hidden {
@@ -115,6 +117,10 @@
                 animation-duration: 0.7s;
                 animation-timing-function: $m-ease-in-out;
                 animation-iteration-count: infinite;
+            }
+
+            &.outdated {
+                opacity: 0.5;
             }
 
             &.stat-change-positive {
@@ -154,15 +160,6 @@
         margin: 0.4em 0;
     }
 
-    // Sizes
-    &.stat-count-medium {
-        min-width: 10em;
-    }
-
-    &.stat-count-large {
-        min-width: 12em;
-    }
-
     p {
         margin: 0;
         padding: 0;
@@ -173,6 +170,8 @@
 
         transition: opacity 0.15s $m-ease-out, transform 0.15s $m-ease-out;
         transform: none;
+
+        opacity: 1;
 
         font-size: 1.5em;
 
@@ -190,6 +189,10 @@
             animation-duration: 0.7s;
             animation-timing-function: $m-ease-in-out;
             animation-iteration-count: infinite;
+        }
+
+        &.outdated {
+            opacity: 0.5;
         }
     }
 

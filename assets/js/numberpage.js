@@ -78,7 +78,7 @@ function setupStats() {
     $(".stat-counter").each(function () {
         let statField = $(this);
         updateStatField(statField);
-        let loopTime = statField.data("loop-time");
+        let loopTime = parseInt(statField.data("loop-time"));
         if (loopTime !== undefined) {
             statIntervals.push(setInterval(function () {
                 updateStatField(statField);
@@ -101,7 +101,7 @@ function setupStats() {
 function updateStatField(statField) {
     let getString = "";
     let apiString = statField.data("api");
-    let loopTime = statField.data("loop-time");
+    let loopTime = parseInt(statField.data("loop-time"));
     let isChange = statField.data("change") == true;
 
     if (apiString === undefined) {
@@ -130,9 +130,9 @@ function updateStatField(statField) {
             let statCountup = statField.data("countup");
             if (statCountup) {
                 let statId = statField.attr("id");
-                if (statId) {
+                if (statId && loopTime) {
                     let statNumber = parseInt(data);
-                    if (!statCounters[statId] && loopTime) {
+                    if (!statCounters[statId]) {
                         statField.addClass("hidden");
                         setTimeout(function () {
                             statField.removeClass("hidden");
@@ -151,12 +151,28 @@ function updateStatField(statField) {
                             statCounters[statId].start();
                         }, 500);
                     } else if (statCounters[statId]) {
+                        // Remove classes
                         statField.removeClass("hidden");
                         statField.removeClass("loading");
+                        // Animate to new value
                         statCounters[statId].update(statNumber);
+                        statCounters[statId].options.startVal = statNumber;
+                        // Check for repeated values
+                        if (statCounters[statId].prevFrameVal === statCounters[statId].frameVal) {
+                            statField.addClass("outdated");
+                            statCounters[statId].reset();
+                            requestAnimationFrame(function () {
+                                statCounters[statId].prevFrameVal = null;
+                            });
+                        } else {
+                            statField.removeClass("outdated");
+                        }
+
+                        // Setup outdated checker
+                        statCounters[statId].prevFrameVal = statCounters[statId].frameVal;
                     }
                 } else {
-                    console.error("'id' attribute must be set for stat field with countup attribute");
+                    console.error("'id' and 'data-looptime' attributes must be set for stat field with 'data-countup' attribute");
                 }
             } else {
                 setStatFieldValue(statField, statValue);

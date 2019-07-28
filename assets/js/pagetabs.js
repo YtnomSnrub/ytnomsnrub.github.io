@@ -17,7 +17,7 @@ function updateTabs() {
 
 function updateHeader() {
     'use strict';
-    let $headerText = $(".page-header-text");
+    /*let $headerText = $(".page-header-text");
 
     let translate = window.scrollY / 2;
     let scale = Math.max(1 - (window.scrollY * 0.0005), 0);
@@ -28,7 +28,7 @@ function updateHeader() {
     ];
 
     $headerText.css("transform", transform.join(" "));
-    $headerText.css("opacity", opacity);
+    $headerText.css("opacity", opacity);*/
 }
 
 $(function () {
