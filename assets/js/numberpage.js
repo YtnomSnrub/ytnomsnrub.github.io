@@ -133,7 +133,6 @@ function updateStatField(statField) {
                 if (statId) {
                     let statNumber = parseInt(data);
                     if (!statCounters[statId] && loopTime) {
-                        statField.addClass("hidden");
                         setTimeout(function () {
                             let options = {
                                 duration: loopTime / 1000,
@@ -145,7 +144,6 @@ function updateStatField(statField) {
                                 }
                             };
 
-                            statField.removeClass("loading");
                             statCounters[statId] = new CountUp(statId, statNumber, options);
                             statCounters[statId].start();
                         }, 500);
