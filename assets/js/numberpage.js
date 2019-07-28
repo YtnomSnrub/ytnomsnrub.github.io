@@ -133,10 +133,10 @@ function updateStatField(statField) {
                 if (statId) {
                     let statNumber = parseInt(data);
                     if (!statCounters[statId] && loopTime) {
-                        setStatFieldValue(statField, statValue);
+                        statField.addClass("hidden");
                         setTimeout(function () {
                             let options = {
-                                duration: (loopTime * 1.25) / 1000,
+                                duration: (loopTime * 1.5) / 1000,
                                 startVal: statNumber,
                                 // Easing
                                 useEasing: true,
@@ -145,9 +145,13 @@ function updateStatField(statField) {
                                 }
                             };
 
+                            statField.removeClass("loading");
                             statCounters[statId] = new CountUp(statId, statNumber, options);
-                        }, 250);
+                            statCounters[statId].start();
+                        }, 500);
                     } else if (statCounters[statId]) {
+                        statField.removeClass("hidden");
+                        statField.removeClass("loading");
                         statCounters[statId].update(statNumber);
                     }
                 } else {
