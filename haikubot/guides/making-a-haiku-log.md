@@ -1,5 +1,5 @@
 ---
-title: "Haiku Log"
+title: "Making a Haiku Log"
 ---
 
 # Making a Haiku Log
@@ -31,6 +31,8 @@ If you want haikus to show up in the Haiku Log, but not in other channels, you c
 ![Channel Role Settings for Haiku Log](/haikubot/img/channel_settings_log.png)
 
 > For information on how to change channel and category permissions, see [this guide](./restricting-haikubot). Just remember to leave the 'Read Messages' checkbox on if you still want messages in the Haiku Log.
+
+Alternatively, if you just want to change the way that haikus are logged across the whole server, rather than each channel individually, have a look how to [Change a Server's Haiku Type](./changing-a-servers-haiku-type). Specifically, setting the haiku type to `react` or `none` will stop HaikuBot from responding to haikus in the same channel and only send them to the haiku log.
 
 ## How does it Work?
 
