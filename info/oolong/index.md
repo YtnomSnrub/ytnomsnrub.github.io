@@ -29,6 +29,8 @@ Changing these options will require you to reload your data before they take eff
 
 Once you've loaded your data, you can generate random words based on the input data you've selected. You can select "Generate" to generate new words, or use the "Reset" and "Next Step" buttons to step through the generation process one step at a time.
 
+---
+
 ## How it Works
 
 You can step through the process of generating new words in Oolong by pressing the "Next Step" button in the generation panel near the bottom of the page. This will show a table with the current key and the chance of picking each letter next.
