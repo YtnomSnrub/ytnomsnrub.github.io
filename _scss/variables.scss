@@ -102,8 +102,3 @@ $button-inset: 3px;
 $button-extend: 2px;
 $button-extend-hover: 6px;
 $button-extend-active: 3px;
-
-// Header
-@mixin header-background {
-    background-color: $background-color;
-}

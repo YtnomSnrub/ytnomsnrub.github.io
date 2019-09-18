@@ -36,8 +36,6 @@
         overflow: hidden;
 
         opacity: 0;
-
-@include header-background;
     }
 
     .page-header-text {
@@ -66,7 +64,7 @@
 
         opacity: 1;
 
-@include font-title;
+        @include font-title;
 
         @media (max-width: $large-breakpoint) {
             font-size: 4.5rem;
@@ -90,7 +88,7 @@
 
         opacity: 0.9;
 
-@include font-subtitle;
+        @include font-subtitle;
 
         @media (max-width: $medium-breakpoint) {
             font-size: 1rem;
@@ -107,7 +105,7 @@
 
     background-color: $background-color-alt;
 
-@include header-shadow-page;
+    @include header-shadow-page;
 
     &.fixed {
         @include header-shadow-fixed;
