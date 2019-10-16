@@ -26,8 +26,32 @@ $loading-time: 0.15s;
     }
 }
 
+@keyframes loading-animation-inner {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+
+        border-right-color: $primary-color;
+        border-left-color: $primary-color;
+    }
+
+    50% {
+        transform: rotate(360deg) translate3d(0, 0, 0);
+
+        border-right-color: $secondary-color;
+        border-left-color: $secondary-color;
+    }
+
+    100% {
+        transform: rotate(720deg) translate3d(0, 0, 0);
+
+        border-right-color: $primary-color;
+        border-left-color: $primary-color;
+    }
+}
+
 .loading-indicator {
     position: absolute;
+    z-index: 1000;
     left: 0;
     right: 0;
 
@@ -38,20 +62,20 @@ $loading-time: 0.15s;
     transition: opacity $loading-time $m-ease-in 0s;
 
     opacity: 0;
-    border: $loading-border solid transparent;
+    border: ($loading-padding * 2) solid transparent;
     border-radius: $loading-size;
-    background-color: transparent;
+    background-color: $background-color;
 
     &.content-loading {
         position: fixed;
-        z-index: -1;
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
     }
 
-    &::before {
+    &::before,
+    &::after {
         position: absolute;
         left: $loading-padding;
         right: $loading-padding;
@@ -67,13 +91,24 @@ $loading-time: 0.15s;
         background-color: transparent;
     }
 
-    &.visible {
-        transition: opacity $loading-time $m-ease-out 0.1s;
-        animation: loading-animation 1.4s $m-ease-in-out 0s infinite;
+    &::after {
+        left: -$loading-padding;
+        right: -$loading-padding;
+        top: -$loading-padding;
+        bottom: -$loading-padding;
+    }
 
+    &.visible {
         opacity: 1;
 
         &::before {
+            transition: opacity $loading-time $m-ease-out 0.1s;
+            animation: loading-animation-inner 1.4s $m-ease-in-out 0s infinite;
+
+            opacity: 1;
+        }
+
+        &::after {
             transition: opacity $loading-time $m-ease-out 0s;
             animation: loading-animation 1.4s $m-ease-in-out 0s infinite;
 
