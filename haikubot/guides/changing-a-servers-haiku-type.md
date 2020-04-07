@@ -6,7 +6,7 @@ title: "Changing a Server's Haiku Type"
 
 You can change the way that Haikus are formatted in your server. This can be done with the `!haiku type` command. There are a number of options for haiku types for your server.
 
-> To change the haiku type, the user sending the command must have the "Manage Guild" permission.
+> To change the haiku type, the user sending the command must have the "Manage Server" permission.
 
 ## Normal
 
