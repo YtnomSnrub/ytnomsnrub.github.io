@@ -30,6 +30,14 @@
     }
 }
 
+
+@mixin stat-count-panel($color, $text-color) {
+    color: $text-color;
+    background-color: $color;
+    background-image: linear-gradient(0deg, darken($color, 2.5%), lighten($color, 2.5%));
+}
+
+
 .stat-table {
     position: relative;
 
@@ -152,7 +160,7 @@
 
     opacity: 1;
     border-radius: $border-radius;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
 
     @media (max-width: $small-breakpoint) {
         display: block;
@@ -198,33 +206,27 @@
 
     // Colors
     &.haiku-count {
-        color: $haiku-color-text;
-        background-color: $haiku-color;
+        @include stat-count-panel($haiku-color, $haiku-color-text);
     }
 
     &.server-count {
-        color: $text-color-alt;
-        background-color: $background-color-alt;
+        @include stat-count-panel($background-color-alt, $text-color-alt);
     }
 
     &.heart-count {
-        color: $heart-color-text;
-        background-color: $heart-color;
+        @include stat-count-panel($heart-color, $heart-color-text);
     }
 
     &.broken-heart-count {
-        color: $heart-color-broken-text;
-        background-color: $heart-color-broken;
+        @include stat-count-panel($heart-color-broken, $heart-color-broken-text);
     }
 
     &.message-count {
-        color: $message-color-text;
-        background-color: $message-color;
+        @include stat-count-panel($message-color, $message-color-text);
     }
 
     &.unique-user-count {
-        color: $user-color-text;
-        background-color: $user-color;
+        @include stat-count-panel($user-color, $user-color-text);
     }
 }
 
