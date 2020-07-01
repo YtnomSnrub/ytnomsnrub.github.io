@@ -11,11 +11,9 @@
         <a class="button" href="/haikubot/stats">
             <span class="button-inner">See all Stats</span>
         </a>
-        {% if include.show_page_link %}
-        <a class="button button-haiku" href="/haikubot/">
-            <span class="button-inner">Visit Page</span>
+        <a class="button button-discord" href="https://discordbots.org/bot/372175794895585280">
+            <span class="button-inner">View on Discord Bot List</span>
         </a>
-        {% endif %}
     </div>
 
     <p>HaikuBot is a friend-shaped Discord bot that detects accidental (or intentional) messages in your Discord server
@@ -34,12 +32,13 @@
         in the official server, or send a private message directly to the bot to try out your haiku writing skills!</p>
 
     <div class="button-row">
-        <a class="button button-discord" href="https://discordbots.org/bot/372175794895585280">
-            <span class="button-inner">View on Discord Bot List</span>
-        </a>
-        <a class="button"
-            href="https://discordapp.com/oauth2/authorize?client_id=372175794895585280&scope=bot&permissions=85056">
+        <a class="button" href="https://discordapp.com/oauth2/authorize?client_id=372175794895585280&scope=bot&permissions=85056">
             <span class="button-inner">Add to Your Server</span>
         </a>
+        {% if include.show_page_link %}
+        <a class="button button-haiku" href="/haikubot/">
+            <span class="button-inner">Learn More</span>
+        </a>
+        {% endif %}
     </div>
 </div>

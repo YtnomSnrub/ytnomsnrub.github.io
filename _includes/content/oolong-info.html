@@ -11,13 +11,13 @@
     </p>
 
     <div class="button-row">
-        {% if include.show_page_link %}
-        <a class="button" href="/info/oolong">
-            <span class="button-inner">Visit Page</span>
-        </a>
-        {% endif %}
         <a class="button button-oolong" href="/oolong/">
             <span class="button-inner">Go to Oolong</span>
         </a>
+        {% if include.show_page_link %}
+        <a class="button" href="/info/oolong">
+            <span class="button-inner">Learn More</span>
+        </a>
+        {% endif %}
     </div>
 </div>
