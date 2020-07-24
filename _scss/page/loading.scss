@@ -72,6 +72,8 @@ $loading-time: 0.15s;
         right: 0;
         top: 0;
         bottom: 0;
+
+        pointer-events: none;
     }
 
     &::before,
