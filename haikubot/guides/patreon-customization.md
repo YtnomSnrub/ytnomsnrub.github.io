@@ -48,6 +48,12 @@ If you are a Silver supporter or higher for HaikuBot on Patreon, you can change 
 
 Now, all of your haikus in any server on Discord will be in the color you selected!
 
+### Badge Color
+
+Additionally, Silver supporters or higher can change secondary color of their badge between light and dark using the commands `!haiku badge color light` and `haiku badge color dark`.
+
+![Patreon Badge Color](/haikubot/img/haiku-patreon-badge-color.png)
+
 ## Issues
 
 There are a couple of reasons why your Patreon benefits might not show up.
