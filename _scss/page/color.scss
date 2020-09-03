@@ -9,6 +9,8 @@ $color-block-text-padding: 0.6rem;
         margin-bottom: 1rem;
         padding: 0;
 
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+
         tbody {
             width: 100%;
         }
@@ -29,6 +31,44 @@ $color-block-text-padding: 0.6rem;
             color: $text-color-alt;
             border-radius: $border-radius;
             background-color: $discord-background-color;
+        }
+    }
+
+    .badge-block-table {
+        position: relative;
+
+        margin-bottom: 1rem;
+        padding: 0;
+
+        color: $text-color-alt;
+        border: 0.6rem solid transparent;
+        border-collapse: separate;
+        border-radius: $border-radius;
+        background-color: $discord-background-color;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.25);
+
+        td {
+            position: relative;
+
+            width: 1rem;
+            height: 1rem;
+            margin: 0;
+            padding: 0.2rem;
+        }
+
+        img {
+            margin: 0;
+            padding: 0;
+
+            border: none;
+            box-shadow: none;
+        }
+
+        .loading-image {
+            &::before,
+            &::after {
+                background-color: rgba(255, 255, 255, 0.5);
+            }
         }
     }
 

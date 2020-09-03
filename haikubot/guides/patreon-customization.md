@@ -54,6 +54,8 @@ Additionally, Silver supporters or higher can change secondary color of their ba
 
 ![Patreon Badge Color](/haikubot/img/haiku-patreon-badge-color.png)
 
+{% include patreon/haikubot-patreon-badges.html %}
+
 ## Issues
 
 There are a couple of reasons why your Patreon benefits might not show up.

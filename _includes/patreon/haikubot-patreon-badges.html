@@ -1,0 +1,25 @@
+<div>
+    {%- assign badge_tiers = "Silver,Gold,Emerald,Diamond" | split: "," -%}
+    {%- assign badge_colors = "Red,Orange,Amber,Yellow,Lime,Green,Aqua,Cyan,Sky,Ocean,Indigo,Purple,Magenta,Pink" | split: "," -%}
+    {%- for badge_tier in badge_tiers -%}
+    <h4>{{ badge_tier }}</h4>
+    <table class="badge-block-table" role="presentation">
+        <tbody>
+            <tr>
+                {%- for badge_color in badge_colors -%}
+                <td>
+                    <img src="/assets/img/HaikuBot_Tier_{{ badge_tier }}_{{ badge_color }}.png" alt="{{ badge_tier }} Badge ({{ badge_color }})" />
+                </td>
+                {%- endfor -%}
+            </tr>
+            <tr>
+                {%- for badge_color in badge_colors -%}
+                <td>
+                    <img src="/assets/img/HaikuBot_Tier_{{ badge_tier }}_{{ badge_color }}_Dark.png" alt="{{ badge_tier }} Badge ({{ badge_color }})" />
+                </td>
+                {%- endfor -%}
+            </tr>
+        </tbody>
+    </table>
+    {%- endfor -%}
+</div>
