@@ -39,6 +39,12 @@ Patreon supporters who are Silver tier or higher can change the color of the hai
     </tbody>
 </table>
 
+<div class="button-row">
+    <a class="button button-patreon" href="https://www.patreon.com/ytnomsnrub">
+        <span class="button-inner">HaikuBot on Patreon</span>
+    </a>
+</div>
+
 ## Changing Colors
 
 If you are a Silver supporter or higher for HaikuBot on Patreon, you can change the color of the haikus that you make.
