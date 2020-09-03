@@ -16,5 +16,3 @@ title: "HaikuBot"
 {% include content/haikubot-patreon.html %}
 
 {% include content/haikubot-guides.html %}
-
-{% include content/haikubot-tumblr.html %}
