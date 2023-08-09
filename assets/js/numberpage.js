@@ -109,7 +109,7 @@ function updateStatField(statField) {
     }
 
     // Use haikubot api url
-    getString = "https://haikubotapi.apphb.com/api/" + apiString;
+    getString = "https://stats.haikubot.snrub.club/" + apiString;
     // Make request
     $.get(getString)
         .done(function (data) {
@@ -295,7 +295,7 @@ function setupCharts() {
 
         function updateChart() {
             // Get the data from the api
-            getString = "https://haikubotapi.apphb.com/api/" + chart.htmlData.apiEndpoint;
+            getString = "https://stats.haikubot.snrub.club/" + chart.htmlData.apiEndpoint;
             $.ajax({
                 url: getString,
                 success: function (data) {
@@ -492,7 +492,7 @@ function findMax(arr) {
 
 function updateChartsData(charts, apiEndpoint) {
     // Get the data from the api
-    getString = "https://haikubotapi.apphb.com/api/" + apiEndpoint;
+    getString = "https://stats.haikubot.snrub.club/" + apiEndpoint;
     $.ajax({
         url: getString,
         success: function (data) {
